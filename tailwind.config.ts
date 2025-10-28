@@ -47,16 +47,33 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        glass: {
+          bg: "hsl(var(--glass-bg))",
+          border: "hsl(var(--glass-border))",
         },
+        brand: {
+          purple: {
+            DEFAULT: "#7C3AED",
+            light: "#A78BFA",
+            dark: "#6D28D9",
+          },
+          blue: {
+            DEFAULT: "#0EA5E9",
+            light: "#3B82F6",
+            dark: "#0284C7",
+          },
+          deep: {
+            DEFAULT: "#0B1220",
+            dark: "#0A0A0F",
+          },
+        },
+      },
+      backgroundImage: {
+        "gradient-dark": "linear-gradient(to top right, #0B1220, #1B0B2E, #0A0A0F)",
+        "gradient-accent": "linear-gradient(to bottom right, #6D28D9, #3B82F6, #0EA5E9)",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
       borderRadius: {
         lg: "var(--radius)",
