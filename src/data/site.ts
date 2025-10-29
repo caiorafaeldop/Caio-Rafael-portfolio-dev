@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "João Silva",
-  title: "Full-Stack Developer",
-  tagline: "Transforming ideas into elegant digital solutions",
-  description: "Desenvolvedor Full-Stack especializado em criar aplicações web modernas, escaláveis e de alto desempenho.",
-  email: "joao.silva@example.com",
-  location: "São Paulo, Brasil",
+  name: "Caio Rafael de Oliveira",
+  title: "Desenvolvedor Full Stack",
+  tagline: "Transformando ideias em soluções digitais elegantes",
+  description: "Desenvolvedor Full Stack com sólida experiência em React, Node.js e práticas modernas de desenvolvimento. Paixão por ensinar tecnologia.",
+  email: "caiorafaeldop@gmail.com",
+  location: "Jardim Cidade Universitária, João Pessoa, Paraíba, 58052-190",
   socials: {
-    github: "https://github.com/joaosilva",
-    linkedin: "https://linkedin.com/in/joaosilva",
-    twitter: "https://twitter.com/joaosilva",
+    github: "https://github.com/caiorafael",
+    linkedin: "https://linkedin.com/in/crop1210",
+    twitter: "",
   },
   hero: {
     greeting: "Olá, eu sou",

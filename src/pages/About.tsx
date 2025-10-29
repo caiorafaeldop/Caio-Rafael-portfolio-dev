@@ -45,25 +45,24 @@ const About = () => {
               className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
             >
               <div className="prose prose-invert max-w-none">
-                <h2 className="text-2xl font-bold mb-4">Minha História</h2>
+                <h2 className="text-2xl font-bold mb-4">Sobre Mim</h2>
                 <p className="text-muted-foreground mb-4">
-                  Sou um desenvolvedor Full-Stack com mais de 4 anos de experiência
-                  criando aplicações web modernas e escaláveis. Minha jornada começou
-                  com curiosidade sobre como os sites funcionavam, e rapidamente se
-                  transformou em uma paixão por construir experiências digitais que
-                  fazem a diferença.
+                  Sou um desenvolvedor Full Stack com sólida experiência em
+                  React, Node.js e práticas modernas de desenvolvimento.
+                  Graduado em Ciência da Computação pela UFPB, tenho paixão por
+                  ensinar tecnologia, com histórico comprovado como educador e
+                  mentor em projetos sociais e acadêmicos.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Ao longo da minha carreira, tive a oportunidade de trabalhar com
-                  startups inovadoras e empresas estabelecidas, sempre focado em
-                  entregar soluções de alta qualidade que atendem às necessidades
-                  reais dos usuários.
+                  Atualmente trabalho como Desenvolvedor Full Stack na LAKS,
+                  onde desenvolvo soluções com React, TypeScript, Node, Prisma e
+                  PostgreSQL, aplicando metodologias ágeis e boas práticas de
+                  UX/UI em projetos voltados para gestão de Franquias.
                 </p>
                 <p className="text-muted-foreground">
-                  Sou especializado em React, Node.js e arquiteturas de
-                  microserviços, mas sempre estou aprendendo novas tecnologias e
-                  melhores práticas. Acredito em código limpo, testes automatizados e
-                  na importância de uma boa documentação.
+                  Além do desenvolvimento, dedico-me ao ensino de programação,
+                  compartilhando conhecimento e inspirando novos talentos na
+                  área de tecnologia.
                 </p>
               </div>
             </motion.div>
@@ -72,44 +71,84 @@ const About = () => {
               variants={fadeInUp}
               className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
             >
-              <h2 className="text-2xl font-bold mb-6">Valores & Princípios</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <h2 className="text-2xl font-bold mb-6">Formação Acadêmica</h2>
+              <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold mb-2 text-primary">
-                    Qualidade sobre Quantidade
+                  <h3 className="font-semibold mb-1 text-primary">
+                    Universidade Federal da Paraíba, João Pessoa
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    Prefiro entregar menos funcionalidades com excelência do que
-                    muitas com qualidade comprometida.
+                    Bacharelado em Ciência da Computação (2021 - 2025)
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2 text-primary">
-                    Aprendizado Contínuo
+                  <h3 className="font-semibold mb-1 text-primary">
+                    Século Colégio e Curso, João Pessoa
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    A tecnologia evolui rapidamente, e eu me comprometo a estar
-                    sempre atualizado com as melhores práticas.
+                    Ensino Médio (2017 - 2019)
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2 text-primary">
-                    Colaboração
-                  </h3>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
+            >
+              <h2 className="text-2xl font-bold mb-6">Feitos Acadêmicos</h2>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
                   <p className="text-muted-foreground text-sm">
-                    Acredito que os melhores resultados vêm do trabalho em equipe e
-                    da troca de ideias.
+                    Monitoria Acadêmica em Estrutura de Dados (UFPB, 2023-2024)
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2 text-primary">
-                    Impacto Real
-                  </h3>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
                   <p className="text-muted-foreground text-sm">
-                    Busco projetos que fazem diferença na vida das pessoas e
-                    resolvem problemas reais.
+                    Ensino de Análise de Dados como Atividade Extensionista
+                    (UFPB, 2024)
                   </p>
                 </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <p className="text-muted-foreground text-sm">
+                    Membro do PET-Computação (UFPB, 2023-2025): grupo acadêmico
+                    restrito a alunos de desempenho acadêmico elevado
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
+            >
+              <h2 className="text-2xl font-bold mb-6">Projetos Voluntários</h2>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <p className="text-muted-foreground text-sm">
+                    Projeto Full Stack voluntário para a Rede Feminina de
+                    Combate ao Câncer, responsável por aumentar a arrecadação e
+                    melhorar a gestão de doações através de uma plataforma
+                    digital integrada.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
+            >
+              <h2 className="text-2xl font-bold mb-6">Idiomas</h2>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">•</span>
+                <p className="text-muted-foreground text-sm">
+                  Inglês Avançado - Wizard (2023-2025)
+                </p>
               </div>
             </motion.div>
 

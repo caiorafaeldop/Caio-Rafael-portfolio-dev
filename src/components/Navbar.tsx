@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl shadow-lg">
             <div className="flex items-center justify-between h-16 px-6">
               <Link to="/" className="text-xl font-bold bg-gradient-accent bg-clip-text text-transparent">
-                JS
+                Caio
               </Link>
 
               {/* Desktop Navigation */}
