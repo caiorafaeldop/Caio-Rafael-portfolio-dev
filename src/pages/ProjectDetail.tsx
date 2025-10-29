@@ -1,7 +1,14 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink, Calendar, ArrowRight } from "lucide-react";
+import { useState, useCallback } from "react";
+import {
+  ArrowLeft,
+  Github,
+  ExternalLink,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
@@ -10,11 +17,26 @@ import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import ReactMarkdown from "react-markdown";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const project = projects.find((p) => p.slug === slug);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = useCallback((api: CarouselApi) => {
+    if (!api) return;
+    setActiveIndex(api.selectedScrollSnap());
+  }, []);
 
   if (!project) {
     return (
@@ -46,7 +68,10 @@ const ProjectDetail = () => {
       <Helmet>
         <title>{`${project.title} - ${siteConfig.name}`}</title>
         <meta name="description" content={project.shortDescription} />
-        <meta property="og:title" content={`${project.title} - ${siteConfig.name}`} />
+        <meta
+          property="og:title"
+          content={`${project.title} - ${siteConfig.name}`}
+        />
         <meta property="og:description" content={project.shortDescription} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -112,6 +137,66 @@ const ProjectDetail = () => {
                   ))}
                 </div>
 
+                {project.gallery && project.gallery.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="text-xl font-bold mb-4">
+                      Galeria do Projeto
+                    </h2>
+                    <Carousel
+                      className="w-full"
+                      opts={{
+                        loop: true,
+                        align: "center",
+                      }}
+                      setApi={(api) => {
+                        api?.on("select", () => handleSlideChange(api));
+                      }}
+                    >
+                      <CarouselContent>
+                        {project.gallery.map((image, index) => (
+                          <CarouselItem key={index}>
+                            <div className="p-1">
+                              <div className="overflow-hidden rounded-xl border border-glass-border/20 shadow-lg">
+                                <img
+                                  src={image}
+                                  alt={`${project.title} - Imagem ${index + 1}`}
+                                  className="w-full h-auto object-cover aspect-video hover:scale-105 transition-transform duration-300"
+                                />
+                              </div>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <div className="flex flex-col items-center gap-2 mt-4">
+                        <div className="flex justify-center gap-2">
+                          <CarouselPrevious className="relative static left-0 translate-y-0 mr-2" />
+                          <CarouselNext className="relative static right-0 translate-y-0" />
+                        </div>
+                        <div className="flex gap-1 mt-2">
+                          {project.gallery.map((_, index) => (
+                            <div
+                              key={index}
+                              className={`w-2 h-2 rounded-full mx-0.5 transition-colors duration-300 ${index === activeIndex ? "bg-primary" : "bg-muted-foreground/30"}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </Carousel>
+                  </div>
+                )}
+
+                {project.cover && !project.gallery && (
+                  <div className="mb-8">
+                    <div className="overflow-hidden rounded-xl border border-glass-border/20">
+                      <img
+                        src={project.cover}
+                        alt={project.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {project.longDescription && (
                   <div className="prose prose-invert max-w-none mb-8">
                     <ReactMarkdown>{project.longDescription}</ReactMarkdown>
@@ -121,12 +206,16 @@ const ProjectDetail = () => {
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   {project.responsibilities && (
                     <div>
-                      <h2 className="text-xl font-bold mb-4">Responsabilidades</h2>
+                      <h2 className="text-xl font-bold mb-4">
+                        Responsabilidades
+                      </h2>
                       <ul className="space-y-2">
                         {project.responsibilities.map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="text-primary mt-1.5">•</span>
-                            <span className="text-muted-foreground">{item}</span>
+                            <span className="text-muted-foreground">
+                              {item}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -140,7 +229,9 @@ const ProjectDetail = () => {
                         {project.results.map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="text-primary mt-1.5">•</span>
-                            <span className="text-muted-foreground">{item}</span>
+                            <span className="text-muted-foreground">
+                              {item}
+                            </span>
                           </li>
                         ))}
                       </ul>

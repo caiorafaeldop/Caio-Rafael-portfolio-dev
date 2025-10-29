@@ -1,7 +1,7 @@
 export interface Project {
   slug: string;
   title: string;
-  year: number;
+  year: string;
   shortDescription: string;
   longDescription?: string;
   tags: string[];
@@ -20,10 +20,58 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "rfcc-colab",
+    title: "RFCC-COLAB",
+    year: 2025,
+    shortDescription:
+      "Plataforma voluntária para a Rede Feminina de Combate ao Câncer focada em aumentar arrecadações através de doações, e-commerce e assinaturas recorrentes.",
+    longDescription: `# RFCC-COLAB
+
+Plataforma desenvolvida de forma voluntária para a Rede Feminina de Combate ao Câncer com o objetivo de aumentar a arrecadação e ampliar o alcance da instituição.
+
+## Desafio
+A instituição enfrentava dificuldades para gerenciar doações e manter um fluxo constante de arrecadação para sustentar seus projetos de apoio a pacientes com câncer.
+
+## Solução
+Desenvolvimento de uma plataforma integrada com três pilares principais:
+- Sistema de doações online com múltiplas formas de pagamento
+- E-commerce para venda de produtos institucionais
+- Programa de assinatura recorrente para doadores mensais`,
+    tags: ["Voluntariado", "E-commerce", "Doações", "Impacto Social"],
+    stack: ["React", "Node.js", "MongoDB", "Mercado Pago", "AWS"],
+    responsibilities: [
+      "Desenvolvimento full-stack da plataforma",
+      "Implementação do sistema de pagamentos recorrentes",
+      "Integração com gateway de pagamentos",
+      "Criação do e-commerce e sistema de gestão de estoque",
+    ],
+    results: [
+      "Aumento na arrecadação mensal através de assinaturas recorrentes",
+      "Crescimento expressivo na base de doadores com a adição de novas formas de pagamento",
+      "Nova fonte de renda com operações de comércio digital dentro da plataforma",
+    ],
+    links: {
+      github: "https://github.com/caiorafaeldop/mvp-projeto-colab-ongs",
+      live: "https://rede-feminina-colab.onrender.com/",
+    },
+    cover: "/RFCC/Captura de tela 2025-10-25 232152.png",
+    gallery: [
+      "/RFCC/Captura de tela 2025-10-28 213510.png",
+      "/RFCC/Captura de tela 2025-10-28 213802.png",
+      "/RFCC/Captura de tela 2025-10-28 213853.png",
+      "/RFCC/Captura de tela 2025-10-28 213916.png",
+      "/RFCC/Captura de tela 2025-10-28 213936.png",
+      "/RFCC/Captura de tela 2025-10-28 214050.png",
+      "/RFCC/Captura de tela 2025-10-28 214111.png",
+    ],
+    featured: true,
+  },
+  {
     slug: "dashzap",
     title: "DashZap",
-    year: 2024,
-    shortDescription: "Dashboard completo de analytics e gestão para WhatsApp Business com visualizações em tempo real.",
+    year: "2024",
+    shortDescription:
+      "Dashboard completo de analytics e gestão para WhatsApp Business com visualizações em tempo real.",
     longDescription: `# DashZap
 
 Plataforma completa de analytics e gestão para WhatsApp Business API, oferecendo insights profundos sobre conversas, automações e performance de atendimento.
@@ -38,7 +86,14 @@ Sistema empresarial que conecta múltiplas instâncias do WhatsApp Business, pro
 - Relatórios customizáveis
 - Integração com CRM`,
     tags: ["Dashboard", "Analytics", "Mensageria", "Real-time"],
-    stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "WebSocket"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "WebSocket",
+    ],
     responsibilities: [
       "Arquitetura da solução end-to-end",
       "Implementação do sistema de WebSocket para real-time",
@@ -60,8 +115,9 @@ Sistema empresarial que conecta múltiplas instâncias do WhatsApp Business, pro
   {
     slug: "leadsim",
     title: "LeadSim",
-    year: 2024,
-    shortDescription: "Plataforma de captura e qualificação automática de leads com IA para otimização de conversão.",
+    year: "2024 - 2025",
+    shortDescription:
+      "Plataforma de captura e gerenciamento de leads com foco na administração de franquias e franqueadoras.",
     longDescription: `# LeadSim
 
 Sistema inteligente de captura e qualificação de leads que utiliza Machine Learning para identificar oportunidades de alta qualidade e automatizar follow-ups.
@@ -85,16 +141,16 @@ Plataforma que captura leads de múltiplas fontes, aplica scoring com IA e autom
       "Automação de 90% do processo de follow-up",
     ],
     links: {
-      github: "https://github.com/joaosilva/leadsim",
-      live: "https://leadsim.example.com",
+      live: "https://leadsim.com.br/",
     },
     featured: true,
   },
   {
     slug: "arcdashboard-api",
     title: "ArcDashboard API",
-    year: 2023,
-    shortDescription: "API RESTful robusta para gestão de dashboards customizáveis com sistema de permissões granular.",
+    year: "2023",
+    shortDescription:
+      "API RESTful robusta para gestão de dashboards customizáveis com sistema de permissões granular.",
     longDescription: `# ArcDashboard API
 
 API backend escalável que permite criar, gerenciar e compartilhar dashboards customizáveis com sistema avançado de permissões e controle de acesso.
