@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Caio Rafael de Oliveira - Desenvolvedor Full Stack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366f1", // Indigo-500 equivalent, good for both modes
+                        "primary-hover": "#4f46e5",
+                        "secondary": "#8b5cf6", // Purple accent from screenshot
+                        "background-light": "#f8fafc", // Slate-50
+                        "background-dark": "#0f0f11", // Very dark grey/black
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#18181b", // Zinc-900
+                        "surface-dark-lighter": "#27272a", // Zinc-800
+                        "text-light": "#1e293b",
+                        "text-dark": "#e2e8f0",
+                        "text-muted-light": "#64748b",
+                        "text-muted-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#27272a",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(15, 15, 17, 0) 50%)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+<nav class="fixed w-full z-50 top-0 left-0 border-b border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex-shrink-0 flex items-center">
+<span class="text-primary font-bold text-xl tracking-tight">Caio.dev</span>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#home">Home</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#projetos">Projetos</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#experiencia">Sobre</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#contato">Contato</a>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark-lighter transition-colors focus:outline-none" id="theme-toggle">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-xl">light_mode</span>
+</button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark-lighter transition-colors focus:outline-none" id="theme-toggle-mobile">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-xl">light_mode</span>
+</button>
+<button class="text-text-light dark:text-text-dark hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden" id="home">
+<div class="absolute inset-0 bg-hero-gradient pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+<p class="text-text-muted-light dark:text-text-muted-dark mb-4 text-sm font-medium tracking-wide">Olá, eu sou</p>
+<h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 tracking-tight pb-2">
+            Caio Rafael de Oliveira
+        </h1>
+<h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark mb-6">
+            Desenvolvedor Full Stack
+        </h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            Transformando ideias em soluções digitais elegantes com foco em React, Node.js, TypeScript e PostgreSQL.
+        </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+<a class="px-8 py-3 bg-secondary hover:bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/20 transition-all transform hover:-translate-y-1 flex items-center gap-2" href="#projetos">
+                Ver Projetos
+                <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+<a class="px-8 py-3 bg-surface-light dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-surface-dark font-medium rounded-lg transition-colors" href="#contato">
+                Entre em Contato
+            </a>
+</div>
+<div class="flex justify-center gap-4">
+<a class="p-3 rounded-full bg-surface-light dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary hover:border-primary transition-all" href="https://github.com/CaioRafael01" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<a class="p-3 rounded-full bg-surface-light dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary hover:border-primary transition-all" href="https://www.linkedin.com/in/caio-rafael-de-oliveira-18751b228/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="p-3 rounded-full bg-surface-light dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary hover:border-primary transition-all" href="mailto:caiorafaeldop@gmail.com">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-12 bg-surface-light dark:bg-surface-dark border-y border-border-light dark:border-border-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="p-6 rounded-2xl bg-white dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-center hover:border-primary/50 transition-colors">
+<span class="block text-4xl font-extrabold text-secondary mb-2">5</span>
+<span class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider">Projetos Entregues</span>
+</div>
+<div class="p-6 rounded-2xl bg-white dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-center hover:border-primary/50 transition-colors">
+<span class="block text-4xl font-extrabold text-secondary mb-2">9+</span>
+<span class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider">Tecnologias</span>
+</div>
+<div class="p-6 rounded-2xl bg-white dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-center hover:border-primary/50 transition-colors">
+<span class="block text-4xl font-extrabold text-secondary mb-2">3</span>
+<span class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider">Empresas</span>
+</div>
+<div class="p-6 rounded-2xl bg-white dark:bg-surface-dark-lighter border border-border-light dark:border-border-dark text-center hover:border-primary/50 transition-colors">
+<span class="block text-4xl font-extrabold text-secondary mb-2">+1</span>
+<span class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider">Ano em Produção</span>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap justify-center gap-3">
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">React</span>
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">TypeScript</span>
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">Node.js</span>
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">PostgreSQL</span>
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">MongoDB</span>
+<span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20">AWS</span>
+</div>
+<div class="mt-8 text-center">
+<a class="inline-flex items-center gap-2 text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5" href="#">
+<span class="material-symbols-outlined text-lg">download</span>
+                Baixar Currículo (PDF)
+            </a>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-24 bg-background-light dark:bg-background-dark" id="projetos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">Meus Projetos em Destaque</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg max-w-2xl mx-auto">
+                Uma jornada pelos meus trabalhos mais impactantes e inovadores.
+            </p>
+</div>
+<article class="relative min-h-[70vh] flex flex-col justify-center mb-24 md:mb-32">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl opacity-50 dark:opacity-20 z-0"></div>
+<div class="absolute inset-0 bg-cover bg-center rounded-3xl group-odd:bg-left-top group-even:bg-right-top mix-blend-multiply dark:mix-blend-screen opacity-10 blur-sm pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-7_ZWAynGYmrKrxPLTEFBEPgsIQtmaWFZJb2leSkcmq_ARgYpM5UPebbKZcEuFozd6hlu4Ui8DUts2yGxeI7dtM65pPGiT4VJQzoFLmpp6Sjx9goItDfiG8kH8r6oHrKCaQtMbf-8x_5vjkVq81X0W-u_JSlANgXe-klL4JGXHzMmBYGsVlAN7B4YD0oLToLr-foLdx-nHqqKQTdsdsl-DykCXb5cCToaPYLGqh4Yk6Qt8zl3qE4aAoZ8eA8LJBNVLxLcy3vgHY8D');"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center p-6 md:p-12">
+<div class="order-2 md:order-1">
+<img alt="Screenshot do Projeto Pet de Todos" class="w-full h-auto rounded-xl shadow-2xl border border-border-light dark:border-border-dark transition-transform hover:scale-[1.01] duration-300 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa4EO3TEC6MhY0WgjKEPbMydYeUVvJV1FCX9vpMTOwdiRibIdaBu4ozr8u-p_RFrNKWF8DPtKeuUVv3WSmKZUUvtZ3JoCkTYFAhEaARKV0qjinr20KT-riVAo1mU3gbXjA3IZTMu8ZUd3WrpMKS7i0uL3yzgdTqrbFKd9omEF6f1dri7cnmcl8WO59imnwjTJCCyExETtZzSgsxV5JKsjoijP2a8naq-dF164SDEECWMrmz-y7waYbkkO-fTOBjDcDect8phc06r1w"/>
+</div>
+<div class="order-1 md:order-2 text-center md:text-left">
+<h3 class="text-4xl md:text-5xl font-extrabold text-text-light dark:text-text-dark leading-tight mb-4">Pet de Todos</h3>
+<span class="text-lg font-mono text-text-muted-light dark:text-text-muted-dark mb-6 block">2025</span>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg md:text-xl leading-relaxed mb-6 max-w-prose md:mx-0 mx-auto">
+                        Desenvolvi uma landing page interativa para o plano de saúde pet do Grupo Cartão de Todos, focando na conversão e na apresentação dos benefícios como consultas, exames, cirurgias e teleorientação 24h para cães e gatos com cobertura nacional.
+                    </p>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full">HealthTech</span>
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full">Landing Page</span>
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full">Conversão</span>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-bold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider mb-2">Tecnologias Usadas:</h4>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start">
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">React</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">TypeScript</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">Tailwind CSS</span>
+</div>
+</div>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+<a class="flex-1 sm:flex-none bg-secondary hover:bg-primary text-white text-base font-semibold py-3 px-6 rounded-lg text-center transition-colors flex items-center justify-center gap-2 max-w-xs w-full" href="#">
+                                Ver Demo
+                                <span class="material-symbols-outlined text-base">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="relative min-h-[70vh] flex flex-col justify-center mb-24 md:mb-32 group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl opacity-50 dark:opacity-20 z-0"></div>
+<div class="absolute inset-0 bg-cover bg-center rounded-3xl group-odd:bg-left-top group-even:bg-right-top mix-blend-multiply dark:mix-blend-screen opacity-10 blur-sm pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzcJn8RVQvFdK64KHzoNQAQLGEpP4-TgA-DK60xIXXumaJCvCdAdgWT3i7T-0O2WO8TMIZ0wDk3cdmvlp6mfzDza4YiSp4GEtgWytEneLfi9o0EfF8KxgR00ONnqpULCRUGEXS_PosD1GtGUl2VOSgV6kcP6RnyvgqRl6U-oRfAU1lSayXSvbRP2ffYIRRwlSko8C2srI_biJKPXEoYLfCoOwYy_yoxnus6_q9kD8XQOC7xTGlb3baM1Wb_IijLs7KhtRZBwaPZ-g4');"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center p-6 md:p-12">
+<div class="order-2 md:order-2">
+<img alt="Screenshot do Projeto LeadSim" class="w-full h-auto rounded-xl shadow-2xl border border-border-light dark:border-border-dark transition-transform hover:scale-[1.01] duration-300 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjEgCCOYZMWYpH00XJshRdYbLxqDPcOvzyc1Ma87mOEo_IAc5NRFK2Ql2XQxYrAcFVVInTiEPY8stoUN-kOjTQZUf5jKWpp15JzoCszKj5umdkySfQRfwDrF8Ovl7TaXGGy9iG2TS_KK746xiitIkyFHh5mHcNdh_6SqcpI4rK02iQ_2015bsXU1S3dFz7bVrefYNFoHhhlVhAuZ8le8u8XLq6p--llc3R1XNum8E_1bTIqVASztgw6JTNqm0bL3dacS7eRz4Utevw"/>
+</div>
+<div class="order-1 md:order-1 text-center md:text-left">
+<h3 class="text-4xl md:text-5xl font-extrabold text-text-light dark:text-text-dark leading-tight mb-4">LeadSim</h3>
+<span class="text-lg font-mono text-text-muted-light dark:text-text-muted-dark mb-6 block">2024 - 2025</span>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg md:text-xl leading-relaxed mb-6 max-w-prose md:mx-0 mx-auto">
+                        Participei do desenvolvimento de uma plataforma SaaS de CRM e gestão de leads, centralizando clientes, propostas, contratos, finanças e automação de marketing para otimizar o fluxo de trabalho de vendas.
+                    </p>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full">SaaS</span>
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full">CRM</span>
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 rounded-full">Gestão</span>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-bold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider mb-2">Tecnologias Usadas:</h4>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start">
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">Next.js</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">Prisma</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">PostgreSQL</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">Node.js</span>
+</div>
+</div>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+<a class="flex-1 sm:flex-none bg-secondary hover:bg-primary text-white text-base font-semibold py-3 px-6 rounded-lg text-center transition-colors flex items-center justify-center gap-2 max-w-xs w-full" href="#">
+                                Ver Demo
+                                <span class="material-symbols-outlined text-base">open_in_new</span>
+</a>
+<a class="p-3 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary rounded-lg border border-border-light dark:border-border-dark hover:border-primary transition-colors flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="relative min-h-[70vh] flex flex-col justify-center mb-24 md:mb-32 group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl opacity-50 dark:opacity-20 z-0"></div>
+<div class="absolute inset-0 bg-cover bg-center rounded-3xl group-odd:bg-left-top group-even:bg-right-top mix-blend-multiply dark:mix-blend-screen opacity-10 blur-sm pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVLhjngHM56EFPHrLCB3kWAmtz30_nXZryfeD4f7jD6TSCuL1PmAVbgiWDh_QKmcXhLorokoK0pGr914uhHhgAB1Xe8Ut2GlraYfcMeEM6oG9I7BjvxKhdbKQOgS7qsYj5tgLJOjhNCSUmbBwgZrod7fDQ9uDhCocqgKnKPD7bn4uWuP9Daa_C68yM0v2uFiS7NjXh1s2EjWTHJA4_cqFr5o-zCRECYhYR8vkmvUVftLxbVmC_Z8Bm_1ls8SpD4PbY1zJpT3ft6BiD');"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center p-6 md:p-12">
+<div class="order-2 md:order-1">
+<img alt="Screenshot do Projeto RFCC-COLAB" class="w-full h-auto rounded-xl shadow-2xl border border-border-light dark:border-border-dark transition-transform hover:scale-[1.01] duration-300 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5SpotSWiISwt5vzow9bncBxmYVwSlWGtxMOEqg7uC_0kpiUtNFZjJDPdA9Ig9SEogJaLut7VgWHr6KWsLsLoD10DL4VRg8DFga60g7WD7v8b45gjfZE8NBN-ORIWxNSLUpIAyeXUCsAgpqgHNy1eogoFVTNJzHXop64XepNQAHdbVkg5lC1-wX0dMq-1Kmz_ucvd1S83yL05pvOddFiDhyZuhxUimTxAETR1bwQwBtd3jsTDn8cB7u35R40sToRIl9skNzii9NrHK"/>
+</div>
+<div class="order-1 md:order-2 text-center md:text-left">
+<h3 class="text-4xl md:text-5xl font-extrabold text-text-light dark:text-text-dark leading-tight mb-4">RFCC-COLAB</h3>
+<span class="text-lg font-mono text-text-muted-light dark:text-text-muted-dark mb-6 block">2025</span>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg md:text-xl leading-relaxed mb-6 max-w-prose md:mx-0 mx-auto">
+                        Criei uma plataforma voluntária para a Rede Feminina de Combate ao Câncer, com o objetivo de otimizar e aumentar as arrecadações através de doações, e-commerce e assinaturas recorrentes.
+                    </p>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded-full">Voluntariado</span>
+<span class="text-xs uppercase font-bold tracking-wider px-3 py-1 bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-full">Doações</span>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-bold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider mb-2">Tecnologias Usadas:</h4>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start">
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">Clean Architecture</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">DevOps</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-surface-dark text-xs text-text-light dark:text-text-dark rounded-full border border-gray-200 dark:border-gray-700">AWS</span>
+</div>
+</div>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+<a class="flex-1 sm:flex-none bg-secondary hover:bg-primary text-white text-base font-semibold py-3 px-6 rounded-lg text-center transition-colors flex items-center justify-center gap-2 max-w-xs w-full" href="#">
+                                Ver Demo
+                                <span class="material-symbols-outlined text-base">open_in_new</span>
+</a>
+<a class="p-3 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary rounded-lg border border-border-light dark:border-border-dark hover:border-primary transition-colors flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div class="mt-16 flex justify-center">
+<a class="px-6 py-3 rounded-full border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:border-primary hover:text-primary transition-all font-medium flex items-center gap-2 group" href="#">
+                Ver Todos os Projetos
+                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-20 md:py-28 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark" id="experiencia">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">Experiência</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg">Minha jornada profissional e evolução como desenvolvedor</p>
+</div>
+<div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:dark:via-gray-700 before:to-transparent md:before:mx-auto md:before:translate-x-0">
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-secondary bg-secondary/20 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-secondary text-sm">work</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark-lighter shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-bold text-text-light dark:text-text-dark text-lg">Desenvolvedor Full Stack</h3>
+<span class="text-xs font-mono text-secondary px-2 py-0.5 rounded bg-secondary/10">Atual</span>
+</div>
+<p class="text-secondary font-semibold text-sm mb-1">LAKS</p>
+<time class="block mb-4 text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Maio de 2024 - Presente</time>
+<ul class="space-y-2 mb-4">
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-secondary before:rounded-full">Desenvolvimento de soluções com React, Typescript, Node, Prisma e PostgreSQL</li>
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-secondary before:rounded-full">Consumo de APIs REST</li>
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-secondary before:rounded-full">Aplicação de boas práticas de UX/UI</li>
+</ul>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-border-light dark:border-border-dark mt-2">
+<span class="text-[10px] text-text-muted-light dark:text-text-muted-dark font-mono">React</span>
+<span class="text-[10px] text-text-muted-light dark:text-text-muted-dark font-mono">TypeScript</span>
+<span class="text-[10px] text-text-muted-light dark:text-text-muted-dark font-mono">Node.js</span>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-surface-dark shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark text-sm">school</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark-lighter shadow-sm hover:shadow-md transition-shadow">
+<h3 class="font-bold text-text-light dark:text-text-dark text-lg mb-1">Professor de Programação</h3>
+<p class="text-secondary font-semibold text-sm mb-1">CTRL Play</p>
+<time class="block mb-4 text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Janeiro - Abril de 2025</time>
+<ul class="space-y-2">
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gray-400 before:dark:bg-gray-600 before:rounded-full">Planejamento e aplicação de aulas para mais de 50 alunos</li>
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gray-400 before:dark:bg-gray-600 before:rounded-full">Ensino de programação para crianças e adultos</li>
+</ul>
+</div>
+</div>
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-surface-dark shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark text-sm">school</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark-lighter shadow-sm hover:shadow-md transition-shadow">
+<h3 class="font-bold text-text-light dark:text-text-dark text-lg mb-1">Professor de Programação</h3>
+<p class="text-secondary font-semibold text-sm mb-1">FUNETEC</p>
+<time class="block mb-4 text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Maio de 2023 - Presente</time>
+<ul class="space-y-2">
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gray-400 before:dark:bg-gray-600 before:rounded-full">Planejamento e aplicação de aulas no Projeto CODE</li>
+<li class="text-sm text-text-muted-light dark:text-text-muted-dark pl-4 relative before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gray-400 before:dark:bg-gray-600 before:rounded-full">Ênfase em lógica de programação e desenvolvimento</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-text-light dark:text-text-dark mb-4">Tech Stack</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark">Tecnologias e ferramentas que domino</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-light dark:bg-surface-dark-lighter p-8 rounded-2xl border border-border-light dark:border-border-dark hover:border-primary/30 transition-all">
+<h3 class="text-lg font-bold text-secondary mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Frontend</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">React</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Angular</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Vue</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">JavaScript</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">TypeScript</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Tailwind</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark-lighter p-8 rounded-2xl border border-border-light dark:border-border-dark hover:border-primary/30 transition-all">
+<h3 class="text-lg font-bold text-secondary mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Backend</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Node.js</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Prisma</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">PostgreSQL</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">MongoDB</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">REST APIs</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark-lighter p-8 rounded-2xl border border-border-light dark:border-border-dark hover:border-primary/30 transition-all">
+<h3 class="text-lg font-bold text-secondary mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Outras Habilidades</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Git / GitHub</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Power BI</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Metodologias Ágeis</span>
+<span class="px-3 py-1.5 rounded-md text-sm bg-gray-100 dark:bg-surface-dark text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700">Scrum / Kanban</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="pt-20 pb-10 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark" id="contato">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">Vamos Trabalhar Juntos</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg">
+                    Estou sempre aberto a novos projetos e oportunidades. Entre em contato!
+                </p>
+</div>
+<div class="bg-white dark:bg-surface-dark-lighter p-8 md:p-10 rounded-2xl border border-border-light dark:border-border-dark shadow-lg dark:shadow-none mb-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-text-light dark:text-text-dark uppercase tracking-wide mb-1">Email</h4>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="mailto:caiorafaeldop@gmail.com">caiorafaeldop@gmail.com</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-text-light dark:text-text-dark uppercase tracking-wide mb-1">Localização</h4>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">
+                                    Jardim Cidade Universitária, João Pessoa,<br/> Paraíba, 58052-190
+                                </p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-text-light dark:text-text-dark uppercase tracking-wide mb-2">Redes Sociais</h4>
+<a class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-surface-dark hover:border-primary transition-all group" href="https://github.com/CaioRafael01" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current text-text-muted-light dark:text-text-muted-dark group-hover:text-primary" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+<span class="text-sm font-medium text-text-light dark:text-text-dark">GitHub</span>
+<span class="material-symbols-outlined ml-auto text-sm text-text-muted-light dark:text-text-muted-dark group-hover:text-primary">arrow_forward</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-surface-dark hover:border-primary transition-all group" href="https://www.linkedin.com/in/caio-rafael-de-oliveira-18751b228/" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current text-text-muted-light dark:text-text-muted-dark group-hover:text-primary" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<span class="text-sm font-medium text-text-light dark:text-text-dark">LinkedIn</span>
+<span class="material-symbols-outlined ml-auto text-sm text-text-muted-light dark:text-text-muted-dark group-hover:text-primary">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-200 dark:border-gray-800 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+<div>
+<h3 class="text-primary font-bold text-lg mb-2">Caio Rafael de Oliveira</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark">Transformando ideias em soluções digitais elegantes.</p>
+</div>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-3">Links Rápidos</h4>
+<ul class="space-y-2 text-text-muted-light dark:text-text-muted-dark">
+<li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#projetos">Projetos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#experiencia">Sobre</a></li>
+</ul>
+</div>
+<div>
+<p class="text-text-muted-light dark:text-text-muted-dark mt-8 md:mt-0 text-right md:text-left">
+                        © 2025 Caio Rafael de Oliveira. Todos os direitos reservados.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<a class="fixed bottom-6 right-6 p-4 rounded-full bg-secondary hover:bg-primary text-white shadow-lg shadow-secondary/30 transition-all hover:scale-110 z-40 md:hidden" href="#contato">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<script>
+        // Dark Mode Toggle Logic
+        const toggleButton = document.getElementById('theme-toggle');
+        const toggleButtonMobile = document.getElementById('theme-toggle-mobile');
+        const htmlElement = document.documentElement;
+        // Check system preference on load
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            updateIcons(true);
+        } else {
+            htmlElement.classList.remove('dark');
+            updateIcons(false);
+        }
+        function toggleTheme() {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateIcons(false);
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateIcons(true);
+            }
+        }
+        function updateIcons(isDark) {
+            const iconName = isDark ? 'light_mode' : 'dark_mode';
+            const iconText = document.querySelector('#theme-toggle span');
+            const iconTextMobile = document.querySelector('#theme-toggle-mobile span');
+            if(iconText) iconText.textContent = iconName;
+            if(iconTextMobile) iconTextMobile.textContent = iconName;
+        }
+        toggleButton.addEventListener('click', toggleTheme);
+        if(toggleButtonMobile) toggleButtonMobile.addEventListener('click', toggleTheme);
+    </script>
+
+</body></html>

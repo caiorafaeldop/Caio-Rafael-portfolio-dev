@@ -4,39 +4,44 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const TechStack = () => {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Tech Stack</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          {/* Header */}
+          <motion.div variants={fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Tech Stack
+            </h2>
+            <p className="text-muted-foreground">
               Tecnologias e ferramentas que domino
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-            {techStack.map((category) => (
+          {/* Grid 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {techStack.map((category, index) => (
               <motion.div
                 key={category.category}
                 variants={fadeInUp}
-                className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-6"
+                custom={index}
+                className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 transition-all"
               >
-                <h3 className="text-xl font-bold mb-6 text-primary">
+                <h3 className="text-lg font-bold text-purple-500 mb-6 pb-2 border-b border-border">
                   {category.category}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {category.items.map((item) => (
-                    <div
+                    <span
                       key={item}
-                      className="px-3 py-2 bg-muted/50 hover:bg-primary/10 rounded-lg transition-colors cursor-default"
+                      className="px-3 py-1.5 rounded-md text-sm bg-muted text-foreground border border-border"
                     >
-                      <span className="text-sm font-medium">{item}</span>
-                    </div>
+                      {item}
+                    </span>
                   ))}
                 </div>
               </motion.div>

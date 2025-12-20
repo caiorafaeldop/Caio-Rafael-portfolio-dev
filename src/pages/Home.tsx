@@ -7,8 +7,8 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import ParticlesBackground from "@/components/Background/Particles";
 
 const Home = () => {
   return (
@@ -45,20 +45,23 @@ const Home = () => {
         </script>
       </Helmet>
 
+      {/* Global Particles Background */}
+      <div className="fixed inset-0 -z-10">
+        <ParticlesBackground />
+      </div>
+
       <Navbar />
       <main>
         <Hero />
         <QuickStats />
         <FeaturedProjects />
         <Experience />
-        <Contact />
         <TechStack />
+        <Contact />
       </main>
-      <Footer />
       <BackToTop />
     </>
   );
 };
 
 export default Home;
-

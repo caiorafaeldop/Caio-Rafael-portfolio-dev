@@ -1,41 +1,44 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
-import { Button } from "./ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-4">
+    <section className="pt-20 pb-10 bg-card border-t border-border" id="contato">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           variants={staggerContainer}
-          className="max-w-4xl mx-auto"
         >
+          {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Vamos Trabalhar Juntos
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg">
               Estou sempre aberto a novos projetos e oportunidades. Entre em contato!
             </p>
           </motion.div>
 
+          {/* Contact Card */}
           <motion.div
             variants={fadeInUp}
-            className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8"
+            className="bg-background p-8 md:p-10 rounded-2xl border border-border shadow-lg mb-16"
           >
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {/* Contact Info */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
+                    <Mail className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-1">
+                      Email
+                    </h4>
                     <a
                       href={`mailto:${siteConfig.email}`}
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -46,47 +49,70 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <MapPin className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
+                    <MapPin className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Localização</h3>
-                    <p className="text-muted-foreground">{siteConfig.location}</p>
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-1">
+                      Localização
+                    </h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      João Pessoa, Paraíba<br />Brasil
+                    </p>
                   </div>
                 </div>
               </div>
 
+              {/* Social Links */}
               <div className="space-y-4">
-                <h3 className="font-semibold mb-4">Redes Sociais</h3>
-                <div className="flex flex-col gap-3">
-                  <Button asChild variant="outline" className="justify-start">
-                    <a
-                      href={siteConfig.socials.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="justify-start">
-                    <a
-                      href={siteConfig.socials.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Linkedin className="mr-2 h-4 w-4" />
-                      LinkedIn
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="justify-start">
-                    <a href={`mailto:${siteConfig.email}`}>
-                      <Mail className="mr-2 h-4 w-4" />
-                      Email
-                    </a>
-                  </Button>
-                </div>
+                <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">
+                  Redes Sociais
+                </h4>
+                <a
+                  href={siteConfig.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-muted hover:border-primary transition-all group"
+                >
+                  <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                  <span className="text-sm font-medium text-foreground">GitHub</span>
+                  <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-primary" />
+                </a>
+                <a
+                  href={siteConfig.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-muted hover:border-primary transition-all group"
+                >
+                  <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                  <span className="text-sm font-medium text-foreground">LinkedIn</span>
+                  <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-primary" />
+                </a>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Footer */}
+          <motion.div
+            variants={fadeInUp}
+            className="pt-8 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-8 text-sm"
+          >
+            <div>
+              <h3 className="text-primary font-bold text-lg mb-2">{siteConfig.name}</h3>
+              <p className="text-muted-foreground">{siteConfig.tagline}</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-foreground mb-3">Links Rápidos</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#projetos" className="hover:text-primary transition-colors">Projetos</a></li>
+                <li><a href="#experiencia" className="hover:text-primary transition-colors">Experiência</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-muted-foreground mt-8 md:mt-0 text-right md:text-left">
+                © 2025 {siteConfig.name}. Todos os direitos reservados.
+              </p>
             </div>
           </motion.div>
         </motion.div>

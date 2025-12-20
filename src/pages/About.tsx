@@ -1,14 +1,45 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Download, Mail } from "lucide-react";
+import { Download, Mail, Code, GraduationCap, Monitor, Users } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import ParticlesBackground from "@/components/Background/Particles";
 
 const About = () => {
+  const achievements = [
+    {
+      icon: Code,
+      title: "Desenvolvedor Full Stack",
+      description: "Desenvolvimento de soluções robustas com React, TypeScript, Node, Prisma e PostgreSQL, focado em APIs REST e UX/UI na LAKS."
+    },
+    {
+      icon: GraduationCap,
+      title: "Professor de Programação",
+      description: "Planejamento e aplicação de aulas de programação para mais de 50 alunos, focando no ensino de tecnologia para crianças e adultos."
+    },
+    {
+      icon: Monitor,
+      title: "Líder de Projetos de TI",
+      description: "Liderança do desenvolvimento do site institucional do Núcleo Colab UFPB, coordenando equipe e entregas com metodologias ágeis."
+    },
+    {
+      icon: Users,
+      title: "Mentor de Jovens Desenvolvedores",
+      description: "Orientação e mentoria de novos talentos na área de desenvolvimento no Projeto CODE (FUNETEC), promovendo crescimento profissional."
+    }
+  ];
+
+  // Fotos extras para mostrar hobbies/personalidade
+  const extraPhotos = [
+    { src: "/CAIO/3.jpg", alt: "Foto 1" },
+    { src: "/CAIO/4.jpg", alt: "Foto 2" },
+    { src: "/CAIO/6.jpg", alt: "Foto 3" },
+  ];
+
   return (
     <>
       <Helmet>
@@ -24,145 +55,103 @@ const About = () => {
         />
       </Helmet>
 
+      {/* Global Particles Background */}
+      <div className="fixed inset-0 -z-10">
+        <ParticlesBackground />
+      </div>
+
       <Navbar />
-      <main className="min-h-screen pt-32 pb-24">
-        <div className="container mx-auto px-4">
+      <main className="min-h-screen pt-24 pb-24">
+        <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
           >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Sobre Mim</h1>
-              <p className="text-muted-foreground text-lg">
-                Desenvolvedor apaixonado por criar soluções inovadoras
-              </p>
-            </motion.div>
-
-            <motion.div
+            {/* Header */}
+            <motion.h1
               variants={fadeInUp}
-              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
+              className="text-4xl font-extrabold text-center mb-16 text-foreground"
             >
-              <div className="prose prose-invert max-w-none">
-                <h2 className="text-2xl font-bold mb-4">Sobre Mim</h2>
-                <p className="text-muted-foreground mb-4">
-                  Sou um desenvolvedor Full Stack com sólida experiência em
-                  React, Node.js e práticas modernas de desenvolvimento.
-                  Graduado em Ciência da Computação pela UFPB, tenho paixão por
-                  ensinar tecnologia, com histórico comprovado como educador e
-                  mentor em projetos sociais e acadêmicos.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  Atualmente trabalho como Desenvolvedor Full Stack na LAKS,
-                  onde desenvolvo soluções com React, TypeScript, Node, Prisma e
-                  PostgreSQL, aplicando metodologias ágeis e boas práticas de
-                  UX/UI em projetos voltados para gestão de Franquias.
-                </p>
-                <p className="text-muted-foreground">
-                  Além do desenvolvimento, dedico-me ao ensino de programação,
-                  compartilhando conhecimento e inspirando novos talentos na
-                  área de tecnologia.
-                </p>
-              </div>
-            </motion.div>
+              Conheça o Desenvolvedor
+            </motion.h1>
 
-            <motion.div
-              variants={fadeInUp}
-              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
-            >
-              <h2 className="text-2xl font-bold mb-6">Formação Acadêmica</h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold mb-1 text-primary">
-                    Universidade Federal da Paraíba, João Pessoa
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Bacharelado em Ciência da Computação (2021 - 2025)
-                  </p>
+            {/* Hero Section - Photo + Bio */}
+            <motion.section variants={fadeInUp} className="mb-16">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+                {/* Main Photo */}
+                <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-border dark:border-zinc-700">
+                  <img
+                    src="/CAIO/5.jpg"
+                    alt="Caio Rafael de Oliveira - Professional Photo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1 text-primary">
-                    Século Colégio e Curso, João Pessoa
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Ensino Médio (2017 - 2019)
+
+                {/* Bio */}
+                <div className="flex-grow text-center md:text-left">
+                  <p className="text-lg leading-relaxed text-muted-foreground mb-6 max-w-md md:max-w-none mx-auto">
+                    Olá! Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, um desenvolvedor Full Stack apaixonado por criar soluções digitais. 
+                    Fora do código, adoro explorar novos lugares, passar tempo com amigos e família, e sempre busco aprender algo novo.
+                    Minha jornada é movida por aprendizado contínuo e pela vontade de impactar o mundo através da tecnologia.
                   </p>
+
+                  {/* Extra Photos */}
+                  <div className="flex justify-center md:justify-start gap-4 flex-wrap">
+                    {extraPhotos.map((photo, index) => (
+                      <div
+                        key={index}
+                        className="w-20 h-20 rounded-full overflow-hidden shadow-md border-2 border-border dark:border-zinc-700"
+                      >
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.section>
 
-            <motion.div
-              variants={fadeInUp}
-              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
-            >
-              <h2 className="text-2xl font-bold mb-6">Feitos Acadêmicos</h2>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <p className="text-muted-foreground text-sm">
-                    Monitoria Acadêmica em Estrutura de Dados (UFPB, 2023-2024)
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <p className="text-muted-foreground text-sm">
-                    Ensino de Análise de Dados como Atividade Extensionista
-                    (UFPB, 2024)
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <p className="text-muted-foreground text-sm">
-                    Membro do PET-Computação (UFPB, 2023-2025): grupo acadêmico
-                    restrito a alunos de desempenho acadêmico elevado
-                  </p>
-                </div>
+            {/* Achievements Section */}
+            <motion.section variants={fadeInUp}>
+              <h2 className="text-3xl font-extrabold text-center mb-10 text-foreground">
+                Principais Conquistas
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {achievements.map((achievement, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    custom={index}
+                    className="bg-background dark:bg-zinc-900 p-6 rounded-xl shadow-sm border border-border dark:border-zinc-800 flex flex-col items-start text-left hover:border-primary/50 dark:hover:border-purple-500/50 transition-colors"
+                  >
+                    <achievement.icon className="h-12 w-12 text-purple-500 mb-4" />
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-muted-foreground text-base">
+                      {achievement.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </motion.section>
 
+            {/* CTA */}
             <motion.div
               variants={fadeInUp}
-              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16"
             >
-              <h2 className="text-2xl font-bold mb-6">Projetos Voluntários</h2>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <p className="text-muted-foreground text-sm">
-                    Projeto Full Stack voluntário para a Rede Feminina de
-                    Combate ao Câncer, responsável por aumentar a arrecadação e
-                    melhorar a gestão de doações através de uma plataforma
-                    digital integrada.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-8 mb-8"
-            >
-              <h2 className="text-2xl font-bold mb-6">Idiomas</h2>
-              <div className="flex items-start gap-2">
-                <span className="text-primary mt-1">•</span>
-                <p className="text-muted-foreground text-sm">
-                  Inglês Avançado - Wizard (2023-2025)
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-purple-600 hover:bg-primary">
                 <a href={`mailto:${siteConfig.email}`}>
                   <Mail className="mr-2 h-4 w-4" />
                   Entre em Contato
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-border dark:border-zinc-700 hover:bg-muted dark:hover:bg-zinc-800">
                 <a href="/cv.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download CV

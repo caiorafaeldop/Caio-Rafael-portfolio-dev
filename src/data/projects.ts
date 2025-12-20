@@ -22,13 +22,17 @@ export interface Project {
   cover?: string;
   gallery?: string[];
   featured?: boolean;
+  brandColor?: {
+    light: string;
+    dark: string;
+  };
 }
 
 export const projects: Project[] = [
   {
     slug: "pet-de-todos",
     title: "Pet de Todos",
-    year: "2025",
+    year: "2024 - Presente",
     shortDescription:
       "Plano de saúde pet do Grupo Cartão de Todos com consultas, exames, cirurgias, vacinas e teleorientação 24h para cães e gatos com cobertura nacional.",
     longDescription: `# Pet de Todos
@@ -41,7 +45,7 @@ Criar uma experiência digital fluida para o gerenciamento de planos de saúde p
 ## Solução
 Landing page moderna e conversiva com integração ao sistema de jornada de contratação, apresentação clara das coberturas e acesso rápido aos serviços.`,
     tags: ["HealthTech", "Pet", "Landing Page", "Conversão"],
-    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    stack: ["React", "Node.js", "TypeScript", "Prisma", "PostgreSQL", "Scrum", "Kanban", "Azure"],
     learnings: [
       { skill: "React", category: "hard" },
       { skill: "TypeScript", category: "hard" },
@@ -73,6 +77,10 @@ Landing page moderna e conversiva com integração ao sistema de jornada de cont
       "/PETDETODOS/4.png",
     ],
     featured: true,
+    brandColor: {
+      light: "#ea580c",
+      dark: "#fb923c"
+    },
   },
   {
     slug: "leadsim",
@@ -128,6 +136,10 @@ Plataforma integrada que unifica:
       "/LEADSIM/4.png",
     ],
     featured: true,
+    brandColor: {
+      light: "#2563eb",
+      dark: "#60a5fa"
+    },
   },
   {
     slug: "rfcc-colab",
@@ -182,6 +194,10 @@ Desenvolvimento de uma plataforma integrada com três pilares principais:
       "/RFCC/6.png",
     ],
     featured: true,
+    brandColor: {
+      light: "#db2777",
+      dark: "#f472b6"
+    },
   },
   {
     slug: "colab-ufpb",
@@ -236,6 +252,10 @@ Desenvolvimento de uma plataforma moderna que apresenta:
       "/COLAB/5.jpeg",
     ],
     featured: true,
+    brandColor: {
+      light: "#dc2626",
+      dark: "#f87171"
+    },
   },
   {
     slug: "paulo-maia-advocacia",
@@ -285,6 +305,10 @@ Site elegante e profissional que destaca:
       "/PAULOMAIA/4.png",
     ],
     featured: true,
+    brandColor: {
+      light: "#b45309",
+      dark: "#fbbf24"
+    },
   },
 ];
 
