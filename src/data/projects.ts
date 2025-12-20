@@ -44,7 +44,7 @@ Criar uma experiência digital fluida para o gerenciamento de planos de saúde p
 
 ## Solução
 Landing page moderna e conversiva com integração ao sistema de jornada de contratação, apresentação clara das coberturas e acesso rápido aos serviços.`,
-    tags: ["HealthTech", "Pet", "Landing Page", "Conversão"],
+    tags: ["HealthTech", "Pet", "Assinatura", "Conversão"],
     stack: ["React", "Node.js", "TypeScript", "Prisma", "PostgreSQL", "Scrum", "Kanban", "Azure"],
     learnings: [
       { skill: "React", category: "hard" },
@@ -72,8 +72,6 @@ Landing page moderna e conversiva com integração ao sistema de jornada de cont
     },
     cover: "/PETDETODOS/1.png",
     gallery: [
-      "/PETDETODOS/2.png",
-      "/PETDETODOS/3.png",
       "/PETDETODOS/4.png",
     ],
     featured: true,
@@ -103,7 +101,7 @@ Plataforma integrada que unifica:
 - Automação de marketing e follow-ups
 - Cadastros e oportunidades centralizados`,
     tags: ["SaaS", "CRM", "Automação", "Gestão"],
-    stack: ["Next.js", "Node.js", "MongoDB", "TailwindCSS"],
+    stack: ["React", "Node.js", "TypeScript", "Prisma", "PostgreSQL", "Scrum", "Kanban", "Azure"],
     learnings: [
       { skill: "React", category: "hard" },
       { skill: "TypeScript", category: "hard" },
@@ -131,8 +129,6 @@ Plataforma integrada que unifica:
     },
     cover: "/LEADSIM/1.png",
     gallery: [
-      "/LEADSIM/2.png",
-      "/LEADSIM/3.png",
       "/LEADSIM/4.png",
     ],
     featured: true,
@@ -160,7 +156,7 @@ Desenvolvimento de uma plataforma integrada com três pilares principais:
 - E-commerce para venda de produtos institucionais
 - Programa de assinatura recorrente para doadores mensais`,
     tags: ["Voluntariado", "E-commerce", "Doações", "Impacto Social"],
-    stack: ["React", "Node.js", "MongoDB", "Mercado Pago", "AWS"],
+    stack: ["React", "Node.js", "MongoDB", "Mercado Pago", "Render"],
     learnings: [
       { skill: "Clean Architecture", category: "hard" },
       { skill: "MongoDB (NoSQL)", category: "hard" },
@@ -181,9 +177,7 @@ Desenvolvimento de uma plataforma integrada com três pilares principais:
       "Crescimento expressivo na base de doadores com a adição de novas formas de pagamento",
       "Nova fonte de renda com operações de comércio digital dentro da plataforma",
     ],
-    links: {
-      github: "https://github.com/caiorafaeldop/mvp-projeto-colab-ongs",
-      live: "https://rede-feminina-colab.onrender.com/",
+    links: { live: "https://rede-feminina-colab.onrender.com/",
     },
     cover: "/RFCC/1.png",
     gallery: [
@@ -219,7 +213,7 @@ Desenvolvimento de uma plataforma moderna que apresenta:
 - Informações sobre mentoria e recursos disponíveis
 - Formulários de inscrição para novos projetos`,
     tags: ["Institucional", "Educação", "Inovação", "Startups"],
-    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    stack: ["React", "TypeScript", "NestJS", "MongoDB", "TailwindCSS"],
     learnings: [
       { skill: "Liderança de Projeto", category: "soft" },
       { skill: "Empreendedorismo", category: "soft" },
@@ -277,7 +271,7 @@ Site elegante e profissional que destaca:
 - Formulário de contato para consultas
 - Design sóbrio e profissional adequado ao segmento jurídico`,
     tags: ["Institucional", "Advocacia", "Direito Trabalhista", "Landing Page"],
-    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    stack: ["React", "TypeScript", "NestJS", "MongoDB", "TailwindCSS"],
     learnings: [
       { skill: "React", category: "hard" },
       { skill: "TypeScript", category: "hard" },

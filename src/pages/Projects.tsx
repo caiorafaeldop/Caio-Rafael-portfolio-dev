@@ -1,13 +1,14 @@
 import { useState, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Search, Filter } from "lucide-react";
+import { Search } from "lucide-react";
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import ProjectCard from "@/components/ProjectCard";
+import ParticlesBackground from "@/components/Background/Particles";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
@@ -48,7 +49,7 @@ const Projects = () => {
     });
 
     if (sortBy === "recent") {
-      filtered.sort((a, b) => b.year - a.year);
+      filtered.sort((a, b) => b.year.localeCompare(a.year));
     } else {
       filtered.sort((a, b) => a.title.localeCompare(b.title));
     }
@@ -71,6 +72,11 @@ const Projects = () => {
         />
       </Helmet>
 
+      {/* Global Particles Background */}
+      <div className="fixed inset-0 -z-10">
+        <ParticlesBackground />
+      </div>
+
       <Navbar />
       <main className="min-h-screen pt-32 pb-24">
         <div className="container mx-auto px-4">
@@ -80,7 +86,7 @@ const Projects = () => {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
                 Todos os Projetos
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -91,21 +97,21 @@ const Projects = () => {
             {/* Filters */}
             <motion.div
               variants={fadeInUp}
-              className="mb-12 bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl p-6"
+              className="mb-12 bg-background dark:bg-zinc-900 backdrop-blur-xl border-2 border-purple-500/20 dark:border-purple-400/20 rounded-2xl p-6"
             >
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-purple-500" />
                   <Input
                     placeholder="Buscar projetos..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 border-purple-500/20 dark:border-purple-400/20 focus:border-purple-500"
                   />
                 </div>
 
                 <Select value={selectedTag} onValueChange={setSelectedTag}>
-                  <SelectTrigger>
+                  <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
                     <SelectValue placeholder="Filtrar por tag" />
                   </SelectTrigger>
                   <SelectContent>
@@ -119,7 +125,7 @@ const Projects = () => {
                 </Select>
 
                 <Select value={sortBy} onValueChange={(v) => setSortBy(v as "recent" | "title")}>
-                  <SelectTrigger>
+                  <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
                     <SelectValue placeholder="Ordenar por" />
                   </SelectTrigger>
                   <SelectContent>
@@ -137,6 +143,7 @@ const Projects = () => {
                   <Button
                     variant="ghost"
                     size="sm"
+                    className="text-purple-500 hover:text-purple-600"
                     onClick={() => {
                       setSearch("");
                       setSelectedTag("all");
@@ -166,7 +173,7 @@ const Projects = () => {
                 <p className="text-lg">Nenhum projeto encontrado.</p>
                 <Button
                   variant="outline"
-                  className="mt-4"
+                  className="mt-4 border-2 border-purple-500/50 text-foreground hover:bg-purple-500/10"
                   onClick={() => {
                     setSearch("");
                     setSelectedTag("all");

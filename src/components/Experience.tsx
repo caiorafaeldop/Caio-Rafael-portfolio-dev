@@ -5,7 +5,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const Experience = () => {
   return (
-    <section className="py-20 md:py-28 bg-card border-t border-border" id="experiencia">
+    <section className="py-20 md:py-28" id="experiencia">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -15,7 +15,7 @@ const Experience = () => {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
               Experiência Profissional 
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -26,7 +26,7 @@ const Experience = () => {
           {/* Timeline */}
           <div className="relative space-y-12">
             {/* Timeline line */}
-            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-border to-transparent md:-translate-x-px" />
+            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-purple-500/20 to-transparent md:-translate-x-px" />
 
             {experiences.map((exp, index) => {
               const isCurrentJob = exp.period.includes("Presente");
@@ -46,24 +46,24 @@ const Experience = () => {
                   <div className={`
                     flex items-center justify-center w-10 h-10 rounded-full shrink-0 z-10
                     ${isCurrentJob 
-                      ? 'border-purple-500 bg-purple-500/20' 
-                      : 'border-border bg-card'
-                    } border
+                      ? 'border-2 border-purple-500 bg-purple-500/20 dark:bg-purple-500/30' 
+                      : 'border-2 border-purple-500/30 dark:border-purple-400/30 bg-background dark:bg-zinc-900'
+                    }
                     md:order-1 ${isEven ? 'md:-translate-x-1/2' : 'md:translate-x-1/2'}
                   `}>
-                    <Icon className={`h-4 w-4 ${isCurrentJob ? 'text-purple-500' : 'text-muted-foreground'}`} />
+                    <Icon className={`h-4 w-4 ${isCurrentJob ? 'text-purple-500' : 'text-purple-500/70'}`} />
                   </div>
 
                   {/* Card */}
                   <div className={`
                     w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] 
-                    p-6 rounded-xl border border-border bg-background 
-                    shadow-sm hover:shadow-md transition-shadow
+                    p-6 rounded-xl border-2 border-purple-500/20 dark:border-purple-400/20 bg-background dark:bg-zinc-900
+                    shadow-sm hover:shadow-lg hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all
                   `}>
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-bold text-foreground text-lg">{exp.role}</h3>
                       {isCurrentJob && (
-                        <span className="text-xs font-mono text-purple-500 px-2 py-0.5 rounded bg-purple-500/10">
+                        <span className="text-xs font-mono text-purple-500 px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
                           Atual
                         </span>
                       )}
@@ -79,7 +79,7 @@ const Experience = () => {
                           className={`
                             text-sm text-muted-foreground pl-4 relative
                             before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full
-                            ${isCurrentJob ? 'before:bg-purple-500' : 'before:bg-muted-foreground/40'}
+                            ${isCurrentJob ? 'before:bg-purple-500' : 'before:bg-purple-500/40'}
                           `}
                         >
                           {item}
@@ -87,9 +87,9 @@ const Experience = () => {
                       ))}
                     </ul>
                     {exp.technologies && exp.technologies.length > 0 && (
-                      <div className="flex flex-wrap gap-2 pt-2 border-t border-border mt-2">
+                      <div className="flex flex-wrap gap-2 pt-2 border-t border-border dark:border-zinc-700 mt-2">
                         {exp.technologies.map((tech) => (
-                          <span key={tech} className="text-[10px] text-muted-foreground font-mono">
+                          <span key={tech} className="text-xs text-purple-500 font-medium px-2 py-0.5 bg-purple-500/10 rounded">
                             {tech}
                           </span>
                         ))}

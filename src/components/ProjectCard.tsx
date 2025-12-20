@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Project, Learning } from "@/data/projects";
 import { Button } from "./ui/button";
 import { fadeInUp } from "@/lib/animations";
+import { useTheme } from "@/hooks/use-theme";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,38 +13,50 @@ interface ProjectCardProps {
 const getLearningColor = (category: Learning["category"]) => {
   switch (category) {
     case "hard":
-      return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
+      return "bg-cyan-500/10 text-cyan-500 border-cyan-500/20";
     case "methodology":
-      return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+      return "bg-purple-500/10 text-purple-500 border-purple-500/20";
     case "soft":
-      return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+      return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
     default:
       return "bg-muted/50 text-muted-foreground";
   }
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { theme } = useTheme();
+  
   // Pegar apenas os 5 primeiros learnings para não poluir
   const displayLearnings = project.learnings?.slice(0, 5) || [];
   const hasMoreLearnings = (project.learnings?.length || 0) > 5;
 
+  // Cor do título baseada no brandColor do projeto
+  const titleColor = project.brandColor 
+    ? (theme === "dark" ? project.brandColor.dark : project.brandColor.light)
+    : undefined;
+
   return (
     <motion.article
       variants={fadeInUp}
-      className="group relative bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300"
+      className="group relative bg-background dark:bg-zinc-900 backdrop-blur-xl border-2 border-purple-500/20 dark:border-purple-400/20 rounded-2xl overflow-hidden hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all duration-300"
     >
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <h3 
+                className="text-2xl font-bold"
+                style={{ color: titleColor }}
+              >
+                {project.title}
+              </h3>
               <span className="text-sm text-muted-foreground">{project.year}</span>
             </div>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
+                  className="px-2 py-0.5 text-[10px] uppercase font-medium text-muted-foreground bg-muted/50 rounded"
                 >
                   {tag}
                 </span>
@@ -78,31 +91,37 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.stack.slice(0, 4).map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-1 text-xs bg-muted/50 text-muted-foreground rounded-md"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.stack.length > 4 && (
-            <span className="px-2 py-1 text-xs bg-muted/50 text-muted-foreground rounded-md">
-              +{project.stack.length - 4} mais
-            </span>
-          )}
+        {/* Tech Stack - DESTAQUE */}
+        <div className="mb-6">
+          <p className="text-xs text-foreground mb-2 font-bold uppercase tracking-wider">
+            Tecnologias:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.stack.slice(0, 5).map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1.5 text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-lg border border-purple-500/20"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.stack.length > 5 && (
+              <span className="px-3 py-1.5 text-xs bg-muted/50 text-muted-foreground rounded-lg">
+                +{project.stack.length - 5} mais
+              </span>
+            )}
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button asChild variant="default" className="group/btn">
+        <div className="flex items-center gap-3 pt-4 border-t border-purple-500/20">
+          <Button asChild className="bg-purple-600 hover:bg-purple-700 shadow-lg shadow-purple-500/20">
             <Link to={`/projects/${project.slug}`}>
               Ver Detalhes
               <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
           {project.links?.github && (
-            <Button asChild variant="ghost" size="icon">
+            <Button asChild variant="outline" size="icon" className="border-purple-500/30 hover:bg-purple-500/10">
               <a
                 href={project.links.github}
                 target="_blank"
@@ -114,12 +133,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </Button>
           )}
           {project.links?.live && (
-            <Button asChild variant="ghost" size="icon">
+            <Button asChild variant="outline" size="icon" className="border-purple-500/30 hover:bg-purple-500/10">
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Live Demo"
+                aria-label="Ver Site"
               >
                 <ExternalLink className="h-4 w-4" />
               </a>
@@ -129,10 +148,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       {/* Hover effect overlay */}
-      <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </motion.article>
   );
 };
 
 export default ProjectCard;
-

@@ -3,34 +3,32 @@ import { motion } from "framer-motion";
 import { Download, Mail, Code, GraduationCap, Monitor, Users } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import ParticlesBackground from "@/components/Background/Particles";
+import Contact from "@/components/Contact";
 
 const About = () => {
   const achievements = [
     {
       icon: Code,
       title: "Desenvolvedor Full Stack",
-      description: "Desenvolvimento de soluções robustas com React, TypeScript, Node, Prisma e PostgreSQL, focado em APIs REST e UX/UI na LAKS."
+      description: "Criação de soluções digitais completas, com foco em produtos bem estruturados, experiência do usuário e sistemas pensados para crescer junto com o negócio."
     },
     {
       icon: GraduationCap,
       title: "Professor de Programação",
-      description: "Planejamento e aplicação de aulas de programação para mais de 50 alunos, focando no ensino de tecnologia para crianças e adultos."
-    },
+      description: "Atuação como educador em diferentes contextos: universidade, mercado de trabalho, formação de jovens e ensino público, tornando a tecnologia acessível e aplicável à vida real."},
     {
       icon: Monitor,
-      title: "Líder de Projetos de TI",
-      description: "Liderança do desenvolvimento do site institucional do Núcleo Colab UFPB, coordenando equipe e entregas com metodologias ágeis."
+      title: "Líder de Diversos Projetos de TI",
+      description: "Como Lider de desenvolvimento do Núcleo Colab UFPB, coordenei diversas equipes e entregas com metodologias ágeis."
     },
     {
       icon: Users,
       title: "Mentor de Jovens Desenvolvedores",
-      description: "Orientação e mentoria de novos talentos na área de desenvolvimento no Projeto CODE (FUNETEC), promovendo crescimento profissional."
-    }
+      description: "Mentoria e orientação de novos desenvolvedores em projetos ligados à UFPB, como Colab, Connecta CI e PET Computação, apoiando crescimento técnico e profissional."}
   ];
 
   // Fotos extras para mostrar hobbies/personalidade
@@ -71,7 +69,7 @@ const About = () => {
             {/* Header */}
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl font-extrabold text-center mb-16 text-foreground"
+              className="text-4xl md:text-6xl font-extrabold text-center mb-16 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight"
             >
               Conheça o Desenvolvedor
             </motion.h1>
@@ -89,12 +87,21 @@ const About = () => {
                 </div>
 
                 {/* Bio */}
-                <div className="flex-grow text-center md:text-left">
-                  <p className="text-lg leading-relaxed text-muted-foreground mb-6 max-w-md md:max-w-none mx-auto">
-                    Olá! Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, um desenvolvedor Full Stack apaixonado por criar soluções digitais. 
-                    Fora do código, adoro explorar novos lugares, passar tempo com amigos e família, e sempre busco aprender algo novo.
-                    Minha jornada é movida por aprendizado contínuo e pela vontade de impactar o mundo através da tecnologia.
-                  </p>
+                <div className="flex-grow text-center md:text-left space-y-6">
+                  <div className="text-lg leading-relaxed text-muted-foreground max-w-md md:max-w-none mx-auto space-y-4">
+                    <p>
+                      Olá, seja bem-vindo(a).
+                    </p>
+                    <p>
+                      Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-purple-500 font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
+                    </p>
+                    <p>
+                      Tenho uma forte paixão por <strong className="text-foreground">empreendedorismo</strong>, por tirar ideias do papel e transformá-las em produtos e soluções com propósito. Gosto de pensar além do código: entender contextos, necessidades e impactos. É isso que torna um projeto vivo e relevante.
+                    </p>
+                    <p>
+                      Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-purple-500 font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
+                    </p>
+                  </div>
 
                   {/* Extra Photos */}
                   <div className="flex justify-center md:justify-start gap-4 flex-wrap">
@@ -143,17 +150,11 @@ const About = () => {
             {/* CTA */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 mb-20"
             >
-              <Button asChild size="lg" className="bg-purple-600 hover:bg-primary">
-                <a href={`mailto:${siteConfig.email}`}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  Entre em Contato
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-border dark:border-zinc-700 hover:bg-muted dark:hover:bg-zinc-800">
-                <a href="/cv.pdf" download>
-                  <Download className="mr-2 h-4 w-4" />
+              <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
+                <a href="/cv.pdf" download className="flex items-center gap-2">
+                  <Download className="h-4 w-4" />
                   Download CV
                 </a>
               </Button>
@@ -161,7 +162,11 @@ const About = () => {
           </motion.div>
         </div>
       </main>
-      <Footer />
+
+      <div className="border-t border-purple-500/10">
+        <Contact />
+      </div>
+      
       <BackToTop />
     </>
   );

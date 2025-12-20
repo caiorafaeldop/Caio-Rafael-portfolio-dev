@@ -97,7 +97,7 @@ const FeaturedProjects = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-background" id="projetos">
+    <section className="py-16 md:py-24" id="projetos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -107,11 +107,11 @@ const FeaturedProjects = () => {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
               Meus Projetos em Destaque
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Uma jornada pelos meus trabalhos mais impactantes e inovadores.
+              Conheça meus trabalhos mais impactantes e inovadores.
             </p>
           </motion.div>
 

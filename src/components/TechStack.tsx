@@ -4,7 +4,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const TechStack = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -14,12 +14,10 @@ const TechStack = () => {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Tech Stack
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
+              Conhecimentos Técnicos
             </h2>
-            <p className="text-muted-foreground">
-              Tecnologias e ferramentas que domino
-            </p>
+            
           </motion.div>
 
           {/* Grid 3 columns */}
@@ -29,16 +27,16 @@ const TechStack = () => {
                 key={category.category}
                 variants={fadeInUp}
                 custom={index}
-                className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 transition-all"
+                className="bg-background dark:bg-zinc-900 p-8 rounded-2xl border-2 border-purple-500/20 dark:border-purple-400/20 hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all"
               >
-                <h3 className="text-lg font-bold text-purple-500 mb-6 pb-2 border-b border-border">
+                <h3 className="text-xl font-bold text-purple-500 mb-6 pb-2 border-b border-purple-500/20">
                   {category.category}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {category.items.map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1.5 rounded-md text-sm bg-muted text-foreground border border-border"
+                      className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/10 dark:bg-purple-500/15 text-foreground border border-purple-500/20"
                     >
                       {item}
                     </span>

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
@@ -18,7 +18,6 @@ const Navbar = () => {
 
   const isActive = (path: string) => {
     if (path === "/") return location.pathname === "/";
-    if (path.startsWith("/#")) return false;
     return location.pathname.startsWith(path);
   };
 
@@ -33,8 +32,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-primary font-bold text-xl tracking-tight"
+            className="text-purple-500 font-bold text-xl tracking-tight flex items-center gap-2"
           >
+            <Code className="h-5 w-5" />
             Caio Rafael de Oliveira
           </Link>
 
@@ -92,7 +92,7 @@ const Navbar = () => {
                 className={`block text-sm font-medium transition-colors ${
                   isActive(link.path)
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-purple-500"
                 }`}
               >
                 {link.name}

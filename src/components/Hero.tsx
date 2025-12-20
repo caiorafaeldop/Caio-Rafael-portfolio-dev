@@ -33,7 +33,7 @@ const Hero = () => {
             variants={fadeInUp}
             className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight pb-2 bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"
           >
-            {siteConfig.name}
+            Caio Rafael <span className="hidden md:inline">de Oliveira</span>
           </motion.h1>
 
           <motion.h2
@@ -60,12 +60,12 @@ const Hero = () => {
                 <ArrowDown className="h-4 w-4" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
-              <a href="#contato">
-                Entre em Contato
+            <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
+              <a href="/about">
+                Mais sobre mim
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
+            <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
               <a href="/cv.pdf" download className="flex items-center gap-2">
                 <Download className="h-4 w-4" />
                 Download CV
