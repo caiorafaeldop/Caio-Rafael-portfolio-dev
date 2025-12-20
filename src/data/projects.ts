@@ -1,3 +1,8 @@
+export interface Learning {
+  skill: string;
+  category: 'hard' | 'soft' | 'methodology';
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -6,6 +11,7 @@ export interface Project {
   longDescription?: string;
   tags: string[];
   stack: string[];
+  learnings: Learning[];
   responsibilities?: string[];
   results?: string[];
   links?: {
@@ -20,9 +26,113 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "pet-de-todos",
+    title: "Pet de Todos",
+    year: "2025",
+    shortDescription:
+      "Plano de saúde pet do Grupo Cartão de Todos com consultas, exames, cirurgias, vacinas e teleorientação 24h para cães e gatos com cobertura nacional.",
+    longDescription: `# Pet de Todos
+
+Plataforma digital desenvolvida para o plano de saúde pet mais acessível do Brasil, parte do ecossistema do Grupo Cartão de Todos.
+
+## Desafio
+Criar uma experiência digital fluida para o gerenciamento de planos de saúde pet, incluindo jornada de contratação, telemedicina veterinária e gestão de reembolsos.
+
+## Solução
+Landing page moderna e conversiva com integração ao sistema de jornada de contratação, apresentação clara das coberturas e acesso rápido aos serviços.`,
+    tags: ["HealthTech", "Pet", "Landing Page", "Conversão"],
+    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    learnings: [
+      { skill: "React", category: "hard" },
+      { skill: "TypeScript", category: "hard" },
+      { skill: "Node.js", category: "hard" },
+      { skill: "Prisma", category: "hard" },
+      { skill: "SQL", category: "hard" },
+      { skill: "Git Flow", category: "methodology" },
+      { skill: "Scrum", category: "methodology" },
+      { skill: "Kanban", category: "methodology" },
+    ],
+    responsibilities: [
+      "Desenvolvimento da landing page institucional",
+      "Otimização de conversão e UX",
+      "Integração com sistema de contratação",
+      "Design responsivo e acessível",
+    ],
+    results: [
+      "Planos a partir de R$ 19,90/mês com cobertura nacional",
+      "Telemedicina veterinária 24h disponível",
+      "Interface clara sem taxas escondidas",
+    ],
+    links: {
+      live: "https://nacional.petdetodos.com.br/",
+    },
+    cover: "/PETDETODOS/1.png",
+    gallery: [
+      "/PETDETODOS/2.png",
+      "/PETDETODOS/3.png",
+      "/PETDETODOS/4.png",
+    ],
+    featured: true,
+  },
+  {
+    slug: "leadsim",
+    title: "LeadSim",
+    year: "2024 - 2025",
+    shortDescription:
+      "Plataforma SaaS de CRM e gestão de leads que centraliza clientes, propostas, contratos, financeiro e automação de marketing em um só lugar.",
+    longDescription: `# LeadSim
+
+Sistema completo de gestão de leads e CRM desenvolvido para simplificar e centralizar todas as operações comerciais de empresas e franquias.
+
+## Desafio
+Empresas enfrentam o caos de múltiplas planilhas e sistemas desconectados para gerenciar CRM, financeiro e automação, resultando em perda de leads e baixa produtividade.
+
+## Solução
+Plataforma integrada que unifica:
+- Controle e qualificação de leads
+- Geração de contratos e propostas
+- Gestão financeira
+- Automação de marketing e follow-ups
+- Cadastros e oportunidades centralizados`,
+    tags: ["SaaS", "CRM", "Automação", "Gestão"],
+    stack: ["Next.js", "Node.js", "MongoDB", "TailwindCSS"],
+    learnings: [
+      { skill: "React", category: "hard" },
+      { skill: "TypeScript", category: "hard" },
+      { skill: "Node.js", category: "hard" },
+      { skill: "Prisma", category: "hard" },
+      { skill: "SQL/PostgreSQL", category: "hard" },
+      { skill: "Git Flow", category: "methodology" },
+      { skill: "Scrum", category: "methodology" },
+      { skill: "Kanban", category: "methodology" },
+      { skill: "Metodologias Ágeis", category: "methodology" },
+    ],
+    responsibilities: [
+      "Arquitetura full-stack da plataforma SaaS",
+      "Desenvolvimento do sistema de leads e CRM",
+      "Implementação de automações e integrações",
+      "Dashboard de analytics e relatórios",
+    ],
+    results: [
+      "Centralização completa de operações comerciais",
+      "Eliminação de múltiplas planilhas e sistemas",
+      "Automação inteligente de nutrição de leads",
+    ],
+    links: {
+      live: "https://leadsim.com.br/",
+    },
+    cover: "/LEADSIM/1.png",
+    gallery: [
+      "/LEADSIM/2.png",
+      "/LEADSIM/3.png",
+      "/LEADSIM/4.png",
+    ],
+    featured: true,
+  },
+  {
     slug: "rfcc-colab",
     title: "RFCC-COLAB",
-    year: 2025,
+    year: "2025",
     shortDescription:
       "Plataforma voluntária para a Rede Feminina de Combate ao Câncer focada em aumentar arrecadações através de doações, e-commerce e assinaturas recorrentes.",
     longDescription: `# RFCC-COLAB
@@ -39,6 +149,15 @@ Desenvolvimento de uma plataforma integrada com três pilares principais:
 - Programa de assinatura recorrente para doadores mensais`,
     tags: ["Voluntariado", "E-commerce", "Doações", "Impacto Social"],
     stack: ["React", "Node.js", "MongoDB", "Mercado Pago", "AWS"],
+    learnings: [
+      { skill: "Clean Architecture", category: "hard" },
+      { skill: "MongoDB (NoSQL)", category: "hard" },
+      { skill: "DevOps", category: "hard" },
+      { skill: "AWS", category: "hard" },
+      { skill: "CI/CD", category: "methodology" },
+      { skill: "Deploy em Produção", category: "hard" },
+      { skill: "Integrações de Pagamento", category: "hard" },
+    ],
     responsibilities: [
       "Desenvolvimento full-stack da plataforma",
       "Implementação do sistema de pagamentos recorrentes",
@@ -54,132 +173,118 @@ Desenvolvimento de uma plataforma integrada com três pilares principais:
       github: "https://github.com/caiorafaeldop/mvp-projeto-colab-ongs",
       live: "https://rede-feminina-colab.onrender.com/",
     },
-    cover: "/RFCC/Captura de tela 2025-10-25 232152.png",
+    cover: "/RFCC/1.png",
     gallery: [
-      "/RFCC/Captura de tela 2025-10-28 213510.png",
-      "/RFCC/Captura de tela 2025-10-28 213802.png",
-      "/RFCC/Captura de tela 2025-10-28 213853.png",
-      "/RFCC/Captura de tela 2025-10-28 213916.png",
-      "/RFCC/Captura de tela 2025-10-28 213936.png",
-      "/RFCC/Captura de tela 2025-10-28 214050.png",
-      "/RFCC/Captura de tela 2025-10-28 214111.png",
+      "/RFCC/2.png",
+      "/RFCC/3.png",
+      "/RFCC/4.png",
+      "/RFCC/5.png",
+      "/RFCC/6.png",
     ],
     featured: true,
   },
   {
-    slug: "dashzap",
-    title: "DashZap",
-    year: "2024",
-    shortDescription:
-      "Dashboard completo de analytics e gestão para WhatsApp Business com visualizações em tempo real.",
-    longDescription: `# DashZap
-
-Plataforma completa de analytics e gestão para WhatsApp Business API, oferecendo insights profundos sobre conversas, automações e performance de atendimento.
-
-## Visão Geral
-Sistema empresarial que conecta múltiplas instâncias do WhatsApp Business, processando milhares de mensagens por dia e fornecendo métricas em tempo real.
-
-## Principais Features
-- Dashboard com métricas em tempo real
-- Automação de respostas com IA
-- Gestão de múltiplos atendentes
-- Relatórios customizáveis
-- Integração com CRM`,
-    tags: ["Dashboard", "Analytics", "Mensageria", "Real-time"],
-    stack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "WebSocket",
-    ],
-    responsibilities: [
-      "Arquitetura da solução end-to-end",
-      "Implementação do sistema de WebSocket para real-time",
-      "Design e desenvolvimento do dashboard analytics",
-      "Integração com WhatsApp Business API",
-    ],
-    results: [
-      "Processamento de +50k mensagens/dia",
-      "Redução de 60% no tempo de resposta",
-      "Aumento de 45% na satisfação do cliente",
-      "ROI positivo em 3 meses",
-    ],
-    links: {
-      github: "https://github.com/joaosilva/dashzap",
-      live: "https://dashzap.example.com",
-    },
-    featured: true,
-  },
-  {
-    slug: "leadsim",
-    title: "LeadSim",
+    slug: "colab-ufpb",
+    title: "Núcleo Colab UFPB",
     year: "2024 - 2025",
     shortDescription:
-      "Plataforma de captura e gerenciamento de leads com foco na administração de franquias e franqueadoras.",
-    longDescription: `# LeadSim
+      "Plataforma institucional do Núcleo de Inovação e Empreendedorismo da UFPB, conectando startups ao ecossistema universitário de incubação.",
+    longDescription: `# Núcleo Colab UFPB
 
-Sistema inteligente de captura e qualificação de leads que utiliza Machine Learning para identificar oportunidades de alta qualidade e automatizar follow-ups.
+Portal institucional desenvolvido para o Núcleo de Inovação e Empreendedorismo da Universidade Federal da Paraíba, promovendo a conexão entre startups, pesquisadores e o mercado.
 
 ## Desafio
-Empresas perdem tempo qualificando leads manualmente, resultando em baixa conversão e desperdício de recursos.
+O núcleo precisava de uma presença digital profissional para divulgar seus programas de incubação, atrair novos empreendedores e conectar a comunidade acadêmica ao ecossistema de inovação.
 
 ## Solução
-Plataforma que captura leads de múltiplas fontes, aplica scoring com IA e automatiza o processo de qualificação e nutrição.`,
-    tags: ["IA", "Lead Gen", "Automação", "SaaS"],
-    stack: ["Next.js", "Python", "FastAPI", "MongoDB", "TensorFlow", "AWS"],
+Desenvolvimento de uma plataforma moderna que apresenta:
+- Programas de incubação e pré-incubação
+- Portfólio de startups incubadas
+- Informações sobre mentoria e recursos disponíveis
+- Formulários de inscrição para novos projetos`,
+    tags: ["Institucional", "Educação", "Inovação", "Startups"],
+    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    learnings: [
+      { skill: "Liderança de Projeto", category: "soft" },
+      { skill: "Empreendedorismo", category: "soft" },
+      { skill: "Comunicação", category: "soft" },
+      { skill: "Gestão de Equipe", category: "soft" },
+      { skill: "Inovação", category: "soft" },
+      { skill: "React", category: "hard" },
+      { skill: "TypeScript", category: "hard" },
+    ],
     responsibilities: [
-      "Desenvolvimento do algoritmo de scoring com ML",
-      "Arquitetura de microserviços",
-      "Implementação de integrações (Facebook Ads, Google Ads, etc)",
-      "Dashboard de analytics e relatórios",
+      "Liderança do projeto de desenvolvimento",
+      "Desenvolvimento do site institucional",
+      "Design de interface moderna e responsiva",
+      "Implementação de formulários de inscrição",
+      "Integração com sistemas do núcleo",
     ],
     results: [
-      "Aumento de 80% na qualificação de leads",
-      "Redução de 50% no custo por lead qualificado",
-      "Automação de 90% do processo de follow-up",
+      "Presença digital profissional para o núcleo",
+      "Maior visibilidade do programa de incubação",
+      "Facilidade de inscrição para novos empreendedores",
     ],
     links: {
-      live: "https://leadsim.com.br/",
+      live: "https://colab-site.onrender.com/",
     },
+    cover: "/COLAB/1.png",
+    gallery: [
+      "/COLAB/2.png",
+      "/COLAB/3.png",
+      "/COLAB/4.jpeg",
+      "/COLAB/5.jpeg",
+    ],
     featured: true,
   },
   {
-    slug: "arcdashboard-api",
-    title: "ArcDashboard API",
-    year: "2023",
+    slug: "paulo-maia-advocacia",
+    title: "Paulo Maia Advocacia",
+    year: "2024",
     shortDescription:
-      "API RESTful robusta para gestão de dashboards customizáveis com sistema de permissões granular.",
-    longDescription: `# ArcDashboard API
+      "Site institucional para escritório de advocacia especializado em Direito Trabalhista com mais de 30 anos de experiência.",
+    longDescription: `# Paulo Maia Advocacia
 
-API backend escalável que permite criar, gerenciar e compartilhar dashboards customizáveis com sistema avançado de permissões e controle de acesso.
+Site institucional desenvolvido para escritório de advocacia especializado em Direito do Trabalho, apresentando de forma profissional os serviços oferecidos tanto para trabalhadores quanto para empresas.
 
-## Arquitetura
-Sistema modular com arquitetura hexagonal, facilitando manutenção e escalabilidade.
+## Desafio
+O escritório precisava de uma presença digital que transmitisse credibilidade, excelência e ética, alinhada com mais de 30 anos de experiência na área trabalhista.
 
-## Features Principais
-- Sistema de autenticação e autorização robusto
-- CRUD completo para dashboards e widgets
-- Permissões granulares (visualização, edição, compartilhamento)
-- Rate limiting e caching
-- Documentação automática com Swagger`,
-    tags: ["API", "Backend", "Microservices"],
-    stack: ["Node.js", "Express", "PostgreSQL", "Redis", "Docker", "JWT"],
+## Solução
+Site elegante e profissional que destaca:
+- Áreas de atuação especializadas
+- Experiência e credenciais do advogado
+- Formulário de contato para consultas
+- Design sóbrio e profissional adequado ao segmento jurídico`,
+    tags: ["Institucional", "Advocacia", "Direito Trabalhista", "Landing Page"],
+    stack: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    learnings: [
+      { skill: "React", category: "hard" },
+      { skill: "TypeScript", category: "hard" },
+      { skill: "SEO", category: "hard" },
+      { skill: "UX/UI Design", category: "hard" },
+    ],
     responsibilities: [
-      "Design da arquitetura da API",
-      "Implementação de sistema de autenticação",
-      "Otimização de queries e caching",
-      "Documentação e testes unitários",
+      "Desenvolvimento do site institucional",
+      "Design elegante e profissional",
+      "Otimização SEO para advogados",
+      "Formulário de captação de leads",
     ],
     results: [
-      "99.9% de uptime",
-      "Tempo de resposta médio <100ms",
-      "Suporte a 10k+ requisições/minuto",
+      "Presença digital profissional estabelecida",
+      "Maior visibilidade online para captação de clientes",
+      "Design que transmite confiança e credibilidade",
     ],
     links: {
-      github: "https://github.com/joaosilva/arcdashboard-api",
+      live: "https://paulomaiaadv.com.br/",
     },
+    cover: "/PAULOMAIA/1.png",
+    gallery: [
+      "/PAULOMAIA/2.png",
+      "/PAULOMAIA/3.png",
+      "/PAULOMAIA/4.png",
+    ],
     featured: true,
   },
 ];
+

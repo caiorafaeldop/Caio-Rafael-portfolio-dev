@@ -11,7 +11,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-dark -z-20" />
-      
+
       {/* Particles */}
       <ParticlesBackground />
 
@@ -43,12 +43,16 @@ const Hero = () => {
             {siteConfig.title}
           </motion.h2>
 
-          <motion.p
+          <motion.div
             variants={fadeInUp}
             className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl mx-auto"
           >
-            {siteConfig.hero.description}
-          </motion.p>
+            {siteConfig.hero.description.split("\n\n").map((paragraph, idx) => (
+              <p key={idx} className={idx > 0 ? "mt-4" : undefined}>
+                {paragraph}
+              </p>
+            ))}
+          </motion.div>
 
           <motion.div
             variants={fadeInUp}

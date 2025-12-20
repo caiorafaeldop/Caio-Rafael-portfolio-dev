@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Project } from "@/data/projects";
+import { Project, Learning } from "@/data/projects";
 import { Button } from "./ui/button";
 import { fadeInUp } from "@/lib/animations";
 
@@ -9,7 +9,24 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const getLearningColor = (category: Learning["category"]) => {
+  switch (category) {
+    case "hard":
+      return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
+    case "methodology":
+      return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+    case "soft":
+      return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+    default:
+      return "bg-muted/50 text-muted-foreground";
+  }
+};
+
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  // Pegar apenas os 5 primeiros learnings para não poluir
+  const displayLearnings = project.learnings?.slice(0, 5) || [];
+  const hasMoreLearnings = (project.learnings?.length || 0) > 5;
+
   return (
     <motion.article
       variants={fadeInUp}
@@ -35,7 +52,31 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </div>
 
-        <p className="text-muted-foreground mb-6">{project.shortDescription}</p>
+        <p className="text-muted-foreground mb-4">{project.shortDescription}</p>
+
+        {/* Competências desenvolvidas */}
+        {displayLearnings.length > 0 && (
+          <div className="mb-4">
+            <p className="text-xs text-muted-foreground mb-2 font-medium uppercase tracking-wider">
+              O que aprendi:
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {displayLearnings.map((learning) => (
+                <span
+                  key={learning.skill}
+                  className={`px-2 py-0.5 text-xs font-medium rounded-md border ${getLearningColor(learning.category)}`}
+                >
+                  {learning.skill}
+                </span>
+              ))}
+              {hasMoreLearnings && (
+                <span className="px-2 py-0.5 text-xs text-muted-foreground">
+                  +{(project.learnings?.length || 0) - 5} mais
+                </span>
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.stack.slice(0, 4).map((tech) => (
@@ -94,3 +135,4 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 };
 
 export default ProjectCard;
+

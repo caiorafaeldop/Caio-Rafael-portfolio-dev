@@ -33,8 +33,11 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="bg-glass-bg/5 backdrop-blur-xl border border-glass-border/10 rounded-2xl shadow-lg">
             <div className="flex items-center justify-between h-16 px-6">
-              <Link to="/" className="text-xl font-bold bg-gradient-accent bg-clip-text text-transparent">
-                Caio
+              <Link
+                to="/"
+                className="text-xl font-bold bg-gradient-accent bg-clip-text text-transparent"
+              >
+                Caio Rafael de Oliveira
               </Link>
 
               {/* Desktop Navigation */}
@@ -64,7 +67,11 @@ const Navbar = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   aria-label="Toggle menu"
                 >
-                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                  {isOpen ? (
+                    <X className="h-5 w-5" />
+                  ) : (
+                    <Menu className="h-5 w-5" />
+                  )}
                 </Button>
               </div>
             </div>

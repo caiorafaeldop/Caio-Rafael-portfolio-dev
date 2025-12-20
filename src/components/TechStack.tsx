@@ -32,17 +32,10 @@ const TechStack = () => {
                 <div className="flex flex-wrap gap-2">
                   {category.items.map((item) => (
                     <div
-                      key={item.name}
-                      className="group relative px-3 py-2 bg-muted/50 hover:bg-primary/10 rounded-lg transition-colors cursor-default"
+                      key={item}
+                      className="px-3 py-2 bg-muted/50 hover:bg-primary/10 rounded-lg transition-colors cursor-default"
                     >
-                      <span className="text-sm font-medium">{item.name}</span>
-                      {item.level && (
-                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <div className="bg-popover text-popover-foreground px-2 py-1 rounded text-xs whitespace-nowrap">
-                            {item.level}
-                          </div>
-                        </div>
-                      )}
+                      <span className="text-sm font-medium">{item}</span>
                     </div>
                   ))}
                 </div>

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import QuickStats from "@/components/QuickStats";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
@@ -15,11 +16,17 @@ const Home = () => {
       <Helmet>
         <title>{`${siteConfig.name} - ${siteConfig.title}`}</title>
         <meta name="description" content={siteConfig.description} />
-        <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+        <meta
+          property="og:title"
+          content={`${siteConfig.name} - ${siteConfig.title}`}
+        />
         <meta property="og:description" content={siteConfig.description} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+        <meta
+          name="twitter:title"
+          content={`${siteConfig.name} - ${siteConfig.title}`}
+        />
         <meta name="twitter:description" content={siteConfig.description} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -41,10 +48,11 @@ const Home = () => {
       <Navbar />
       <main>
         <Hero />
+        <QuickStats />
         <FeaturedProjects />
         <Experience />
-        <TechStack />
         <Contact />
+        <TechStack />
       </main>
       <Footer />
       <BackToTop />
@@ -53,3 +61,4 @@ const Home = () => {
 };
 
 export default Home;
+

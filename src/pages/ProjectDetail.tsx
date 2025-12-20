@@ -239,6 +239,77 @@ const ProjectDetail = () => {
                   )}
                 </div>
 
+                {/* Competências Desenvolvidas */}
+                {project.learnings && project.learnings.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="text-xl font-bold mb-4">Competências Desenvolvidas</h2>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {/* Hard Skills */}
+                      {project.learnings.filter(l => l.category === 'hard').length > 0 && (
+                        <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-xl p-4">
+                          <h3 className="text-sm font-semibold text-cyan-400 mb-3 uppercase tracking-wider">
+                            Hard Skills
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.learnings
+                              .filter(l => l.category === 'hard')
+                              .map((learning) => (
+                                <span
+                                  key={learning.skill}
+                                  className="px-2 py-1 text-xs bg-cyan-500/10 text-cyan-300 rounded-md border border-cyan-500/20"
+                                >
+                                  {learning.skill}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Metodologias */}
+                      {project.learnings.filter(l => l.category === 'methodology').length > 0 && (
+                        <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-4">
+                          <h3 className="text-sm font-semibold text-purple-400 mb-3 uppercase tracking-wider">
+                            Metodologias
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.learnings
+                              .filter(l => l.category === 'methodology')
+                              .map((learning) => (
+                                <span
+                                  key={learning.skill}
+                                  className="px-2 py-1 text-xs bg-purple-500/10 text-purple-300 rounded-md border border-purple-500/20"
+                                >
+                                  {learning.skill}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Soft Skills */}
+                      {project.learnings.filter(l => l.category === 'soft').length > 0 && (
+                        <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4">
+                          <h3 className="text-sm font-semibold text-emerald-400 mb-3 uppercase tracking-wider">
+                            Soft Skills
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.learnings
+                              .filter(l => l.category === 'soft')
+                              .map((learning) => (
+                                <span
+                                  key={learning.skill}
+                                  className="px-2 py-1 text-xs bg-emerald-500/10 text-emerald-300 rounded-md border border-emerald-500/20"
+                                >
+                                  {learning.skill}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 <div className="mb-8">
                   <h2 className="text-xl font-bold mb-4">Stack Tecnológico</h2>
                   <div className="flex flex-wrap gap-2">
