@@ -38,7 +38,7 @@ const Navbar = () => {
             className="text-purple-500 font-bold text-xl tracking-tight flex items-center gap-2"
           >
             <Code className="h-5 w-5" />
-            Caio <span className="hidden sm:inline">de Oliveira</span>
+            Caio Rafael <span className="hidden sm:inline">de Oliveira</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,7 +63,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             <LanguageSwitcher />
-            <ThemeToggle />
+
             <Button
               variant="ghost"
               size="icon"
@@ -103,6 +103,12 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <div className="pt-2 border-t border-border/50">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-sm font-medium text-muted-foreground">Tema</span>
+                <ThemeToggle />
+              </div>
+            </div>
           </div>
         </motion.div>
       )}
