@@ -38,7 +38,7 @@ const Navbar = () => {
             className="text-purple-500 font-bold text-xl tracking-tight flex items-center gap-2"
           >
             <Code className="h-5 w-5" />
-            Caio Rafael <span className="hidden sm:inline">de Oliveira</span>
+            Caio <span className="hidden sm:inline">de Oliveira</span>
           </Link>
 
           {/* Desktop Navigation */}
