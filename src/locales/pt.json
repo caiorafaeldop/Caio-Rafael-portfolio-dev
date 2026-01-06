@@ -1,0 +1,348 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "contact": "Contato"
+    },
+    "hero": {
+        "greeting": "Olá, eu sou",
+        "role": "Engenheiro Full-Stack",
+        "description": "Especialista na construção de aplicações modernas, rápidas e seguras.",
+        "viewProjects": "Ver Projetos",
+        "aboutMe": "Mais sobre mim",
+        "downloadCv": "Download CV",
+        "cards": {
+            "fullstack": "Full-Stack Engineer",
+            "degree": "Graduado em Ciência da Computação",
+            "university": "UFPB",
+            "experience_years": "+3 anos",
+            "experience_desc": "em Desenvolvimento Web",
+            "specialist": "Especialista",
+            "specialist_tech": "React + Node.js"
+        }
+    },
+    "about": {
+        "title": "Conheça o Desenvolvedor",
+        "bio": {
+            "p1": "Olá, seja bem-vindo(a).",
+            "p2": "Sou <1>Caio Rafael de Oliveira</1>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <2>resolver problemas reais</2>, conectar pessoas e abrir caminhos.",
+            "p3": "Tenho uma forte paixão por <1>empreendedorismo</1>, por tirar ideias do papel e transformá-las em produtos e soluções com propósito. Gosto de pensar além do código: entender contextos, necessidades e impactos. É isso que torna um projeto vivo e relevante.",
+            "p4": "Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <1>liderança, colaboração e responsabilidade</1>, sempre buscando crescer e ajudar outros a crescerem comigo."
+        },
+        "achievements": {
+            "title": "Principais Conquistas",
+            "fullstack": {
+                "title": "Desenvolvedor Full Stack",
+                "description": "Criação de soluções digitais completas, com foco em produtos bem estruturados, experiência do usuário e sistemas pensados para crescer junto com o negócio."
+            },
+            "teacher": {
+                "title": "Professor de Programação",
+                "description": "Atuação como educador em diferentes contextos: universidade, mercado de trabalho, formação de jovens e ensino público, tornando a tecnologia acessível e aplicável à vida real."
+            },
+            "leader": {
+                "title": "Líder de Diversos Projetos de TI",
+                "description": "Como Lider de desenvolvimento do Núcleo Colab UFPB, coordenei diversas equipes e entregas com metodologias ágeis."
+            },
+            "mentor": {
+                "title": "Mentor de Jovens Desenvolvedores",
+                "description": "Mentoria e orientação de novos desenvolvedores em projetos ligados à UFPB, como Colab, Connecta CI e PET Computação, apoiando crescimento técnico e profissional."
+            }
+        }
+    },
+    "experience": {
+        "title": "Experiência Profissional",
+        "subtitle": "Minha jornada",
+        "current_badge": "Atual",
+        "exp-1": {
+            "role": "Desenvolvedor Full Stack",
+            "company": "LAKS",
+            "period": "Maio de 2024 - Presente",
+            "description": [
+                "Desenvolvimento de soluções com React, Typescript, Node, Prisma e PostgreSQL",
+                "Consumo de APIs REST",
+                "Aplicação de boas práticas de UX/UI",
+                "Aplicação de metodologias ágeis como modelo de trabalho (Scrum, Kanban, XP)",
+                "Atuação em Projeto voltado para gestão de Franquias e Franqueadoras"
+            ]
+        },
+        "exp-2": {
+            "role": "Professor de Programação",
+            "company": "CTRL Play",
+            "period": "Janeiro - Abril de 2025",
+            "description": [
+                "Planejamento e aplicação de aulas para mais de 50 alunos",
+                "Ensino de programação para crianças e adultos",
+                "Desenvolvimento de material didático"
+            ]
+        },
+        "exp-3": {
+            "role": "Professor de Programação",
+            "company": "FUNETEC",
+            "period": "Maio de 2023 - Presente",
+            "description": [
+                "Planejamento e aplicação de aulas no Projeto CODE para turmas do 6º ao 9º ano do ensino fundamental",
+                "Ênfase em lógica de programação e desenvolvimento de aplicativos de forma didática"
+            ]
+        }
+    },
+    "techStack": {
+        "title": "Conhecimentos Técnicos",
+        "categories": {
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Outras Habilidades": "Outras Habilidades"
+        },
+        "items": {
+            "Planejamento didático": "Planejamento didático",
+            "Comunicação": "Comunicação",
+            "Adaptabilidade": "Adaptabilidade",
+            "Trabalho em equipe": "Trabalho em equipe",
+            "Versionamento Git": "Versionamento Git",
+            "Metodologias Ágeis": "Metodologias Ágeis"
+        }
+    },
+    "projects": {
+        "featured": {
+            "title": "Meus Projetos em Destaque",
+            "subtitle": "Conheça meus trabalhos mais impactantes e inovadores."
+        },
+        "stack_label": "Tecnologias que Utilizo:",
+        "actions": {
+            "view_site": "Ver Site",
+            "details": "Detalhes",
+            "view_all": "Ver Todos os Projetos"
+        },
+        "page": {
+            "title": "Todos os Projetos",
+            "subtitle": "Uma coleção dos meus trabalhos e experimentos",
+            "filters": {
+                "search_placeholder": "Buscar projetos...",
+                "tag_placeholder": "Filtrar por tag",
+                "all_tags": "Todas as Tags",
+                "sort_placeholder": "Ordenar por",
+                "sort_recent": "Mais Recentes",
+                "sort_title": "Título A-Z",
+                "found": "{{count}} projeto(s) encontrado(s)",
+                "clear": "Limpar filtros",
+                "empty": "Nenhum projeto encontrado."
+            }
+        },
+        "detail": {
+            "not_found": "Projeto não encontrado",
+            "back_to_projects": "Voltar para Projetos",
+            "back": "Voltar",
+            "gallery": "Galeria do Projeto",
+            "responsibilities": "Responsabilidades",
+            "results": "Resultados",
+            "tech_stack": "Stack Tecnológico",
+            "competencies": "Competências Desenvolvidas",
+            "view_code": "Ver Código",
+            "view_demo": "Ver Demo",
+            "prev_project": "Projeto Anterior",
+            "next_project": "Próximo Projeto"
+        },
+        "gallery": "Galeria de Projetos",
+        "notFound": {
+            "title": "Página Não Encontrada",
+            "description": "Desculpe, a página que você está procurando não existe ou foi movida.",
+            "backValue": "Voltar para Home",
+            "viewProjects": "Ver Projetos"
+        },
+        "pet-de-todos": {
+            "title": "Pet de Todos",
+            "shortDescription": "Plano de saúde pet do Grupo Cartão de Todos com consultas, exames, cirurgias, vacinas e teleorientação 24h para cães e gatos com cobertura nacional.",
+            "longDescription": "# Pet de Todos\n\nPlataforma digital desenvolvida para o plano de saúde pet mais acessível do Brasil, parte do ecossistema do Grupo Cartão de Todos.\n\n## Desafio\nCriar uma experiência digital fluida para o gerenciamento de planos de saúde pet, incluindo jornada de contratação, telemedicina veterinária e gestão de reembolsos.\n\n## Solução\nLanding page moderna e conversiva com integração ao sistema de jornada de contratação, apresentação clara das coberturas e acesso rápido aos serviços.",
+            "responsibilities": [
+                "Desenvolvimento da landing page institucional",
+                "Otimização de conversão e UX",
+                "Integração com sistema de contratação",
+                "Design responsivo e acessível"
+            ],
+            "results": [
+                "Planos a partir de R$ 19,90/mês com cobertura nacional",
+                "Telemedicina veterinária 24h disponível",
+                "Interface clara sem taxas escondidas"
+            ]
+        },
+        "leadsim": {
+            "title": "LeadSim",
+            "shortDescription": "Plataforma SaaS de CRM e gestão de leads que centraliza clientes, propostas, contratos, financeiro e automação de marketing em um só lugar.",
+            "longDescription": "# LeadSim\n\nSistema completo de gestão de leads e CRM desenvolvido para simplificar e centralizar todas as operações comerciais de empresas e franquias.\n\n## Desafio\nEmpresas enfrentam o caos de múltiplas planilhas e sistemas desconectados para gerenciar CRM, financeiro e automação, resultando em perda de leads e baixa produtividade.\n\n## Solução\nPlataforma integrada que unifica:\n- Controle e qualificação de leads\n- Geração de contratos e propostas\n- Gestão financeira\n- Automação de marketing e follow-ups\n- Cadastros e oportunidades centralizados",
+            "responsibilities": [
+                "Arquitetura full-stack da plataforma SaaS",
+                "Desenvolvimento do sistema de leads e CRM",
+                "Implementação de automações e integrações",
+                "Dashboard de analytics e relatórios"
+            ],
+            "results": [
+                "Centralização completa de operações comerciais",
+                "Eliminação de múltiplas planilhas e sistemas",
+                "Automação inteligente de nutrição de leads"
+            ]
+        },
+        "rfcc-colab": {
+            "title": "RFCC-COLAB",
+            "shortDescription": "Plataforma voluntária para a Rede Feminina de Combate ao Câncer focada em aumentar arrecadações através de doações, e-commerce e assinaturas recorrentes.",
+            "longDescription": "# RFCC-COLAB\n\nPlataforma desenvolvida de forma voluntária para a Rede Feminina de Combate ao Câncer com o objetivo de aumentar a arrecadação e ampliar o alcance da instituição.\n\n## Desafio\nA instituição enfrentava dificuldades para gerenciar doações e manter um fluxo constante de arrecadação para sustentar seus projetos de apoio a pacientes com câncer.\n\n## Solução\nDesenvolvimento de uma plataforma integrada com três pilares principais:\n- Sistema de doações online com múltiplas formas de pagamento\n- E-commerce para venda de produtos institucionais\n- Programa de assinatura recorrente para doadores mensais",
+            "responsibilities": [
+                "Desenvolvimento full-stack da plataforma",
+                "Implementação do sistema de pagamentos recorrentes",
+                "Integração com gateway de pagamentos",
+                "Criação do e-commerce e sistema de gestão de estoque"
+            ],
+            "results": [
+                "Aumento na arrecadação mensal através de assinaturas recorrentes",
+                "Crescimento expressivo na base de doadores com a adição de novas formas de pagamento",
+                "Nova fonte de renda com operações de comércio digital dentro da plataforma"
+            ]
+        },
+        "colab-ufpb": {
+            "title": "Núcleo Colab UFPB",
+            "shortDescription": "Plataforma institucional do Núcleo de Inovação e Empreendedorismo da UFPB, conectando startups ao ecossistema universitário de incubação.",
+            "longDescription": "# Núcleo Colab UFPB\n\nPortal institucional desenvolvido para o Núcleo de Inovação e Empreendedorismo da Universidade Federal da Paraíba, promovendo a conexão entre startups, pesquisadores e o mercado.\n\n## Desafio\nO núcleo precisava de uma presença digital profissional para divulgar seus programas de incubação, atrair novos empreendedores e conectar a comunidade acadêmica ao ecossistema de inovação.\n\n## Solução\nDesenvolvimento de uma plataforma moderna que apresenta:\n- Programas de incubação e pré-incubação\n- Portfólio de startups incubadas\n- Informações sobre mentoria e recursos disponíveis\n- Formulários de inscrição para novos projetos",
+            "responsibilities": [
+                "Liderança do projeto de desenvolvimento",
+                "Desenvolvimento do site institucional",
+                "Design de interface moderna e responsiva",
+                "Implementação de formulários de inscrição",
+                "Integração com sistemas do núcleo"
+            ],
+            "results": [
+                "Presença digital profissional para o núcleo",
+                "Maior visibilidade do programa de incubação",
+                "Facilidade de inscrição para novos empreendedores"
+            ]
+        },
+        "paulo-maia-advocacia": {
+            "title": "Paulo Maia Advocacia",
+            "shortDescription": "Site institucional para escritório de advocacia especializado em Direito Trabalhista com mais de 30 anos de experiência.",
+            "longDescription": "# Paulo Maia Advocacia\n\nSite institucional desenvolvido para escritório de advocacia especializado em Direito do Trabalho, apresentando de forma profissional os serviços oferecidos tanto para trabalhadores quanto para empresas.\n\n## Desafio\nO escritório precisava de uma presença digital que transmitisse credibilidade, excelência e ética, alinhada com mais de 30 anos de experiência na área trabalhista.\n\n## Solução\nSite elegante e profissional que destaca:\n- Áreas de atuação especializadas\n- Experiência e credenciais do advogado\n- Formulário de contato para consultas\n- Design sóbrio e profissional adequado ao segmento jurídico",
+            "responsibilities": [
+                "Desenvolvimento do site institucional",
+                "Design elegante e profissional",
+                "Otimização SEO para advogados",
+                "Formulário de captação de leads"
+            ],
+            "results": [
+                "Presença digital profissional estabelecida",
+                "Maior visibilidade online para captação de clientes",
+                "Design que transmite confiança e credibilidade"
+            ]
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Caio Rafael de Oliveira - Desenvolvedor Full Stack",
+            "description": "Full Stack Developer | React, Node.js, TypeScript e o melhor da engenharia web moderna. Crio produtos digitais com foco em engenharia sólida, performance e experiência de usuário."
+        },
+        "about": {
+            "title": "Sobre - Caio Rafael de Oliveira",
+            "description": "Conheça mais sobre minha trajetória, experiências e paixão por desenvolvimento."
+        },
+        "projects": {
+            "title": "Projetos - Caio Rafael de Oliveira",
+            "description": "Explore meus projetos e trabalhos desenvolvidos com as mais modernas tecnologias."
+        }
+    },
+    "projectCard": {
+        "learnings": "O que aprendi:",
+        "technologies": "Tecnologias:",
+        "viewDetails": "Ver Detalhes",
+        "more": "mais"
+    },
+    "footer": {
+        "tagline": "Transformando ideias em soluções digitais elegantes",
+        "location": "Jardim Cidade Universitária, João Pessoa, Paraíba, 58052-190"
+    },
+    "contact": {
+        "title": "Vamos Trabalhar Juntos",
+        "description": "Estou aberto a novos projetos e oportunidades. Entre em contato!",
+        "email": "Email",
+        "location": "Localização",
+        "location_value": "João Pessoa, Paraíba<br />Brasil",
+        "socials": "Redes Sociais",
+        "quick_links": "Links Rápidos",
+        "rights": "Todos os direitos reservados."
+    },
+    "site": {
+        "title": "Desenvolvedor Full Stack",
+        "tagline": "Transformando ideias em soluções digitais elegantes",
+        "description": "Full Stack Developer | React, Node.js, TypeScript e o melhor da engenharia web moderna. Crio produtos digitais com foco em engenharia sólida, performance e experiência de usuário."
+    },
+    "aria": {
+        "prev_image": "Imagem anterior",
+        "next_image": "Próxima imagem",
+        "go_to_image": "Ir para imagem {{number}}",
+        "view_code_github": "Ver código no GitHub",
+        "project_image": " - Imagem {{number}}",
+        "photo": "Foto {{number}}"
+    },
+    "tags": {
+        "HealthTech": "HealthTech",
+        "Pet": "Pet",
+        "Assinatura": "Assinatura",
+        "Conversão": "Conversão",
+        "SaaS": "SaaS",
+        "CRM": "CRM",
+        "Automação": "Automação",
+        "Gestão": "Gestão",
+        "Voluntariado": "Voluntariado",
+        "E-commerce": "E-commerce",
+        "Doações": "Doações",
+        "Impacto Social": "Impacto Social",
+        "Institucional": "Institucional",
+        "Educação": "Educação",
+        "Inovação": "Inovação",
+        "Startups": "Startups",
+        "Advocacia": "Advocacia",
+        "Direito Trabalhista": "Direito Trabalhista",
+        "Landing Page": "Landing Page"
+    },
+    "stack": {
+        "React": "React",
+        "Node.js": "Node.js",
+        "TypeScript": "TypeScript",
+        "Prisma": "Prisma",
+        "PostgreSQL": "PostgreSQL",
+        "Scrum": "Scrum",
+        "Kanban": "Kanban",
+        "Azure": "Azure",
+        "SQL/PostgreSQL": "SQL/PostgreSQL",
+        "Git Flow": "Git Flow",
+        "Metodologias Ágeis": "Metodologias Ágeis",
+        "MongoDB": "MongoDB",
+        "Mercado Pago": "Mercado Pago",
+        "Render": "Render",
+        "AWS": "AWS",
+        "CI/CD": "CI/CD",
+        "Deploy em Produção": "Deploy em Produção",
+        "Integrações de Pagamento": "Integrações de Pagamento",
+        "NestJS": "NestJS",
+        "TailwindCSS": "TailwindCSS",
+        "SEO": "SEO",
+        "UX/UI Design": "UX/UI Design",
+        "Clean Architecture": "Clean Architecture",
+        "MongoDB (NoSQL)": "MongoDB (NoSQL)",
+        "DevOps": "DevOps",
+        "Liderança de Projeto": "Liderança de Projeto",
+        "Empreendedorismo": "Empreendedorismo",
+        "Comunicação": "Comunicação",
+        "Gestão de Equipe": "Gestão de Equipe",
+        "SQL": "SQL"
+    },
+    "common": {
+        "present": "Presente"
+    },
+    "ui": {
+        "carousel": {
+            "previous": "Slide anterior",
+            "next": "Próximo slide"
+        },
+        "pagination": {
+            "previous": "Anterior",
+            "next": "Próximo",
+            "more": "Mais páginas"
+        }
+    }
+}

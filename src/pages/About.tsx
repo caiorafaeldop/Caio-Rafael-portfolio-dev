@@ -8,48 +8,52 @@ import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import ParticlesBackground from "@/components/Background/Particles";
 import Contact from "@/components/Contact";
+import { useTranslation, Trans } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   const achievements = [
     {
       icon: Code,
-      title: "Desenvolvedor Full Stack",
-      description: "Criação de soluções digitais completas, com foco em produtos bem estruturados, experiência do usuário e sistemas pensados para crescer junto com o negócio."
+      title: t('about.achievements.fullstack.title'),
+      description: t('about.achievements.fullstack.description')
     },
     {
       icon: GraduationCap,
-      title: "Professor de Programação",
-      description: "Atuação como educador em diferentes contextos: universidade, mercado de trabalho, formação de jovens e ensino público, tornando a tecnologia acessível e aplicável à vida real."},
+      title: t('about.achievements.teacher.title'),
+      description: t('about.achievements.teacher.description')
+    },
     {
       icon: Monitor,
-      title: "Líder de Diversos Projetos de TI",
-      description: "Como Lider de desenvolvimento do Núcleo Colab UFPB, coordenei diversas equipes e entregas com metodologias ágeis."
+      title: t('about.achievements.leader.title'),
+      description: t('about.achievements.leader.description')
     },
     {
       icon: Users,
-      title: "Mentor de Jovens Desenvolvedores",
-      description: "Mentoria e orientação de novos desenvolvedores em projetos ligados à UFPB, como Colab, Connecta CI e PET Computação, apoiando crescimento técnico e profissional."}
+      title: t('about.achievements.mentor.title'),
+      description: t('about.achievements.mentor.description')
+    }
   ];
 
   // Fotos extras para mostrar hobbies/personalidade
   const extraPhotos = [
-    { src: "/CAIO/3.jpg", alt: "Foto 1" },
-    { src: "/CAIO/4.jpg", alt: "Foto 2" },
-    { src: "/CAIO/6.jpg", alt: "Foto 3" },
+    { src: "/CAIO/3.jpg", alt: "1" },
+    { src: "/CAIO/4.jpg", alt: "2" },
+    { src: "/CAIO/6.jpg", alt: "3" },
   ];
 
   return (
     <>
       <Helmet>
-        <title>{`Sobre - ${siteConfig.name}`}</title>
+        <title>{t('seo.about.title')}</title>
         <meta
           name="description"
-          content="Conheça mais sobre minha trajetória, experiências e paixão por desenvolvimento."
+          content={t('seo.about.description')}
         />
-        <meta property="og:title" content={`Sobre - ${siteConfig.name}`} />
+        <meta property="og:title" content={t('seo.about.title')} />
         <meta
           property="og:description"
-          content="Conheça mais sobre minha trajetória, experiências e paixão por desenvolvimento."
+          content={t('about.bio.p2')}
         />
       </Helmet>
 
@@ -71,7 +75,7 @@ const About = () => {
               variants={fadeInUp}
               className="text-4xl md:text-6xl font-extrabold text-center mb-16 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight"
             >
-              Conheça o Desenvolvedor
+              {t('about.title')}
             </motion.h1>
 
             {/* Hero Section - Photo + Bio */}
@@ -90,16 +94,22 @@ const About = () => {
                 <div className="flex-grow text-center md:text-left space-y-6">
                   <div className="text-lg leading-relaxed text-muted-foreground max-w-md md:max-w-none mx-auto space-y-4">
                     <p>
-                      Olá, seja bem-vindo(a).
+                      {t('about.bio.p1')}
                     </p>
                     <p>
-                      Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-purple-500 font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
+                      <Trans i18nKey="about.bio.p2">
+                        Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-purple-500 font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
+                      </Trans>
                     </p>
                     <p>
-                      Tenho uma forte paixão por <strong className="text-foreground">empreendedorismo</strong>, por tirar ideias do papel e transformá-las em produtos e soluções com propósito. Gosto de pensar além do código: entender contextos, necessidades e impactos. É isso que torna um projeto vivo e relevante.
+                       <Trans i18nKey="about.bio.p3">
+                        Tenho uma forte paixão por <strong className="text-foreground">empreendedorismo</strong>, por tirar ideias do papel e transformá-las em produtos e soluções com propósito. Gosto de pensar além do código: entender contextos, necessidades e impactos. É isso que torna um projeto vivo e relevante.
+                      </Trans>
                     </p>
                     <p>
-                      Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-purple-500 font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
+                       <Trans i18nKey="about.bio.p4">
+                        Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-purple-500 font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
+                      </Trans>
                     </p>
                   </div>
 
@@ -112,7 +122,7 @@ const About = () => {
                       >
                         <img
                           src={photo.src}
-                          alt={photo.alt}
+                          alt={t('aria.photo', { number: photo.alt })}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -122,10 +132,9 @@ const About = () => {
               </div>
             </motion.section>
 
-            {/* Achievements Section */}
             <motion.section variants={fadeInUp}>
               <h2 className="text-3xl font-extrabold text-center mb-10 text-foreground">
-                Principais Conquistas
+                {t('about.achievements.title')}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {achievements.map((achievement, index) => (
@@ -155,7 +164,7 @@ const About = () => {
               <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
                 <a href="/cv.pdf" download className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
-                  Download CV
+                  {t('hero.downloadCv')}
                 </a>
               </Button>
             </motion.div>

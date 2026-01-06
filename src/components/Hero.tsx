@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/site";
 import { Button } from "./ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden" id="home">
       {/* Gradient background sutil */}
@@ -26,7 +28,7 @@ const Hero = () => {
             variants={fadeInUp}
             className="text-muted-foreground mb-4 text-sm font-medium tracking-wide"
           >
-            {siteConfig.hero.greeting}
+            {t('hero.greeting')}
           </motion.p>
 
           <motion.h1
@@ -40,14 +42,14 @@ const Hero = () => {
             variants={fadeInUp}
             className="text-2xl md:text-3xl font-bold text-foreground mb-6"
           >
-            {siteConfig.title}
+            {t('hero.role')}
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Transformando ideias em soluções digitais elegantes com foco em React, Node.js, TypeScript e PostgreSQL.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -56,19 +58,19 @@ const Hero = () => {
           >
             <Button asChild size="lg" className="bg-purple-600 hover:bg-primary shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
               <a href="#projetos" className="flex items-center gap-2">
-                Ver Projetos
+                {t('hero.viewProjects')}
                 <ArrowDown className="h-4 w-4" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
               <a href="/about">
-                Mais sobre mim
+                {t('hero.aboutMe')}
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
               <a href="/cv.pdf" download className="flex items-center gap-2">
                 <Download className="h-4 w-4" />
-                Download CV
+                {t('hero.downloadCv')}
               </a>
             </Button>
           </motion.div>
@@ -118,7 +120,7 @@ const Hero = () => {
               <div className="relative z-10">
                 <Code className="h-8 w-8 text-purple-500 mx-auto mb-3" />
                 <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-purple-500 to-primary bg-clip-text text-transparent">
-                  Full-Stack Engineer
+                  {t('hero.cards.fullstack')}
                 </p>
               </div>
             </motion.div>
@@ -132,10 +134,10 @@ const Hero = () => {
               <div className="relative z-10">
                 <GraduationCap className="h-8 w-8 text-purple-500 mx-auto mb-3" />
                 <p className="text-base font-semibold text-foreground leading-tight">
-                  Graduado em Ciência da Computação
+                  {t('hero.cards.degree')}
                 </p>
                 <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-500 to-primary bg-clip-text text-transparent mt-1">
-                  UFPB
+                  {t('hero.cards.university')}
                 </p>
               </div>
             </motion.div>
@@ -149,10 +151,10 @@ const Hero = () => {
               <div className="relative z-10">
                 <Briefcase className="h-8 w-8 text-purple-500 mx-auto mb-3" />
                 <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-500 to-primary bg-clip-text text-transparent">
-                  +3 anos
+                  {t('hero.cards.experience_years')}
                 </p>
                 <p className="text-base font-semibold text-foreground leading-tight mt-1">
-                  em Desenvolvimento Web
+                  {t('hero.cards.experience_desc')}
                 </p>
               </div>
             </motion.div>
@@ -166,10 +168,10 @@ const Hero = () => {
               <div className="relative z-10">
                 <Sparkles className="h-8 w-8 text-purple-500 mx-auto mb-3" />
                 <p className="text-base font-semibold text-foreground leading-tight">
-                  Especialista
+                  {t('hero.cards.specialist')}
                 </p>
                 <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-purple-500 to-primary bg-clip-text text-transparent mt-1">
-                  React + Node.js
+                  {t('hero.cards.specialist_tech')}
                 </p>
               </div>
             </motion.div>

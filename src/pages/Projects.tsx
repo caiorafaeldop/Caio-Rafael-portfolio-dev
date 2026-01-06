@@ -19,8 +19,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<string>("all");
   const [sortBy, setSortBy] = useState<"recent" | "title">("recent");
@@ -30,14 +32,14 @@ const Projects = () => {
     const tags = new Set<string>();
     projects.forEach((p) => p.tags.forEach((tag) => tags.add(tag)));
     return Array.from(tags).sort();
-  }, []);
+  }, []); // We keep the raw tags for logic but will display them translated
 
   // Filter and sort projects
   const filteredProjects = useMemo(() => {
     let filtered = projects.filter((project) => {
       const matchesSearch =
         project.title.toLowerCase().includes(search.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(search.toLowerCase()) ||
+        t(`projects.${project.slug}.shortDescription`).toLowerCase().includes(search.toLowerCase()) ||
         project.stack.some((tech) =>
           tech.toLowerCase().includes(search.toLowerCase())
         );
@@ -60,15 +62,15 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>{`Projetos - ${siteConfig.name}`}</title>
+        <title>{t('seo.projects.title')}</title>
         <meta
           name="description"
-          content="Explore meus projetos e trabalhos desenvolvidos com as mais modernas tecnologias."
+          content={t('seo.projects.description')}
         />
-        <meta property="og:title" content={`Projetos - ${siteConfig.name}`} />
+        <meta property="og:title" content={t('seo.projects.title')} />
         <meta
           property="og:description"
-          content="Explore meus projetos e trabalhos desenvolvidos com as mais modernas tecnologias."
+          content={t('seo.projects.description')}
         />
       </Helmet>
 
@@ -87,10 +89,10 @@ const Projects = () => {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
-                Todos os Projetos
+                {t('projects.page.title')}
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Uma coleção dos meus trabalhos e experimentos
+                {t('projects.page.subtitle')}
               </p>
             </motion.div>
 
@@ -103,7 +105,7 @@ const Projects = () => {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-purple-500" />
                   <Input
-                    placeholder="Buscar projetos..."
+                    placeholder={t('projects.page.filters.search_placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     className="pl-10 border-purple-500/20 dark:border-purple-400/20 focus:border-purple-500"
@@ -112,13 +114,13 @@ const Projects = () => {
 
                 <Select value={selectedTag} onValueChange={setSelectedTag}>
                   <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
-                    <SelectValue placeholder="Filtrar por tag" />
+                    <SelectValue placeholder={t('projects.page.filters.tag_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Todas as Tags</SelectItem>
+                    <SelectItem value="all">{t('projects.page.filters.all_tags')}</SelectItem>
                     {allTags.map((tag) => (
                       <SelectItem key={tag} value={tag}>
-                        {tag}
+                        {t(`tags.${tag}`, tag)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -126,11 +128,11 @@ const Projects = () => {
 
                 <Select value={sortBy} onValueChange={(v) => setSortBy(v as "recent" | "title")}>
                   <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
-                    <SelectValue placeholder="Ordenar por" />
+                    <SelectValue placeholder={t('projects.page.filters.sort_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="recent">Mais Recentes</SelectItem>
-                    <SelectItem value="title">Título A-Z</SelectItem>
+                    <SelectItem value="recent">{t('projects.page.filters.sort_recent')}</SelectItem>
+                    <SelectItem value="title">{t('projects.page.filters.sort_title')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -138,7 +140,7 @@ const Projects = () => {
               {(search || selectedTag !== "all") && (
                 <div className="mt-4 flex items-center gap-2">
                   <p className="text-sm text-muted-foreground">
-                    {filteredProjects.length} projeto(s) encontrado(s)
+                    {t('projects.page.filters.found', { count: filteredProjects.length })}
                   </p>
                   <Button
                     variant="ghost"
@@ -149,7 +151,7 @@ const Projects = () => {
                       setSelectedTag("all");
                     }}
                   >
-                    Limpar filtros
+                    {t('projects.page.filters.clear')}
                   </Button>
                 </div>
               )}
@@ -170,7 +172,7 @@ const Projects = () => {
                 variants={fadeInUp}
                 className="text-center py-12 text-muted-foreground"
               >
-                <p className="text-lg">Nenhum projeto encontrado.</p>
+                <p className="text-lg">{t('projects.page.filters.empty')}</p>
                 <Button
                   variant="outline"
                   className="mt-4 border-2 border-purple-500/50 text-foreground hover:bg-purple-500/10"
@@ -179,7 +181,7 @@ const Projects = () => {
                     setSelectedTag("all");
                   }}
                 >
-                  Limpar filtros
+                  {t('projects.page.filters.clear')}
                 </Button>
               </motion.div>
             )}

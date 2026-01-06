@@ -5,6 +5,7 @@ import { Project, Learning } from "@/data/projects";
 import { Button } from "./ui/button";
 import { fadeInUp } from "@/lib/animations";
 import { useTheme } from "@/hooks/use-theme";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   project: Project;
@@ -25,6 +26,7 @@ const getLearningColor = (category: Learning["category"]) => {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   
   // Pegar apenas os 5 primeiros learnings para não poluir
   const displayLearnings = project.learnings?.slice(0, 5) || [];
@@ -45,12 +47,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <h3 
-                className="text-2xl font-bold"
                 style={{ color: titleColor }}
               >
-                {project.title}
+                {t(`projects.${project.slug}.title`)}
               </h3>
-              <span className="text-sm text-muted-foreground">{project.year}</span>
+              <span className="text-sm text-muted-foreground">{project.year.replace('Presente', t('common.present'))}</span>
             </div>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag) => (
@@ -58,20 +59,20 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                   key={tag}
                   className="px-2 py-0.5 text-[10px] uppercase font-medium text-muted-foreground bg-muted/50 rounded"
                 >
-                  {tag}
+                  {t(`tags.${tag}`, tag)}
                 </span>
               ))}
             </div>
           </div>
         </div>
 
-        <p className="text-muted-foreground mb-4">{project.shortDescription}</p>
+        <p className="text-muted-foreground mb-4">{t(`projects.${project.slug}.shortDescription`)}</p>
 
         {/* Competências desenvolvidas */}
         {displayLearnings.length > 0 && (
           <div className="mb-4">
             <p className="text-xs text-muted-foreground mb-2 font-medium uppercase tracking-wider">
-              O que aprendi:
+              {t('projectCard.learnings')}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {displayLearnings.map((learning) => (
@@ -79,12 +80,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                   key={learning.skill}
                   className={`px-2 py-0.5 text-xs font-medium rounded-md border ${getLearningColor(learning.category)}`}
                 >
-                  {learning.skill}
+                  {t(`stack.${learning.skill}`, learning.skill)}
                 </span>
               ))}
               {hasMoreLearnings && (
                 <span className="px-2 py-0.5 text-xs text-muted-foreground">
-                  +{(project.learnings?.length || 0) - 5} mais
+                  +{(project.learnings?.length || 0) - 5} {t('projectCard.more')}
                 </span>
               )}
             </div>
@@ -94,7 +95,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         {/* Tech Stack - DESTAQUE */}
         <div className="mb-6">
           <p className="text-xs text-foreground mb-2 font-bold uppercase tracking-wider">
-            Tecnologias:
+            {t('projectCard.technologies')}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.stack.slice(0, 5).map((tech) => (
@@ -102,12 +103,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 key={tech}
                 className="px-3 py-1.5 text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-lg border border-purple-500/20"
               >
-                {tech}
+                {t(`stack.${tech}`, tech)}
               </span>
             ))}
             {project.stack.length > 5 && (
               <span className="px-3 py-1.5 text-xs bg-muted/50 text-muted-foreground rounded-lg">
-                +{project.stack.length - 5} mais
+                +{project.stack.length - 5} {t('projectCard.more')}
               </span>
             )}
           </div>
@@ -116,7 +117,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex items-center gap-3 pt-4 border-t border-purple-500/20">
           <Button asChild className="bg-purple-600 hover:bg-purple-700 shadow-lg shadow-purple-500/20">
             <Link to={`/projects/${project.slug}`}>
-              Ver Detalhes
+              {t('projectCard.viewDetails')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
@@ -138,7 +139,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver Site"
+                aria-label={t('projects.actions.view_site')}
               >
                 <ExternalLink className="h-4 w-4" />
               </a>

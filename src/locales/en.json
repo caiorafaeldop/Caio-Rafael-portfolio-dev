@@ -1,0 +1,348 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Hi, I am",
+        "role": "Full-Stack Engineer",
+        "description": "Specialist in building modern, fast, and secure applications.",
+        "viewProjects": "View Projects",
+        "aboutMe": "More about me",
+        "downloadCv": "Download CV",
+        "cards": {
+            "fullstack": "Full-Stack Engineer",
+            "degree": "Computer Science Graduate",
+            "university": "UFPB",
+            "experience_years": "+3 years",
+            "experience_desc": "in Web Development",
+            "specialist": "Specialist",
+            "specialist_tech": "React + Node.js"
+        }
+    },
+    "about": {
+        "title": "Meet the Developer",
+        "bio": {
+            "p1": "Hello, welcome.",
+            "p2": "I am <1>Caio Rafael de Oliveira</1>, a Full Stack developer driven by curiosity, continuous learning, and a genuine desire to create things that make sense for people. I believe technology is, above all, a tool to <2>solve real problems</2>, connect people, and open paths.",
+            "p3": "I have a strong passion for <1>entrepreneurship</1>, taking ideas off paper and transforming them into products and solutions with purpose. I like to think beyond code: understanding contexts, needs, and impacts. That's what makes a project alive and relevant.",
+            "p4": "Along the way, I actively participated in academic and institutional projects that taught me about <1>leadership, collaboration, and responsibility</1>, always seeking to grow and help others grow with me."
+        },
+        "achievements": {
+            "title": "Key Achievements",
+            "fullstack": {
+                "title": "Full Stack Developer",
+                "description": "Creating complete digital solutions, focusing on well-structured products, user experience, and systems designed to grow with the business."
+            },
+            "teacher": {
+                "title": "Programming Teacher",
+                "description": "Acting as an educator in different contexts: university, job market, youth training, and public education, making technology accessible and applicable to real life."
+            },
+            "leader": {
+                "title": "IT Project Leader",
+                "description": "As Development Lead at Colab UFPB Core, I coordinated various teams and deliveries using agile methodologies."
+            },
+            "mentor": {
+                "title": "Young Developers Mentor",
+                "description": "Mentoring and guiding new developers in projects linked to UFPB, such as Colab, Connecta CI, and PET Computação, supporting technical and professional growth."
+            }
+        }
+    },
+    "experience": {
+        "title": "Professional Experience",
+        "subtitle": "My journey",
+        "current_badge": "Current",
+        "exp-1": {
+            "role": "Full Stack Developer",
+            "company": "LAKS",
+            "period": "May 2024 - Present",
+            "description": [
+                "Developing solutions with React, TypeScript, Node, Prisma, and PostgreSQL",
+                "Consuming REST APIs",
+                "Applying UX/UI best practices",
+                "Applying agile methodologies like Scrum, Kanban, XP",
+                "Working on a Franchise Management Project"
+            ]
+        },
+        "exp-2": {
+            "role": "Programming Teacher",
+            "company": "CTRL Play",
+            "period": "January - April 2025",
+            "description": [
+                "Planning and teaching classes for over 50 students",
+                "Teaching programming to children and adults",
+                "Developing teaching materials"
+            ]
+        },
+        "exp-3": {
+            "role": "Programming Teacher",
+            "company": "FUNETEC",
+            "period": "May 2023 - Present",
+            "description": [
+                "Planning and teaching classes in the CODE Project for 6th to 9th grade students",
+                "Emphasis on programming logic and app development in a didactic way"
+            ]
+        }
+    },
+    "techStack": {
+        "title": "Technical Skills",
+        "categories": {
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Outras Habilidades": "Other Skills"
+        },
+        "items": {
+            "Planejamento didático": "Didactic Planning",
+            "Comunicação": "Communication",
+            "Adaptabilidade": "Adaptability",
+            "Trabalho em equipe": "Team Work",
+            "Versionamento Git": "Git Versioning",
+            "Metodologias Ágeis": "Agile Methodologies"
+        }
+    },
+    "projects": {
+        "featured": {
+            "title": "Featured Projects",
+            "subtitle": "Discover my most impactful and innovative work."
+        },
+        "stack_label": "Technologies I Use:",
+        "actions": {
+            "view_site": "View Site",
+            "details": "Details",
+            "view_all": "View All Projects"
+        },
+        "page": {
+            "title": "All Projects",
+            "subtitle": "A collection of my work and experiments",
+            "filters": {
+                "search_placeholder": "Search projects...",
+                "tag_placeholder": "Filter by tag",
+                "all_tags": "All Tags",
+                "sort_placeholder": "Sort by",
+                "sort_recent": "Most Recent",
+                "sort_title": "Title A-Z",
+                "found": "{{count}} project(s) found",
+                "clear": "Clear filters",
+                "empty": "No projects found."
+            }
+        },
+        "detail": {
+            "not_found": "Project not found",
+            "back_to_projects": "Back to Projects",
+            "back": "Back",
+            "gallery": "Project Gallery",
+            "responsibilities": "Responsibilities",
+            "results": "Results",
+            "tech_stack": "Tech Stack",
+            "competencies": "Developed Competencies",
+            "view_code": "View Code",
+            "view_demo": "View Demo",
+            "prev_project": "Previous Project",
+            "next_project": "Next Project"
+        },
+        "gallery": "Project Gallery",
+        "notFound": {
+            "title": "Page Not Found",
+            "description": "Sorry, the page you are looking for does not exist or has been moved.",
+            "backValue": "Back to Home",
+            "viewProjects": "View Projects"
+        },
+        "pet-de-todos": {
+            "title": "Pet de Todos",
+            "shortDescription": "Pet health plan by Grupo Cartão de Todos with consultations, exams, surgeries, vaccines, and 24h tele-orientation for dogs and cats with national coverage.",
+            "longDescription": "# Pet de Todos\n\nDigital platform developed for the most accessible pet health plan in Brazil, part of the Grupo Cartão de Todos ecosystem.\n\n## Challenge\nCreate a fluid digital experience for managing pet health plans, including hiring journey, veterinary telemedicine, and reimbursement management.\n\n## Solution\nModern and converting landing page integrated with the hiring system, clear presentation of coverages, and quick access to services.",
+            "responsibilities": [
+                "Institutional landing page development",
+                "Conversion and UX optimization",
+                "Integration with hiring system",
+                "Responsive and accessible design"
+            ],
+            "results": [
+                "Plans starting at R$ 19.90/mo with national coverage",
+                "24h Veterinary Telemedicine available",
+                "Clear interface with no hidden fees"
+            ]
+        },
+        "leadsim": {
+            "title": "LeadSim",
+            "shortDescription": "SaaS CRM and lead management platform centralizing clients, proposals, contracts, finance, and marketing automation in one place.",
+            "longDescription": "# LeadSim\n\nComplete lead management and CRM system developed to simplify and centralize all commercial operations for companies and franchises.\n\n## Challenge\nCompanies face the chaos of multiple spreadsheets and disconnected systems to manage CRM, finance, and automation, resulting in lost leads and low productivity.\n\n## Solution\nIntegrated platform that unifies:\n- Lead control and qualification\n- Contract and proposal generation\n- Financial management\n- Marketing automation and follow-ups\n- Centralized registrations and opportunities",
+            "responsibilities": [
+                "SaaS platform full-stack architecture",
+                "Lead and CRM system development",
+                "Automation and integration implementation",
+                "Analytics dashboard and reports"
+            ],
+            "results": [
+                "Complete centralization of commercial operations",
+                "Elimination of multiple spreadsheets and systems",
+                "Intelligent lead nurturing automation"
+            ]
+        },
+        "rfcc-colab": {
+            "title": "RFCC-COLAB",
+            "shortDescription": "Volunteer platform for the Female Network Fighting Cancer focused on increasing donations, e-commerce, and recurring subscriptions.",
+            "longDescription": "# RFCC-COLAB\n\nPlatform developed voluntarily for the Female Network Fighting Cancer aiming to increase fundraising and expand the institution's reach.\n\n## Challenge\nThe institution faced difficulties managing donations and maintaining a constant flow of fundraising to sustain its support projects for cancer patients.\n\n## Solution\nDevelopment of an integrated platform with three main pillars:\n- Online donation system with multiple payment methods\n- E-commerce for selling institutional products\n- Recurring subscription program for monthly donors",
+            "responsibilities": [
+                "Full-stack platform development",
+                "Recurring payments system implementation",
+                "Payment gateway integration",
+                "E-commerce and inventory management creation"
+            ],
+            "results": [
+                "Increased monthly collection via recurring subscriptions",
+                "Significant growth in donor base with new payment methods",
+                "New revenue source with digital commerce within the platform"
+            ]
+        },
+        "colab-ufpb": {
+            "title": "Núcleo Colab UFPB",
+            "shortDescription": "Institutional platform for UFPB's Innovation and Entrepreneurship Core, connecting startups to the university incubation ecosystem.",
+            "longDescription": "# Núcleo Colab UFPB\n\nInstitutional portal developed for the Innovation and Entrepreneurship Core of the Federal University of Paraíba, connecting startups, researchers, and the market.\n\n## Challenge\nThe core needed a professional digital presence to promote its incubation programs, attract new entrepreneurs, and connect the academic community to the innovation ecosystem.\n\n## Solution\nDevelopment of a modern platform presenting:\n- Incubation and pre-incubation programs\n- Portfolio of incubated startups\n- Information on mentorship and available resources\n- Registration forms for new projects",
+            "responsibilities": [
+                "Development project leadership",
+                "Institutional site development",
+                "Modern and responsive interface design",
+                "Registration forms implementation",
+                "Core systems integration"
+            ],
+            "results": [
+                "Professional digital presence for the core",
+                "Greater visibility for the incubation program",
+                "Easy application for new entrepreneurs"
+            ]
+        },
+        "paulo-maia-advocacia": {
+            "title": "Paulo Maia Advocacia",
+            "shortDescription": "Institutional website for a law firm specializing in Labor Law with over 30 years of experience.",
+            "longDescription": "# Paulo Maia Advocacia\n\nInstitutional website developed for a law firm specializing in Labor Law, professionally presenting services offered to both workers and companies.\n\n## Challenge\nThe firm needed a digital presence that conveyed credibility, excellence, and ethics, aligned with over 30 years of experience in labor law.\n\n## Solution\nElegant and professional website highlighting:\n- Specialized practice areas\n- Lawyer's experience and credentials\n- Contact form for consultations\n- Sober and professional design suitable for the legal sector",
+            "responsibilities": [
+                "Institutional site development",
+                "Elegant and professional design",
+                "SEO optimization for lawyers",
+                "Lead capture form"
+            ],
+            "results": [
+                "Established professional digital presence",
+                "Greater online visibility for client acquisition",
+                "Design that conveys trust and credibility"
+            ]
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Caio Rafael de Oliveira - Full Stack Developer",
+            "description": "Full Stack Developer | React, Node.js, TypeScript and the best of modern web engineering. Creating digital products focused on solid engineering, performance, and user experience."
+        },
+        "about": {
+            "title": "About - Caio Rafael de Oliveira",
+            "description": "Learn more about my journey, experiences, and passion for development."
+        },
+        "projects": {
+            "title": "Projects - Caio Rafael de Oliveira",
+            "description": "Explore my projects and works developed with the most modern technologies."
+        }
+    },
+    "projectCard": {
+        "learnings": "What I learned:",
+        "technologies": "Technologies:",
+        "viewDetails": "View Details",
+        "more": "more"
+    },
+    "footer": {
+        "tagline": "Transforming ideas into elegant digital solutions",
+        "location": "Jardim Cidade Universitária, João Pessoa, Paraíba, 58052-190"
+    },
+    "site": {
+        "title": "Full Stack Developer",
+        "tagline": "Transforming ideas into elegant digital solutions",
+        "description": "Full Stack Developer | React, Node.js, TypeScript and the best of modern web engineering. Creating digital products focused on solid engineering, performance, and user experience."
+    },
+    "contact": {
+        "title": "Let's Work Together",
+        "description": "I am open to new projects and opportunities. Get in touch!",
+        "email": "Email",
+        "location": "Location",
+        "location_value": "João Pessoa, Paraíba<br />Brazil",
+        "socials": "Social Networks",
+        "quick_links": "Quick Links",
+        "rights": "All rights reserved."
+    },
+    "ui": {
+        "carousel": {
+            "previous": "Previous slide",
+            "next": "Next slide"
+        },
+        "pagination": {
+            "previous": "Previous",
+            "next": "Next",
+            "more": "More pages"
+        }
+    },
+    "aria": {
+        "prev_image": "Previous image",
+        "next_image": "Next image",
+        "go_to_image": "Go to image {{number}}",
+        "view_code_github": "View code on GitHub",
+        "project_image": " - Image {{number}}",
+        "photo": "Photo {{number}}"
+    },
+    "tags": {
+        "HealthTech": "HealthTech",
+        "Pet": "Pet",
+        "Assinatura": "Subscription",
+        "Conversão": "Conversion",
+        "SaaS": "SaaS",
+        "CRM": "CRM",
+        "Automação": "Automation",
+        "Gestão": "Management",
+        "Voluntariado": "Volunteering",
+        "E-commerce": "E-commerce",
+        "Doações": "Donations",
+        "Impacto Social": "Social Impact",
+        "Institucional": "Institutional",
+        "Educação": "Education",
+        "Inovação": "Innovation",
+        "Startups": "Startups",
+        "Advocacia": "Advocacy",
+        "Direito Trabalhista": "Labor Law",
+        "Landing Page": "Landing Page"
+    },
+    "stack": {
+        "React": "React",
+        "Node.js": "Node.js",
+        "TypeScript": "TypeScript",
+        "Prisma": "Prisma",
+        "PostgreSQL": "PostgreSQL",
+        "Scrum": "Scrum",
+        "Kanban": "Kanban",
+        "Azure": "Azure",
+        "SQL/PostgreSQL": "SQL/PostgreSQL",
+        "Git Flow": "Git Flow",
+        "Metodologias Ágeis": "Agile Methodologies",
+        "MongoDB": "MongoDB",
+        "Mercado Pago": "Mercado Pago",
+        "Render": "Render",
+        "AWS": "AWS",
+        "CI/CD": "CI/CD",
+        "Deploy em Produção": "Production Deployment",
+        "Integrações de Pagamento": "Payment Integrations",
+        "NestJS": "NestJS",
+        "TailwindCSS": "TailwindCSS",
+        "SEO": "SEO",
+        "UX/UI Design": "UX/UI Design",
+        "Clean Architecture": "Clean Architecture",
+        "MongoDB (NoSQL)": "MongoDB (NoSQL)",
+        "DevOps": "DevOps",
+        "Liderança de Projeto": "Project Leadership",
+        "Empreendedorismo": "Entrepreneurship",
+        "Comunicação": "Communication",
+        "Gestão de Equipe": "Team Management",
+        "SQL": "SQL"
+    },
+    "common": {
+        "present": "Present"
+    }
+}

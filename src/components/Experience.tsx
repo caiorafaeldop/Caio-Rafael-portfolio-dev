@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { experiences } from "@/data/experience";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useTranslation } from "react-i18next";
 
 const Experience = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-20 md:py-28" id="experiencia">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,10 +18,10 @@ const Experience = () => {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
-              Experiência Profissional 
+              {t('experience.title')}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Minha jornada
+              {t('experience.subtitle')}
             </p>
           </motion.div>
 
@@ -61,19 +63,20 @@ const Experience = () => {
                     shadow-sm hover:shadow-lg hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all
                   `}>
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold text-foreground text-lg">{exp.role}</h3>
+                      <h3 className="font-bold text-foreground text-lg">{t(`experience.${exp.id}.role`)}</h3>
                       {isCurrentJob && (
                         <span className="text-xs font-mono text-purple-500 px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
-                          Atual
+                          {t('experience.current_badge')}
                         </span>
                       )}
                     </div>
-                    <p className="text-purple-500 font-semibold text-sm mb-1">{exp.company}</p>
+                    <p className="text-purple-500 font-semibold text-sm mb-1">{t(`experience.${exp.id}.company`)}</p>
                     <time className="block mb-4 text-xs font-medium uppercase text-muted-foreground">
-                      {exp.period}
+                      {t(`experience.${exp.id}.period`)}
                     </time>
                     <ul className="space-y-2 mb-4">
-                      {exp.description.map((item, i) => (
+                      {/* @ts-ignore */}
+                      {(t(`experience.${exp.id}.description`, { returnObjects: true }) as string[]).map((item, i) => (
                         <li 
                           key={i} 
                           className={`

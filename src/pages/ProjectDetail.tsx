@@ -26,8 +26,10 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 const ProjectDetail = () => {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const project = projects.find((p) => p.slug === slug);
@@ -44,11 +46,11 @@ const ProjectDetail = () => {
         <Navbar />
         <main className="min-h-screen pt-32 pb-24">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Projeto não encontrado</h1>
+            <h1 className="text-4xl font-bold mb-4">{t('projects.detail.not_found')}</h1>
             <Button asChild>
               <Link to="/projects">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Voltar para Projetos
+                {t('projects.detail.back_to_projects')}
               </Link>
             </Button>
           </div>
@@ -66,19 +68,19 @@ const ProjectDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{`${project.title} - ${siteConfig.name}`}</title>
-        <meta name="description" content={project.shortDescription} />
+        <title>{`${t(`projects.${project.slug}.title`)} - ${siteConfig.name}`}</title>
+        <meta name="description" content={t(`projects.${project.slug}.shortDescription`)} />
         <meta
           property="og:title"
-          content={`${project.title} - ${siteConfig.name}`}
+          content={`${t(`projects.${project.slug}.title`)} - ${siteConfig.name}`}
         />
-        <meta property="og:description" content={project.shortDescription} />
+        <meta property="og:description" content={t(`projects.${project.slug}.shortDescription`)} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
-            name: project.title,
-            description: project.shortDescription,
+            name: t(`projects.${project.slug}.title`),
+            description: t(`projects.${project.slug}.shortDescription`),
             datePublished: `${project.year}-01-01`,
             author: {
               "@type": "Person",
@@ -104,7 +106,7 @@ const ProjectDetail = () => {
                 className="mb-4"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Voltar
+                {t('projects.detail.back')}
               </Button>
             </motion.div>
 
@@ -115,13 +117,13 @@ const ProjectDetail = () => {
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
-                    <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+                    <h1 className="text-4xl font-bold mb-4">{t(`projects.${project.slug}.title`)}</h1>
                     <div className="flex items-center gap-2 text-muted-foreground mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>{project.year}</span>
+                      <span>{project.year.replace('Presente', t('common.present'))}</span>
                     </div>
                     <p className="text-lg text-muted-foreground mb-6">
-                      {project.shortDescription}
+                      {t(`projects.${project.slug}.shortDescription`)}
                     </p>
                   </div>
                 </div>
@@ -132,7 +134,7 @@ const ProjectDetail = () => {
                       key={tag}
                       className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full"
                     >
-                      {tag}
+                      {t(`tags.${tag}`, tag)}
                     </span>
                   ))}
                 </div>
@@ -140,7 +142,7 @@ const ProjectDetail = () => {
                 {project.gallery && project.gallery.length > 0 && (
                   <div className="mb-8">
                     <h2 className="text-xl font-bold mb-4">
-                      Galeria do Projeto
+                      {t('projects.detail.gallery')}
                     </h2>
                     <Carousel
                       className="w-full"
@@ -159,7 +161,7 @@ const ProjectDetail = () => {
                               <div className="overflow-hidden rounded-xl border border-glass-border/20 shadow-lg">
                                 <img
                                   src={image}
-                                  alt={`${project.title} - Imagem ${index + 1}`}
+                                  alt={`${project.title} - ${t('aria.project_image', { number: index + 1 })}`}
                                   className="w-full h-auto object-cover aspect-video hover:scale-105 transition-transform duration-300"
                                 />
                               </div>
@@ -197,52 +199,46 @@ const ProjectDetail = () => {
                   </div>
                 )}
 
-                {project.longDescription && (
-                  <div className="prose prose-invert max-w-none mb-8">
-                    <ReactMarkdown>{project.longDescription}</ReactMarkdown>
-                  </div>
-                )}
+                <div className="prose prose-invert max-w-none mb-8">
+                  <ReactMarkdown>{t(`projects.${project.slug}.longDescription`)}</ReactMarkdown>
+                </div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  {project.responsibilities && (
-                    <div>
-                      <h2 className="text-xl font-bold mb-4">
-                        Responsabilidades
-                      </h2>
-                      <ul className="space-y-2">
-                        {project.responsibilities.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1.5">•</span>
-                            <span className="text-muted-foreground">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <div>
+                    <h2 className="text-xl font-bold mb-4">
+                      {t('projects.detail.responsibilities')}
+                    </h2>
+                    <ul className="space-y-2">
+                      {(t(`projects.${project.slug}.responsibilities`, { returnObjects: true }) as string[]).map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span className="text-muted-foreground">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                  {project.results && (
-                    <div>
-                      <h2 className="text-xl font-bold mb-4">Resultados</h2>
-                      <ul className="space-y-2">
-                        {project.results.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1.5">•</span>
-                            <span className="text-muted-foreground">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <div>
+                    <h2 className="text-xl font-bold mb-4">{t('projects.detail.results')}</h2>
+                    <ul className="space-y-2">
+                      {(t(`projects.${project.slug}.results`, { returnObjects: true }) as string[]).map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span className="text-muted-foreground">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Competências Desenvolvidas */}
                 {project.learnings && project.learnings.length > 0 && (
                   <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4">Competências Desenvolvidas</h2>
+                    <h2 className="text-xl font-bold mb-4">{t('projects.detail.competencies')}</h2>
                     <div className="grid md:grid-cols-3 gap-4">
                       {/* Hard Skills */}
                       {project.learnings.filter(l => l.category === 'hard').length > 0 && (
@@ -258,7 +254,7 @@ const ProjectDetail = () => {
                                   key={learning.skill}
                                   className="px-2 py-1 text-xs bg-cyan-500/10 text-cyan-300 rounded-md border border-cyan-500/20"
                                 >
-                                  {learning.skill}
+                                  {t(`stack.${learning.skill}`, learning.skill)}
                                 </span>
                               ))}
                           </div>
@@ -279,7 +275,7 @@ const ProjectDetail = () => {
                                   key={learning.skill}
                                   className="px-2 py-1 text-xs bg-purple-500/10 text-purple-300 rounded-md border border-purple-500/20"
                                 >
-                                  {learning.skill}
+                                  {t(`stack.${learning.skill}`, learning.skill)}
                                 </span>
                               ))}
                           </div>
@@ -300,7 +296,7 @@ const ProjectDetail = () => {
                                   key={learning.skill}
                                   className="px-2 py-1 text-xs bg-emerald-500/10 text-emerald-300 rounded-md border border-emerald-500/20"
                                 >
-                                  {learning.skill}
+                                  {t(`stack.${learning.skill}`, learning.skill)}
                                 </span>
                               ))}
                           </div>
@@ -311,14 +307,14 @@ const ProjectDetail = () => {
                 )}
 
                 <div className="mb-8">
-                  <h2 className="text-xl font-bold mb-4">Stack Tecnológico</h2>
+                  <h2 className="text-xl font-bold mb-4">{t('projects.detail.tech_stack')}</h2>
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-muted/50 text-muted-foreground rounded-lg"
                       >
-                        {tech}
+                        {t(`stack.${tech}`, tech)}
                       </span>
                     ))}
                   </div>
@@ -334,7 +330,7 @@ const ProjectDetail = () => {
                           rel="noopener noreferrer"
                         >
                           <Github className="mr-2 h-4 w-4" />
-                          Ver Código
+                          {t('projects.detail.view_code')}
                         </a>
                       </Button>
                     )}
@@ -346,7 +342,7 @@ const ProjectDetail = () => {
                           rel="noopener noreferrer"
                         >
                           <ExternalLink className="mr-2 h-4 w-4" />
-                          Ver Demo
+                          {t('projects.detail.view_demo')}
                         </a>
                       </Button>
                     )}
@@ -368,10 +364,10 @@ const ProjectDetail = () => {
                   <div className="flex items-center gap-3 mb-2">
                     <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
                     <span className="text-sm text-muted-foreground">
-                      Projeto Anterior
+                      {t('projects.detail.prev_project')}
                     </span>
                   </div>
-                  <h3 className="font-semibold">{prevProject.title}</h3>
+                  <h3 className="font-semibold">{t(`projects.${prevProject.slug}.title`)}</h3>
                 </Link>
               ) : (
                 <div />
@@ -384,11 +380,11 @@ const ProjectDetail = () => {
                 >
                   <div className="flex items-center justify-end gap-3 mb-2">
                     <span className="text-sm text-muted-foreground">
-                      Próximo Projeto
+                      {t('projects.detail.next_project')}
                     </span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-                  <h3 className="font-semibold">{nextProject.title}</h3>
+                  <h3 className="font-semibold">{t(`projects.${nextProject.slug}.title`)}</h3>
                 </Link>
               )}
             </motion.div>

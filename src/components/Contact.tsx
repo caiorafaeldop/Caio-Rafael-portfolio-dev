@@ -3,8 +3,10 @@ import { Mail, MapPin, Github, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/site";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useTranslation, Trans } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <section className="pt-20 pb-10" id="contato">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,10 +19,10 @@ const Contact = () => {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
-              Vamos Trabalhar Juntos
+              {t('contact.title')}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Estou aberto a novos projetos e oportunidades. Entre em contato!
+              {t('contact.description')}
             </p>
           </motion.div>
 
@@ -38,7 +40,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-1">
-                      Email
+                      {t('contact.email')}
                     </h4>
                     <a
                       href={`mailto:${siteConfig.email}`}
@@ -55,10 +57,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-1">
-                      Localização
+                      {t('contact.location')}
                     </h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      João Pessoa, Paraíba<br />Brasil
+                      <Trans i18nKey="contact.location_value" />
                     </p>
                   </div>
                 </div>
@@ -67,7 +69,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="space-y-4">
                 <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                  Redes Sociais
+                  {t('contact.socials')}
                 </h4>
                 <a
                   href={siteConfig.socials.github}
@@ -100,19 +102,19 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-purple-500 font-bold text-lg mb-2">{siteConfig.name}</h3>
-              <p className="text-muted-foreground">{siteConfig.tagline}</p>
+              <p className="text-muted-foreground">{t('footer.tagline')}</p>
             </div>
             <div>
-              <h4 className="font-bold text-foreground mb-3">Links Rápidos</h4>
+              <h4 className="font-bold text-foreground mb-3">{t('contact.quick_links')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/" className="hover:text-purple-500 transition-colors">Home</Link></li>
-                <li><Link to="/projects" className="hover:text-purple-500 transition-colors">Projetos</Link></li>
-                <li><Link to="/about" className="hover:text-purple-500 transition-colors">Sobre</Link></li>
+                <li><Link to="/" className="hover:text-purple-500 transition-colors">{t('navbar.home')}</Link></li>
+                <li><Link to="/projects" className="hover:text-purple-500 transition-colors">{t('navbar.projects')}</Link></li>
+                <li><Link to="/about" className="hover:text-purple-500 transition-colors">{t('navbar.about')}</Link></li>
               </ul>
             </div>
             <div>
               <p className="text-muted-foreground mt-8 md:mt-0 text-right md:text-left">
-                © 2025 {siteConfig.name}. Todos os direitos reservados.
+                © 2025 {siteConfig.name}. {t('contact.rights')}
               </p>
             </div>
           </motion.div>

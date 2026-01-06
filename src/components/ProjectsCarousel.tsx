@@ -9,8 +9,11 @@ import {
 import { projects } from "@/data/projects";
 import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ProjectsCarousel = () => {
+  const { t } = useTranslation();
+
   // Coleta todas as imagens dos projetos (cover + gallery)
   const projectImages = projects
     .filter((project) => project.featured)
@@ -44,7 +47,7 @@ const ProjectsCarousel = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Galeria de Projetos
+            {t('projects.gallery', 'Galeria de Projetos')}
           </h2>
         </div>
 
@@ -72,15 +75,15 @@ const ProjectsCarousel = () => {
                     <div className="relative aspect-video overflow-hidden">
                       <img
                         src={image.src}
-                        alt={image.title}
+                        alt={t(`projects.${image.slug}.title`)}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <h3 className="text-white font-bold text-lg mb-1">
-                          {image.title}
+                          {t(`projects.${image.slug}.title`)}
                         </h3>
                         <p className="text-white/90 text-sm line-clamp-2">
-                          {image.description}
+                          {t(`projects.${image.slug}.shortDescription`)}
                         </p>
                       </div>
                     </div>

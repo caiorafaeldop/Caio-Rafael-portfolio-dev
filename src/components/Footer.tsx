@@ -1,8 +1,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/site";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,7 +15,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 bg-gradient-accent bg-clip-text text-transparent">
               {siteConfig.name}
             </h3>
-            <p className="text-muted-foreground mb-4">{siteConfig.tagline}</p>
+            <p className="text-muted-foreground mb-4">{t('footer.tagline')}</p>
             <div className="flex items-center gap-3">
               <a
                 href={siteConfig.socials.github}
@@ -44,14 +46,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Links Rápidos</h4>
+            <h4 className="font-semibold mb-4">{t('contact.quick_links')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Home
+                  {t('navbar.home')}
                 </Link>
               </li>
               <li>
@@ -59,7 +61,7 @@ const Footer = () => {
                   to="/projects"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Projetos
+                  {t('navbar.projects')}
                 </Link>
               </li>
               <li>
@@ -67,7 +69,7 @@ const Footer = () => {
                   to="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Sobre
+                  {t('navbar.about')}
                 </Link>
               </li>
               <li>
@@ -75,16 +77,16 @@ const Footer = () => {
                   href="#contact"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Contato
+                  {t('navbar.contact')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Contato</h4>
+            <h4 className="font-semibold mb-4">{t('navbar.contact')}</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>{siteConfig.location}</li>
+              <li>{t('footer.location')}</li>
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
@@ -99,7 +101,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-glass-border/10 text-center text-muted-foreground text-sm">
           <p>
-            © {currentYear} {siteConfig.name}. Todos os direitos reservados.
+            © {currentYear} {siteConfig.name}. {t('contact.rights')}
           </p>
         </div>
       </div>

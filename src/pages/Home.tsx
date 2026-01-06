@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import { siteConfig } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -11,23 +12,24 @@ import BackToTop from "@/components/BackToTop";
 import ParticlesBackground from "@/components/Background/Particles";
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>{`${siteConfig.name} - ${siteConfig.title}`}</title>
-        <meta name="description" content={siteConfig.description} />
+        <title>{t('seo.home.title')}</title>
+        <meta name="description" content={t('seo.home.description')} />
         <meta
           property="og:title"
-          content={`${siteConfig.name} - ${siteConfig.title}`}
+          content={t('seo.home.title')}
         />
-        <meta property="og:description" content={siteConfig.description} />
+        <meta property="og:description" content={t('seo.home.description')} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`${siteConfig.name} - ${siteConfig.title}`}
+          content={t('seo.home.title')}
         />
-        <meta name="twitter:description" content={siteConfig.description} />
+        <meta name="twitter:description" content={t('seo.home.description')} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

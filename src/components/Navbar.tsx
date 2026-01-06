@@ -3,17 +3,20 @@ import { motion } from "framer-motion";
 import { Menu, X, Code } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Projetos", path: "/projects" },
-    { name: "Sobre", path: "/about" },
-    { name: "Contato", path: "/#contato" },
+    { name: t('navbar.home'), path: "/" },
+    { name: t('navbar.projects'), path: "/projects" },
+    { name: t('navbar.about'), path: "/about" },
+    { name: t('navbar.contact'), path: "/#contato" },
   ];
 
   const isActive = (path: string) => {
@@ -54,10 +57,12 @@ const Navbar = () => {
               </Link>
             ))}
             <ThemeToggle />
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
             <ThemeToggle />
             <Button
               variant="ghost"
