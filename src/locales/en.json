@@ -340,7 +340,9 @@
         "Empreendedorismo": "Entrepreneurship",
         "Comunicação": "Communication",
         "Gestão de Equipe": "Team Management",
-        "SQL": "SQL"
+        "SQL": "SQL",
+        "Spring Boot": "Spring Boot",
+        "Liquibase": "Liquibase"
     },
     "common": {
         "present": "Present"

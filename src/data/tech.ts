@@ -10,7 +10,7 @@ export const techStack: TechCategory[] = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Prisma", "PostgreSQL", "MongoDB", "REST APIs"],
+    items: ["Node.js", "Prisma", "PostgreSQL", "MongoDB", "REST APIs", "Spring Boot", "Liquibase"],
   },
   {
     category: "Outras Habilidades",
