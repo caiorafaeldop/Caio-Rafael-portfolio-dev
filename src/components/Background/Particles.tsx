@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
-import { loadLinksPreset } from "tsparticles-preset-links";
+import { loadBasic } from "tsparticles-basic";
+import { loadParticlesLinksInteraction } from "tsparticles-interaction-particles-links";
 import { prefersReducedMotion } from "@/lib/animations";
 
 const ParticlesBackground = () => {
@@ -12,7 +13,8 @@ const ParticlesBackground = () => {
   }, []);
 
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadLinksPreset(engine);
+    await loadBasic(engine, false);
+    await loadParticlesLinksInteraction(engine);
   }, []);
 
   if (!shouldAnimate) {
@@ -24,7 +26,6 @@ const ParticlesBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        preset: "links",
         background: {
           color: {
             value: "transparent",
@@ -65,22 +66,6 @@ const ParticlesBackground = () => {
           },
           size: {
             value: { min: 1, max: 2 },
-          },
-        },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "grab",
-            },
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              links: {
-                opacity: 0.4,
-              },
-            },
           },
         },
         detectRetina: true,
