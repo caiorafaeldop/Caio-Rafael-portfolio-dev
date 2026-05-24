@@ -9,6 +9,19 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "exp-indra",
+    company: "Indra Minsait",
+    role: "Analista de Software",
+    period: "Março de 2026 - Presente",
+    description: [
+      "Manutenção, evolução e desenvolvimento de funcionalidades para sistemas judiciais e governamentais do Tribunal de Justiça da Paraíba",
+      "Modernização de aplicações Java legadas e desenvolvimento de novas features com Java e Angular",
+      "Integração com serviços internos e externos, APIs REST e bancos de dados relacionais",
+      "Atuação com SQL, Git, Scrum, TDD, debugging, code reviews e fluxos colaborativos em sistemas institucionais de grande escala",
+    ],
+    technologies: ["Java", "Angular", "REST APIs", "SQL", "Git", "Scrum", "TDD"],
+  },
+  {
     id: "exp-1",
     company: "LAKS",
     role: "Desenvolvedor Full Stack",

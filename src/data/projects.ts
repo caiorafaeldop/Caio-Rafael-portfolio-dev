@@ -30,6 +30,55 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "indra-minsait",
+    title: "Indra Minsait",
+    year: "2026 - Presente",
+    shortDescription:
+      "Atuação como Analista de Software em sistemas judiciais e governamentais para o Tribunal de Justiça da Paraíba.",
+    longDescription: `# Indra Minsait
+
+Atuação como Analista de Software em projetos de sistemas judiciais e governamentais vinculados ao Tribunal de Justiça da Paraíba, uma instituição do Poder Judiciário estadual brasileiro.
+
+## Desafio
+Manter, modernizar e evoluir aplicações institucionais de grande escala, incluindo sistemas legados em Java, integrações entre serviços e fluxos internos críticos para operação pública.
+
+## Solução
+Desenvolvimento e manutenção de funcionalidades com Java e Angular, integração com serviços internos e externos, melhoria de confiabilidade e colaboração em rotinas de engenharia como code review, debugging, TDD e metodologias ágeis.`,
+    tags: ["Institucional", "Governo", "Justiça", "Sistemas Legados"],
+    stack: ["Java", "Angular", "REST APIs", "SQL", "Git", "Scrum", "TDD"],
+    learnings: [
+      { skill: "Java", category: "hard" },
+      { skill: "Angular", category: "hard" },
+      { skill: "REST APIs", category: "hard" },
+      { skill: "SQL", category: "hard" },
+      { skill: "Git", category: "hard" },
+      { skill: "Scrum", category: "methodology" },
+      { skill: "TDD", category: "methodology" },
+      { skill: "Code Review", category: "methodology" },
+    ],
+    responsibilities: [
+      "Manutenção e modernização de aplicações Java legadas",
+      "Desenvolvimento de novas funcionalidades com Java e Angular",
+      "Integração com serviços internos e externos",
+      "Apoio à confiabilidade dos sistemas e melhoria de fluxos internos",
+      "Participação em debugging, TDD, code reviews e rotinas ágeis",
+    ],
+    results: [
+      "Evolução contínua de sistemas institucionais de grande escala",
+      "Maior sustentação técnica para aplicações judiciais e governamentais",
+      "Colaboração em processos de engenharia voltados à qualidade e manutenção",
+    ],
+    cover: "/INDRA/1.jpg",
+    gallery: [
+      "/INDRA/2.webp",
+    ],
+    featured: true,
+    brandColor: {
+      light: "#dc2626",
+      dark: "#f87171"
+    },
+  },
+  {
     slug: "pet-de-todos",
     title: "Pet de Todos",
     year: "2024 - Presente",

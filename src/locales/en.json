@@ -54,6 +54,17 @@
         "title": "Professional Experience",
         "subtitle": "My journey",
         "current_badge": "Current",
+        "exp-indra": {
+            "role": "Software Analyst",
+            "company": "Indra Minsait",
+            "period": "March 2026 - Present",
+            "description": [
+                "Maintaining, enhancing, and developing features for judicial and government systems at the Court of Justice of Paraíba",
+                "Modernizing legacy Java applications and developing new features with Java and Angular",
+                "Integrating internal and external services, REST APIs, and relational databases",
+                "Working with SQL, Git, Scrum, TDD, debugging, code reviews, and collaborative workflows in large-scale institutional systems"
+            ]
+        },
         "exp-1": {
             "role": "Full Stack Developer",
             "company": "LAKS",
@@ -148,6 +159,23 @@
             "description": "Sorry, the page you are looking for does not exist or has been moved.",
             "backValue": "Back to Home",
             "viewProjects": "View Projects"
+        },
+        "indra-minsait": {
+            "title": "Indra Minsait",
+            "shortDescription": "Software Analyst work on judicial and government systems for the Court of Justice of Paraíba.",
+            "longDescription": "# Indra Minsait\n\nSoftware Analyst work on judicial and government systems connected to the Court of Justice of Paraíba, a Brazilian state court institution.\n\n## Challenge\nMaintain, modernize, and evolve large-scale institutional applications, including legacy Java systems, service integrations, and internal workflows that support public-sector operations.\n\n## Solution\nDevelopment and maintenance of features with Java and Angular, integration with internal and external services, reliability improvements, and collaboration through engineering routines such as code review, debugging, TDD, and agile methodologies.",
+            "responsibilities": [
+                "Maintenance and modernization of legacy Java applications",
+                "Development of new features with Java and Angular",
+                "Integration with internal and external services",
+                "Support for system reliability and internal workflow improvements",
+                "Participation in debugging, TDD, code reviews, and agile routines"
+            ],
+            "results": [
+                "Continuous evolution of large-scale institutional systems",
+                "Stronger technical support for judicial and government applications",
+                "Collaboration in engineering processes focused on quality and maintainability"
+            ]
         },
         "pet-de-todos": {
             "title": "Pet de Todos",
@@ -303,6 +331,9 @@
         "Doações": "Donations",
         "Impacto Social": "Social Impact",
         "Institucional": "Institutional",
+        "Governo": "Government",
+        "Justiça": "Justice",
+        "Sistemas Legados": "Legacy Systems",
         "Educação": "Education",
         "Inovação": "Innovation",
         "Startups": "Startups",
@@ -340,7 +371,13 @@
         "Empreendedorismo": "Entrepreneurship",
         "Comunicação": "Communication",
         "Gestão de Equipe": "Team Management",
-        "SQL": "SQL"
+        "SQL": "SQL",
+        "Java": "Java",
+        "Angular": "Angular",
+        "REST APIs": "REST APIs",
+        "Git": "Git",
+        "TDD": "TDD",
+        "Code Review": "Code Review"
     },
     "common": {
         "present": "Present"

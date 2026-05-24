@@ -54,6 +54,17 @@
         "title": "Experiência Profissional",
         "subtitle": "Minha jornada",
         "current_badge": "Atual",
+        "exp-indra": {
+            "role": "Analista de Software",
+            "company": "Indra Minsait",
+            "period": "Março de 2026 - Presente",
+            "description": [
+                "Manutenção, evolução e desenvolvimento de funcionalidades para sistemas judiciais e governamentais do Tribunal de Justiça da Paraíba",
+                "Modernização de aplicações Java legadas e desenvolvimento de novas features com Java e Angular",
+                "Integração com serviços internos e externos, APIs REST e bancos de dados relacionais",
+                "Atuação com SQL, Git, Scrum, TDD, debugging, code reviews e fluxos colaborativos em sistemas institucionais de grande escala"
+            ]
+        },
         "exp-1": {
             "role": "Desenvolvedor Full Stack",
             "company": "LAKS",
@@ -148,6 +159,23 @@
             "description": "Desculpe, a página que você está procurando não existe ou foi movida.",
             "backValue": "Voltar para Home",
             "viewProjects": "Ver Projetos"
+        },
+        "indra-minsait": {
+            "title": "Indra Minsait",
+            "shortDescription": "Atuação como Analista de Software em sistemas judiciais e governamentais para o Tribunal de Justiça da Paraíba.",
+            "longDescription": "# Indra Minsait\n\nAtuação como Analista de Software em projetos de sistemas judiciais e governamentais vinculados ao Tribunal de Justiça da Paraíba, uma instituição do Poder Judiciário estadual brasileiro.\n\n## Desafio\nManter, modernizar e evoluir aplicações institucionais de grande escala, incluindo sistemas legados em Java, integrações entre serviços e fluxos internos críticos para operação pública.\n\n## Solução\nDesenvolvimento e manutenção de funcionalidades com Java e Angular, integração com serviços internos e externos, melhoria de confiabilidade e colaboração em rotinas de engenharia como code review, debugging, TDD e metodologias ágeis.",
+            "responsibilities": [
+                "Manutenção e modernização de aplicações Java legadas",
+                "Desenvolvimento de novas funcionalidades com Java e Angular",
+                "Integração com serviços internos e externos",
+                "Apoio à confiabilidade dos sistemas e melhoria de fluxos internos",
+                "Participação em debugging, TDD, code reviews e rotinas ágeis"
+            ],
+            "results": [
+                "Evolução contínua de sistemas institucionais de grande escala",
+                "Maior sustentação técnica para aplicações judiciais e governamentais",
+                "Colaboração em processos de engenharia voltados à qualidade e manutenção"
+            ]
         },
         "pet-de-todos": {
             "title": "Pet de Todos",
@@ -292,6 +320,9 @@
         "Doações": "Doações",
         "Impacto Social": "Impacto Social",
         "Institucional": "Institucional",
+        "Governo": "Governo",
+        "Justiça": "Justiça",
+        "Sistemas Legados": "Sistemas Legados",
         "Educação": "Educação",
         "Inovação": "Inovação",
         "Startups": "Startups",
@@ -329,7 +360,13 @@
         "Empreendedorismo": "Empreendedorismo",
         "Comunicação": "Comunicação",
         "Gestão de Equipe": "Gestão de Equipe",
-        "SQL": "SQL"
+        "SQL": "SQL",
+        "Java": "Java",
+        "Angular": "Angular",
+        "REST APIs": "APIs REST",
+        "Git": "Git",
+        "TDD": "TDD",
+        "Code Review": "Code Review"
     },
     "common": {
         "present": "Presente"
