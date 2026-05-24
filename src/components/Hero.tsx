@@ -24,7 +24,7 @@ import { useTheme } from "@/hooks/use-theme";
 const stackItems = ["Java", "Angular", "React", "Node.js"];
 
 const calendarTheme = {
-  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+  dark: ["#0d242c", "#0e5d6d", "#008b9b", "#00b8cc", "#00f0ff"],
   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
 };
 
