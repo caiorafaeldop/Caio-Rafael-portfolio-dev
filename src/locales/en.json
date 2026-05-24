@@ -7,11 +7,43 @@
     },
     "hero": {
         "greeting": "Hi, I am",
+        "eyebrow": "Software Analyst @ Indra Minsait",
+        "availability": "Open to Full-Stack opportunities",
+        "headline": "Full-Stack Developer Java, Angular, React, and Node.js",
         "role": "Full-Stack Engineer",
-        "description": "Specialist in building modern, fast, and secure applications.",
+        "description": "I build and maintain institutional systems by combining Java backends, Angular/React frontends, REST APIs, SQL.",
         "viewProjects": "View Projects",
         "aboutMe": "More about me",
         "downloadCv": "Download CV",
+        "proof": {
+            "current": {
+                "label": "Current",
+                "value": "Indra Minsait"
+            },
+            "systems": {
+                "label": "Focus",
+                "value": "Web & APIs"
+            },
+            "workflow": {
+                "label": "Workflow",
+                "value": "Git and Scrum"
+            }
+        },
+        "terminal": {
+            "file": "github.activity",
+            "status": "profile ready",
+            "role": "Full-Stack Developer",
+            "current": "Software Analyst @ Indra Minsait",
+            "focus": "Enterprise systems, REST APIs and reliability",
+            "location": "João Pessoa, Brazil",
+            "commits": "Commits",
+            "repos": "Repositories",
+            "contributions": "Education"
+        },
+        "profileStrip": {
+            "kicker": "Behind the code",
+            "description": "I also bring experience in teaching, project leadership, and collaboration across academic and institutional environments."
+        },
         "cards": {
             "fullstack": "Full-Stack Engineer",
             "degree": "Computer Science Graduate",
@@ -110,7 +142,13 @@
             "Adaptabilidade": "Adaptability",
             "Trabalho em equipe": "Team Work",
             "Versionamento Git": "Git Versioning",
-            "Metodologias Ágeis": "Agile Methodologies"
+            "Metodologias Ágeis": "Agile Methodologies",
+            "TDD": "TDD",
+            "Scrum": "Scrum",
+            "Code Review": "Code Review",
+            "Debugging": "Debugging",
+            "Java": "Java",
+            "SQL": "SQL"
         }
     },
     "projects": {

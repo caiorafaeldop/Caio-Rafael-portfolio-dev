@@ -7,11 +7,43 @@
     },
     "hero": {
         "greeting": "Olá, eu sou",
+        "eyebrow": "Analista de Software @ Indra Minsait",
+        "availability": "Aberto a oportunidades Full-Stack",
+        "headline": "Full-Stack Developer Java, Angular, React e Node.js",
         "role": "Engenheiro Full-Stack",
-        "description": "Especialista na construção de aplicações modernas, rápidas e seguras.",
+        "description": "Atuo no desenvolvimento e manutenção de sistemas institucionais, combinando backend Java, frontend Angular/React, APIs REST, SQL.",
         "viewProjects": "Ver Projetos",
         "aboutMe": "Mais sobre mim",
         "downloadCv": "Download CV",
+        "proof": {
+            "current": {
+                "label": "Atual",
+                "value": "Indra Minsait"
+            },
+            "systems": {
+                "label": "Foco",
+                "value": "Web & APIs"
+            },
+            "workflow": {
+                "label": "Rotina",
+                "value": "Git e Scrum"
+            }
+        },
+        "terminal": {
+            "file": "github.activity",
+            "status": "profile ready",
+            "role": "Full-Stack Developer",
+            "current": "Software Analyst @ Indra Minsait",
+            "focus": "Enterprise systems, REST APIs and reliability",
+            "location": "João Pessoa, Brasil",
+            "commits": "Commits",
+            "repos": "Repositórios",
+            "contributions": "Educação"
+        },
+        "profileStrip": {
+            "kicker": "Por trás do código",
+            "description": "Também trago experiência com ensino, liderança de projetos e colaboração em ambientes acadêmicos e institucionais."
+        },
         "cards": {
             "fullstack": "Full-Stack Engineer",
             "degree": "Graduado em Ciência da Computação",
@@ -110,7 +142,13 @@
             "Adaptabilidade": "Adaptabilidade",
             "Trabalho em equipe": "Trabalho em equipe",
             "Versionamento Git": "Versionamento Git",
-            "Metodologias Ágeis": "Metodologias Ágeis"
+            "Metodologias Ágeis": "Metodologias Ágeis",
+            "TDD": "TDD",
+            "Scrum": "Scrum",
+            "Code Review": "Revisão de Código",
+            "Debugging": "Debugging",
+            "Java": "Java",
+            "SQL": "SQL"
         }
     },
     "projects": {
