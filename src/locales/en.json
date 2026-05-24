@@ -177,6 +177,22 @@
                 "Collaboration in engineering processes focused on quality and maintainability"
             ]
         },
+        "connecta-hub": {
+            "title": "Connecta Hub",
+            "shortDescription": "Gamified internal management platform for organizing projects, teams, and deliveries in the academic community of UFPB's Informatics Center.",
+            "longDescription": "# Connecta Hub\n\nConnecta Hub is a tool created to support the academic community of UFPB's Informatics Center in the internal management of university projects.\n\n## Challenge\nAcademic projects often involve many people, deadlines, demands, and responsibilities spread across conversations, spreadsheets, and loose documents. This makes it harder to track deliveries, see progress, and keep participants engaged.\n\n## Solution\nA centralized and gamified platform to organize projects, track activities, clarify internal workflows, and turn member participation into a more visual, collaborative, and motivating experience.",
+            "responsibilities": [
+                "Development of the internal management platform",
+                "Creation of workflows for tracking academic projects",
+                "Application of gamification elements to engage the community",
+                "Responsive interface built around university routines"
+            ],
+            "results": [
+                "Centralized project control in a single environment",
+                "Greater clarity around activities, responsibilities, and team progress",
+                "More engaging experience for members of the academic community"
+            ]
+        },
         "pet-de-todos": {
             "title": "Pet de Todos",
             "shortDescription": "Pet health plan by Grupo Cartão de Todos with consultations, exams, surgeries, vaccines, and 24h tele-orientation for dogs and cats with national coverage.",
@@ -326,6 +342,8 @@
         "CRM": "CRM",
         "Automação": "Automation",
         "Gestão": "Management",
+        "Gamificação": "Gamification",
+        "Universidade": "University",
         "Voluntariado": "Volunteering",
         "E-commerce": "E-commerce",
         "Doações": "Donations",
@@ -377,7 +395,9 @@
         "REST APIs": "REST APIs",
         "Git": "Git",
         "TDD": "TDD",
-        "Code Review": "Code Review"
+        "Code Review": "Code Review",
+        "Gamificação": "Gamification",
+        "Gestão de Projetos": "Project Management"
     },
     "common": {
         "present": "Present"

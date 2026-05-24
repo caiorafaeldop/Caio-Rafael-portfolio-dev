@@ -79,6 +79,60 @@ Desenvolvimento e manutenção de funcionalidades com Java e Angular, integraç�
     },
   },
   {
+    slug: "connecta-hub",
+    title: "Connecta Hub",
+    year: "2026",
+    shortDescription:
+      "Plataforma gamificada de gerenciamento interno para organizar projetos, equipes e entregas da comunidade acadêmica do Centro de Informática da UFPB.",
+    longDescription: `# Connecta Hub
+
+O Connecta Hub é uma ferramenta criada para apoiar a comunidade acadêmica do Centro de Informática da UFPB no gerenciamento interno de projetos universitários.
+
+## Desafio
+Projetos acadêmicos costumam envolver muitas pessoas, prazos, demandas e responsabilidades espalhadas em conversas, planilhas e documentos soltos. Isso dificulta o acompanhamento das entregas, a visibilidade do progresso e o engajamento dos participantes.
+
+## Solução
+Uma plataforma centralizada e gamificada para organizar projetos, acompanhar atividades, dar mais clareza aos fluxos internos e transformar a participação dos membros em uma experiência mais visual, colaborativa e motivadora.`,
+    tags: ["Educação", "Gestão", "Gamificação", "Universidade"],
+    stack: ["React", "TypeScript", "TailwindCSS", "UX/UI Design", "Gamificação"],
+    learnings: [
+      { skill: "React", category: "hard" },
+      { skill: "TypeScript", category: "hard" },
+      { skill: "TailwindCSS", category: "hard" },
+      { skill: "UX/UI Design", category: "hard" },
+      { skill: "Gamificação", category: "methodology" },
+      { skill: "Gestão de Projetos", category: "methodology" },
+    ],
+    responsibilities: [
+      "Desenvolvimento da plataforma de gerenciamento interno",
+      "Criação de fluxos para acompanhamento de projetos acadêmicos",
+      "Aplicação de elementos de gamificação para engajamento da comunidade",
+      "Construção de interface responsiva e voltada à rotina universitária",
+    ],
+    results: [
+      "Centralização do controle de projetos em um ambiente único",
+      "Maior clareza sobre atividades, responsabilidades e progresso das equipes",
+      "Experiência mais engajante para membros da comunidade acadêmica",
+    ],
+    links: {
+      live: "https://connectahub.dev.br/",
+    },
+    cover: "/CONNECTA/1.png",
+    gallery: [
+      "/CONNECTA/2.png",
+      "/CONNECTA/3.png",
+      "/CONNECTA/4.png",
+      "/CONNECTA/5.png",
+      "/CONNECTA/6.png",
+      "/CONNECTA/7.png",
+    ],
+    featured: true,
+    brandColor: {
+      light: "#7c3aed",
+      dark: "#a78bfa"
+    },
+  },
+  {
     slug: "pet-de-todos",
     title: "Pet de Todos",
     year: "2024 - Presente",

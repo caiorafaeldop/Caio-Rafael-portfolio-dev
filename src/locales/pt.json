@@ -177,6 +177,22 @@
                 "Colaboração em processos de engenharia voltados à qualidade e manutenção"
             ]
         },
+        "connecta-hub": {
+            "title": "Connecta Hub",
+            "shortDescription": "Plataforma gamificada de gerenciamento interno para organizar projetos, equipes e entregas da comunidade acadêmica do Centro de Informática da UFPB.",
+            "longDescription": "# Connecta Hub\n\nO Connecta Hub é uma ferramenta criada para apoiar a comunidade acadêmica do Centro de Informática da UFPB no gerenciamento interno de projetos universitários.\n\n## Desafio\nProjetos acadêmicos costumam envolver muitas pessoas, prazos, demandas e responsabilidades espalhadas em conversas, planilhas e documentos soltos. Isso dificulta o acompanhamento das entregas, a visibilidade do progresso e o engajamento dos participantes.\n\n## Solução\nUma plataforma centralizada e gamificada para organizar projetos, acompanhar atividades, dar mais clareza aos fluxos internos e transformar a participação dos membros em uma experiência mais visual, colaborativa e motivadora.",
+            "responsibilities": [
+                "Desenvolvimento da plataforma de gerenciamento interno",
+                "Criação de fluxos para acompanhamento de projetos acadêmicos",
+                "Aplicação de elementos de gamificação para engajamento da comunidade",
+                "Construção de interface responsiva e voltada à rotina universitária"
+            ],
+            "results": [
+                "Centralização do controle de projetos em um ambiente único",
+                "Maior clareza sobre atividades, responsabilidades e progresso das equipes",
+                "Experiência mais engajante para membros da comunidade acadêmica"
+            ]
+        },
         "pet-de-todos": {
             "title": "Pet de Todos",
             "shortDescription": "Plano de saúde pet do Grupo Cartão de Todos com consultas, exames, cirurgias, vacinas e teleorientação 24h para cães e gatos com cobertura nacional.",
@@ -315,6 +331,8 @@
         "CRM": "CRM",
         "Automação": "Automação",
         "Gestão": "Gestão",
+        "Gamificação": "Gamificação",
+        "Universidade": "Universidade",
         "Voluntariado": "Voluntariado",
         "E-commerce": "E-commerce",
         "Doações": "Doações",
@@ -366,7 +384,9 @@
         "REST APIs": "APIs REST",
         "Git": "Git",
         "TDD": "TDD",
-        "Code Review": "Code Review"
+        "Code Review": "Code Review",
+        "Gamificação": "Gamificação",
+        "Gestão de Projetos": "Gestão de Projetos"
     },
     "common": {
         "present": "Presente"
