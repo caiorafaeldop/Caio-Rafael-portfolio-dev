@@ -6,7 +6,6 @@ import { projects } from "@/data/projects";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { useTheme } from "@/hooks/use-theme";
 
 // Componente de Carousel automático
 const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
@@ -92,12 +91,6 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
 const FeaturedProjects = () => {
   const { t } = useTranslation();
   const featuredProjects = projects.filter((p) => p.featured);
-  const { theme } = useTheme();
-
-  const getTitleColor = (project: typeof projects[0]) => {
-    if (!project.brandColor) return undefined;
-    return theme === "dark" ? project.brandColor.dark : project.brandColor.light;
-  };
 
   return (
     <section className="py-16 md:py-24" id="projetos">
@@ -110,7 +103,7 @@ const FeaturedProjects = () => {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight">
               {t('projects.featured.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -127,8 +120,6 @@ const FeaturedProjects = () => {
                 ...(project.gallery || [])
               ].filter(Boolean) as string[];
 
-              const titleColor = getTitleColor(project);
-
               return (
                 <motion.article
                   key={project.slug}
@@ -136,7 +127,7 @@ const FeaturedProjects = () => {
                   className="relative min-h-[50vh] flex flex-col justify-center"
                 >
                   {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-3xl opacity-50 dark:opacity-20" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl opacity-50 dark:opacity-20" />
                   
                   <div className={`relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center p-6 md:p-12 ${
                     index % 2 === 1 ? 'md:flex-row-reverse' : ''
@@ -149,8 +140,7 @@ const FeaturedProjects = () => {
                     {/* Content */}
                     <div className={`text-center md:text-left ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
                       <h3 
-                        className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
-                        style={{ color: titleColor }}
+                        className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-primary"
                       >
                         {t(`projects.${project.slug}.title`)}
                       </h3>
@@ -170,7 +160,7 @@ const FeaturedProjects = () => {
                           {project.stack.map((tech) => (
                             <span
                               key={tech}
-                              className="px-4 py-2 bg-purple-500/10 dark:bg-purple-500/20 text-sm font-semibold text-purple-600 dark:text-purple-400 rounded-lg border border-purple-500/20"
+                              className="px-4 py-2 bg-primary/10 text-sm font-semibold text-primary rounded-lg border border-primary/20"
                             >
                               {t(`stack.${tech}`, tech)}
                             </span>
@@ -193,7 +183,7 @@ const FeaturedProjects = () => {
                       {/* Actions */}
                       <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                         {project.links?.live && (
-                          <Button asChild className="bg-purple-600 hover:bg-primary">
+                          <Button asChild>
                             <a
                               href={project.links.live}
                               target="_blank"

@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-purple-500 font-bold text-xl tracking-tight flex items-center gap-2"
+            className="text-primary font-bold text-xl tracking-tight flex items-center gap-2"
           >
             <Code className="h-5 w-5" />
             Caio Rafael <span className="hidden sm:inline">de Oliveira</span>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 className={`block text-sm font-medium transition-colors ${
                   isActive(link.path)
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-purple-500"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {link.name}

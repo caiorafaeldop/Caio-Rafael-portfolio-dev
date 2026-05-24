@@ -16,7 +16,7 @@ const TechStack = () => {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight">
               {t('techStack.title')}
             </h2>
             
@@ -29,16 +29,16 @@ const TechStack = () => {
                 key={category.category}
                 variants={fadeInUp}
                 custom={index}
-                className="bg-background dark:bg-zinc-900 p-8 rounded-2xl border-2 border-purple-500/20 dark:border-purple-400/20 hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all"
+                className="bg-card p-8 rounded-2xl border-2 border-primary/20 hover:border-primary/50 transition-all"
               >
-                <h3 className="text-xl font-bold text-purple-500 mb-6 pb-2 border-b border-purple-500/20">
+                <h3 className="text-xl font-bold text-primary mb-6 pb-2 border-b border-primary/20">
                   {t(`techStack.categories.${category.category}`)}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {category.items.map((item) => (
                     <span
                       key={item}
-                      className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/10 dark:bg-purple-500/15 text-foreground border border-purple-500/20"
+                      className="px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-foreground border border-primary/20"
                     >
                       {t(`techStack.items.${item}`, item)}
                     </span>

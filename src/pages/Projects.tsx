@@ -88,7 +88,7 @@ const Projects = () => {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight">
                 {t('projects.page.title')}
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -99,21 +99,21 @@ const Projects = () => {
             {/* Filters */}
             <motion.div
               variants={fadeInUp}
-              className="mb-12 bg-background dark:bg-zinc-900 backdrop-blur-xl border-2 border-purple-500/20 dark:border-purple-400/20 rounded-2xl p-6"
+              className="mb-12 bg-card backdrop-blur-xl border-2 border-primary/20 rounded-2xl p-6"
             >
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-purple-500" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary" />
                   <Input
                     placeholder={t('projects.page.filters.search_placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="pl-10 border-purple-500/20 dark:border-purple-400/20 focus:border-purple-500"
+                    className="pl-10 border-primary/20 focus:border-primary"
                   />
                 </div>
 
                 <Select value={selectedTag} onValueChange={setSelectedTag}>
-                  <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
+                  <SelectTrigger className="border-primary/20">
                     <SelectValue placeholder={t('projects.page.filters.tag_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -127,7 +127,7 @@ const Projects = () => {
                 </Select>
 
                 <Select value={sortBy} onValueChange={(v) => setSortBy(v as "recent" | "title")}>
-                  <SelectTrigger className="border-purple-500/20 dark:border-purple-400/20">
+                  <SelectTrigger className="border-primary/20">
                     <SelectValue placeholder={t('projects.page.filters.sort_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -145,7 +145,7 @@ const Projects = () => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-purple-500 hover:text-purple-600"
+                    className="text-primary hover:text-primary/80"
                     onClick={() => {
                       setSearch("");
                       setSelectedTag("all");
@@ -175,7 +175,7 @@ const Projects = () => {
                 <p className="text-lg">{t('projects.page.filters.empty')}</p>
                 <Button
                   variant="outline"
-                  className="mt-4 border-2 border-purple-500/50 text-foreground hover:bg-purple-500/10"
+                  className="mt-4 border-2 border-primary/50 text-foreground hover:bg-primary/10"
                   onClick={() => {
                     setSearch("");
                     setSelectedTag("all");

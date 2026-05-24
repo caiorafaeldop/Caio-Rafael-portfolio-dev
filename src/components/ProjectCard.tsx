@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Project, Learning } from "@/data/projects";
 import { Button } from "./ui/button";
 import { fadeInUp } from "@/lib/animations";
-import { useTheme } from "@/hooks/use-theme";
 import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
@@ -14,41 +13,33 @@ interface ProjectCardProps {
 const getLearningColor = (category: Learning["category"]) => {
   switch (category) {
     case "hard":
-      return "bg-cyan-500/10 text-cyan-500 border-cyan-500/20";
+      return "bg-primary/10 text-primary border-primary/20";
     case "methodology":
-      return "bg-purple-500/10 text-purple-500 border-purple-500/20";
+      return "bg-primary/15 text-primary border-primary/25";
     case "soft":
-      return "bg-emerald-500/10 text-emerald-500 border-emerald-500/20";
+      return "bg-muted text-foreground border-primary/15";
     default:
       return "bg-muted/50 text-muted-foreground";
   }
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { theme } = useTheme();
   const { t } = useTranslation();
   
   // Pegar apenas os 5 primeiros learnings para não poluir
   const displayLearnings = project.learnings?.slice(0, 5) || [];
   const hasMoreLearnings = (project.learnings?.length || 0) > 5;
 
-  // Cor do título baseada no brandColor do projeto
-  const titleColor = project.brandColor 
-    ? (theme === "dark" ? project.brandColor.dark : project.brandColor.light)
-    : undefined;
-
   return (
     <motion.article
       variants={fadeInUp}
-      className="group relative bg-background dark:bg-zinc-900 backdrop-blur-xl border-2 border-purple-500/20 dark:border-purple-400/20 rounded-2xl overflow-hidden hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all duration-300"
+      className="group relative bg-card backdrop-blur-xl border-2 border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
     >
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 
-                style={{ color: titleColor }}
-              >
+              <h3 className="text-primary font-bold">
                 {t(`projects.${project.slug}.title`)}
               </h3>
               <span className="text-sm text-muted-foreground">{project.year.replace('Presente', t('common.present'))}</span>
@@ -101,7 +92,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             {project.stack.slice(0, 5).map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 text-xs font-semibold bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-lg border border-purple-500/20"
+                className="px-3 py-1.5 text-xs font-semibold bg-primary/10 text-primary rounded-lg border border-primary/20"
               >
                 {t(`stack.${tech}`, tech)}
               </span>
@@ -114,15 +105,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 pt-4 border-t border-purple-500/20">
-          <Button asChild className="bg-purple-600 hover:bg-purple-700 shadow-lg shadow-purple-500/20">
+        <div className="flex items-center gap-3 pt-4 border-t border-primary/20">
+          <Button asChild className="shadow-lg shadow-primary/20">
             <Link to={`/projects/${project.slug}`}>
               {t('projectCard.viewDetails')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
           {project.links?.github && (
-            <Button asChild variant="outline" size="icon" className="border-purple-500/30 hover:bg-purple-500/10">
+            <Button asChild variant="outline" size="icon" className="border-primary/30 hover:bg-primary/10">
               <a
                 href={project.links.github}
                 target="_blank"
@@ -134,7 +125,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </Button>
           )}
           {project.links?.live && (
-            <Button asChild variant="outline" size="icon" className="border-purple-500/30 hover:bg-purple-500/10">
+            <Button asChild variant="outline" size="icon" className="border-primary/30 hover:bg-primary/10">
               <a
                 href={project.links.live}
                 target="_blank"
@@ -149,7 +140,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       {/* Hover effect overlay */}
-      <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </motion.article>
   );
 };

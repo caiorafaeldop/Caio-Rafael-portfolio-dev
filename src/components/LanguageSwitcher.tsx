@@ -20,8 +20,8 @@ const LanguageSwitcher = () => {
             "h-7 px-3 rounded-sm text-xs font-extrabold transition-all",
             // Active state
             i18n.language === 'pt'
-              ? "bg-purple-600 text-white shadow-sm hover:bg-purple-700 hover:text-white"
-              : "text-muted-foreground hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-400 bg-transparent"
+              ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground"
+              : "text-muted-foreground hover:bg-primary/10 hover:text-primary bg-transparent"
           )}
         >
           PT
@@ -34,8 +34,8 @@ const LanguageSwitcher = () => {
             "h-7 px-3 rounded-sm text-xs font-extrabold transition-all",
             // Active state
             i18n.language === 'en'
-              ? "bg-purple-600 text-white shadow-sm hover:bg-purple-700 hover:text-white"
-              : "text-muted-foreground hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-400 bg-transparent"
+              ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:text-primary-foreground"
+              : "text-muted-foreground hover:bg-primary/10 hover:text-primary bg-transparent"
           )}
         >
           EN

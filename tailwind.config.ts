@@ -52,25 +52,20 @@ export default {
           border: "hsl(var(--glass-border))",
         },
         brand: {
-          purple: {
-            DEFAULT: "#7C3AED",
-            light: "#A78BFA",
-            dark: "#6D28D9",
-          },
-          blue: {
-            DEFAULT: "#0EA5E9",
-            light: "#3B82F6",
-            dark: "#0284C7",
+          indra: {
+            DEFAULT: "#005566",
+            light: "#FFFFFF",
+            dark: "#003F4C",
           },
           deep: {
-            DEFAULT: "#0B1220",
-            dark: "#0A0A0F",
+            DEFAULT: "#005566",
+            dark: "#003F4C",
           },
         },
       },
       backgroundImage: {
-        "gradient-dark": "linear-gradient(to top right, #0B1220, #1B0B2E, #0A0A0F)",
-        "gradient-accent": "linear-gradient(to bottom right, #6D28D9, #3B82F6, #0EA5E9)",
+        "gradient-dark": "linear-gradient(to top right, #003F4C, #005566)",
+        "gradient-accent": "linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)))",
       },
       backdropBlur: {
         xs: "2px",

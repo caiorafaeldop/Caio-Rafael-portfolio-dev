@@ -73,7 +73,7 @@ const About = () => {
             {/* Header */}
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-6xl font-extrabold text-center mb-16 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600 tracking-tight"
+              className="text-4xl md:text-6xl font-extrabold text-center mb-16 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight"
             >
               {t('about.title')}
             </motion.h1>
@@ -82,7 +82,7 @@ const About = () => {
             <motion.section variants={fadeInUp} className="mb-16">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
                 {/* Main Photo */}
-                <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-border dark:border-zinc-700">
+                <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-border">
                   <img
                     src="/CAIO/5.jpg"
                     alt="Caio Rafael de Oliveira - Professional Photo"
@@ -98,7 +98,7 @@ const About = () => {
                     </p>
                     <p>
                       <Trans i18nKey="about.bio.p2">
-                        Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-purple-500 font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
+                        Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-primary font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
                       </Trans>
                     </p>
                     <p>
@@ -108,7 +108,7 @@ const About = () => {
                     </p>
                     <p>
                        <Trans i18nKey="about.bio.p4">
-                        Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-purple-500 font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
+                        Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-primary font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
                       </Trans>
                     </p>
                   </div>
@@ -118,7 +118,7 @@ const About = () => {
                     {extraPhotos.map((photo, index) => (
                       <div
                         key={index}
-                        className="w-20 h-20 rounded-full overflow-hidden shadow-md border-2 border-border dark:border-zinc-700"
+                        className="w-20 h-20 rounded-full overflow-hidden shadow-md border-2 border-border"
                       >
                         <img
                           src={photo.src}
@@ -142,9 +142,9 @@ const About = () => {
                     key={index}
                     variants={fadeInUp}
                     custom={index}
-                    className="bg-background dark:bg-zinc-900 p-6 rounded-xl shadow-sm border border-border dark:border-zinc-800 flex flex-col items-start text-left hover:border-primary/50 dark:hover:border-purple-500/50 transition-colors"
+                    className="bg-card p-6 rounded-xl shadow-sm border border-border flex flex-col items-start text-left hover:border-primary/50 transition-colors"
                   >
-                    <achievement.icon className="h-12 w-12 text-purple-500 mb-4" />
+                    <achievement.icon className="h-12 w-12 text-primary mb-4" />
                     <h3 className="text-xl font-bold text-foreground mb-2">
                       {achievement.title}
                     </h3>
@@ -161,7 +161,7 @@ const About = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 mb-20"
             >
-              <Button asChild size="lg" variant="outline" className="border-2 border-purple-500/50 dark:border-purple-400/50 text-foreground shadow-lg shadow-purple-500/10 transition-all hover:-translate-y-1 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:border-purple-500 dark:hover:border-purple-400">
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary/50 text-foreground shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:border-primary">
                 <a href="/cv.pdf" download className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   {t('hero.downloadCv')}
@@ -172,7 +172,7 @@ const About = () => {
         </div>
       </main>
 
-      <div className="border-t border-purple-500/10">
+      <div className="border-t border-primary/10">
         <Contact />
       </div>
       

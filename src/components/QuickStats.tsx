@@ -11,7 +11,7 @@ const QuickStats = () => {
   ];
 
   return (
-    <section className="py-8 bg-gradient-to-r from-purple-600 via-primary to-purple-600 overflow-hidden">
+    <section className="py-8 bg-primary text-primary-foreground overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -19,15 +19,15 @@ const QuickStats = () => {
         className="relative"
       >
         {/* Gradient fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-purple-600 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-purple-600 to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary to-transparent z-10" />
         
         {/* Scrolling content */}
         <div className="flex animate-marquee whitespace-nowrap">
           {[...technologies, ...technologies].map((tech, index) => (
             <span
               key={`${tech}-${index}`}
-              className="mx-4 md:mx-6 text-lg md:text-2xl font-bold text-white/90 hover:text-white transition-colors cursor-default"
+              className="mx-4 md:mx-6 text-lg md:text-2xl font-bold text-primary-foreground/90 hover:text-primary-foreground transition-colors cursor-default"
             >
               {tech}
             </span>
