@@ -162,7 +162,7 @@ const About = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 mb-20"
             >
               <Button asChild size="lg" variant="outline" className="border-2 border-primary/50 text-foreground shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:border-primary">
-                <a href="/cv.pdf" download className="flex items-center gap-2">
+                <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   {t('hero.downloadCv')}
                 </a>
