@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import ParticlesBackground from "@/components/Background/Particles";
 import Contact from "@/components/Contact";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const { t } = useTranslation();
@@ -96,21 +96,9 @@ const About = () => {
                     <p>
                       {t('about.bio.p1')}
                     </p>
-                    <p>
-                      <Trans i18nKey="about.bio.p2">
-                        Sou <strong className="text-foreground">Caio Rafael de Oliveira</strong>, desenvolvedor Full Stack movido por curiosidade, aprendizado contínuo e pela vontade genuína de criar coisas que façam sentido para as pessoas. Acredito que tecnologia é, antes de tudo, uma ferramenta para <span className="text-primary font-medium">resolver problemas reais</span>, conectar pessoas e abrir caminhos.
-                      </Trans>
-                    </p>
-                    <p>
-                       <Trans i18nKey="about.bio.p3">
-                        Tenho uma forte paixão por <strong className="text-foreground">empreendedorismo</strong>, por tirar ideias do papel e transformá-las em produtos e soluções com propósito. Gosto de pensar além do código: entender contextos, necessidades e impactos. É isso que torna um projeto vivo e relevante.
-                      </Trans>
-                    </p>
-                    <p>
-                       <Trans i18nKey="about.bio.p4">
-                        Ao longo do caminho, participei ativamente de projetos acadêmicos e institucionais que me ensinaram sobre <span className="text-primary font-medium">liderança, colaboração e responsabilidade</span>, sempre buscando crescer e ajudar outros a crescerem comigo.
-                      </Trans>
-                    </p>
+                    <p>{t('about.bio.p2')}</p>
+                    <p>{t('about.bio.p3')}</p>
+                    <p>{t('about.bio.p4')}</p>
                   </div>
 
                   {/* Extra Photos */}

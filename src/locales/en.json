@@ -58,9 +58,9 @@
         "title": "Meet the Developer",
         "bio": {
             "p1": "Hello, welcome.",
-            "p2": "I am <1>Caio Rafael de Oliveira</1>, a Full Stack developer driven by curiosity, continuous learning, and a genuine desire to create things that make sense for people. I believe technology is, above all, a tool to <2>solve real problems</2>, connect people, and open paths.",
-            "p3": "I have a strong passion for <1>entrepreneurship</1>, taking ideas off paper and transforming them into products and solutions with purpose. I like to think beyond code: understanding contexts, needs, and impacts. That's what makes a project alive and relevant.",
-            "p4": "Along the way, I actively participated in academic and institutional projects that taught me about <1>leadership, collaboration, and responsibility</1>, always seeking to grow and help others grow with me."
+            "p2": "I am Caio Rafael de Oliveira, a Full Stack developer driven by curiosity, continuous learning, and a genuine desire to create things that make sense for people. I believe technology is, above all, a tool to solve real problems, connect people, and open paths.",
+            "p3": "I have a strong passion for entrepreneurship, taking ideas off paper and transforming them into products and solutions with purpose. I like to think beyond code: understanding contexts, needs, and impacts. That's what makes a project alive and relevant.",
+            "p4": "Along the way, I actively participated in academic and institutional projects that taught me about leadership, collaboration, and responsibility, always seeking to grow and help others grow with me."
         },
         "achievements": {
             "title": "Key Achievements",
