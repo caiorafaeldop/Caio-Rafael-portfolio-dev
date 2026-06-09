@@ -33,8 +33,22 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <motion.article
       variants={fadeInUp}
-      className="group relative bg-card backdrop-blur-xl border-2 border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
+      className="group relative bg-card backdrop-blur-xl border border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
     >
+      {/* Cover image */}
+      {project.cover && (
+        <div className="relative h-44 overflow-hidden bg-muted/30">
+          <img
+            src={project.cover}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+        </div>
+      )}
+      {!project.cover && (
+        <div className="h-2 bg-gradient-to-r from-primary/60 via-secondary/60 to-primary/30" />
+      )}
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">

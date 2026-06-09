@@ -112,9 +112,8 @@ const FeaturedProjects = () => {
           </motion.div>
 
           {/* Project Cards - Alternating Layout */}
-          <div className="space-y-24 md:space-y-32">
+          <div className="space-y-12 md:space-y-16">
             {featuredProjects.map((project, index) => {
-              // Combina cover + gallery para o carousel
               const allImages = [
                 project.cover,
                 ...(project.gallery || [])
@@ -124,21 +123,26 @@ const FeaturedProjects = () => {
                 <motion.article
                   key={project.slug}
                   variants={fadeInUp}
-                  className="relative min-h-[50vh] flex flex-col justify-center"
+                  className="relative flex flex-col justify-center rounded-3xl overflow-hidden border border-primary/15 shadow-xl shadow-primary/5 hover:shadow-primary/10 hover:border-primary/30 transition-all duration-500 group"
                 >
                   {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl opacity-50 dark:opacity-20" />
-                  
-                  <div className={`relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center p-6 md:p-12 ${
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-secondary/8" />
+
+                  <div className={`relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch ${
                     index % 2 === 1 ? 'md:flex-row-reverse' : ''
                   }`}>
                     {/* Image Carousel */}
-                    <div className={index % 2 === 1 ? 'md:order-2' : 'md:order-1'}>
-                      <ImageCarousel images={allImages} alt={project.title} />
+                    <div className={`relative overflow-hidden bg-muted/30 min-h-[280px] md:min-h-[400px] ${index % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
+                      {allImages.length > 0
+                        ? <ImageCarousel images={allImages} alt={project.title} />
+                        : <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20">
+                            <span className="text-6xl font-black text-primary/20">{project.title[0]}</span>
+                          </div>
+                      }
                     </div>
 
                     {/* Content */}
-                    <div className={`text-center md:text-left ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
+                    <div className={`p-8 md:p-10 flex flex-col justify-center text-center md:text-left ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
                       <h3 
                         className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-primary"
                       >
@@ -181,7 +185,7 @@ const FeaturedProjects = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                      <div className="pt-5 border-t border-primary/15 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3">
                         {project.links?.live && (
                           <Button asChild>
                             <a

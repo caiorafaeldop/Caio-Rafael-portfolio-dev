@@ -130,20 +130,20 @@ const Hero = () => {
               ))}
             </div>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
                 <a href="#projetos" className="flex items-center gap-2">
                   {t("hero.viewProjects")}
                   <ArrowDown className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary/40 hover:border-primary transition-all hover:-translate-y-1">
                 <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   {t("hero.downloadCv")}
                 </a>
               </Button>
-              <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
+              <Button asChild size="lg" variant="ghost" className="transition-all hover:-translate-y-1">
                 <a href="/about" className="flex items-center gap-2">
                   {t("hero.aboutMe")}
                   <ArrowRight className="h-4 w-4" />

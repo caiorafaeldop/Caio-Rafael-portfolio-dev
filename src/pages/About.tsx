@@ -73,14 +73,14 @@ const About = () => {
             {/* Header */}
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-6xl font-extrabold text-center mb-16 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight"
+              className="text-4xl md:text-6xl font-extrabold text-center mb-8 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary tracking-tight"
             >
               {t('about.title')}
             </motion.h1>
 
             {/* Hero Section - Photo + Bio */}
-            <motion.section variants={fadeInUp} className="mb-16">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+            <motion.section variants={fadeInUp} className="mb-10">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
                 {/* Main Photo */}
                 <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-border">
                   <img
@@ -142,9 +142,9 @@ const About = () => {
                     key={index}
                     variants={fadeInUp}
                     custom={index}
-                    className="bg-card p-6 rounded-xl shadow-sm border border-border flex flex-col items-start text-left hover:border-primary/50 transition-colors"
+                    className="group bg-card p-6 rounded-xl shadow-md border border-border border-l-4 border-l-primary/30 flex flex-col items-start text-left hover:border-primary/60 hover:border-l-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 cursor-default"
                   >
-                    <achievement.icon className="h-12 w-12 text-primary mb-4" />
+                    <achievement.icon className="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
                     <h3 className="text-xl font-bold text-foreground mb-2">
                       {achievement.title}
                     </h3>
@@ -159,12 +159,18 @@ const About = () => {
             {/* CTA */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 mb-20"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 mb-16"
             >
-              <Button asChild size="lg" variant="outline" className="border-2 border-primary/50 text-foreground shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:border-primary">
+              <Button asChild size="lg" className="shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 hover:shadow-primary/40 px-8 text-base font-bold">
                 <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
-                  <Download className="h-4 w-4" />
+                  <Download className="h-5 w-5" />
                   {t('hero.downloadCv')}
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary/40 hover:border-primary transition-all hover:-translate-y-1 px-8 text-base">
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2">
+                  <Mail className="h-5 w-5" />
+                  Get in Touch
                 </a>
               </Button>
             </motion.div>

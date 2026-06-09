@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X, Code } from "lucide-react";
+import { Menu, X, Code, Download } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -42,7 +42,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -56,8 +56,16 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <ThemeToggle />
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+              <Button asChild size="sm" className="shadow-md shadow-primary/20 ml-1">
+                <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-1.5">
+                  <Download className="h-3.5 w-3.5" />
+                  CV
+                </a>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-glass-border/10 bg-glass-bg/5 backdrop-blur-xl">
+    <footer className="relative border-t border-primary/15 bg-card/60 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -21,7 +21,7 @@ const Footer = () => {
                 href={siteConfig.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-glass-bg/5 border border-glass-border/10 hover:border-primary/50 transition-colors"
+                className="p-2 rounded-lg border border-primary/20 hover:border-primary/60 hover:text-primary transition-colors cursor-pointer"
                 aria-label="GitHub"
               >
                 <Github className="h-4 w-4" />
@@ -30,14 +30,14 @@ const Footer = () => {
                 href={siteConfig.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-glass-bg/5 border border-glass-border/10 hover:border-primary/50 transition-colors"
+                className="p-2 rounded-lg border border-primary/20 hover:border-primary/60 hover:text-primary transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="p-2 rounded-lg bg-glass-bg/5 border border-glass-border/10 hover:border-primary/50 transition-colors"
+                className="p-2 rounded-lg border border-primary/20 hover:border-primary/60 hover:text-primary transition-colors cursor-pointer"
                 aria-label="Email"
               >
                 <Mail className="h-4 w-4" />
@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-glass-border/10 text-center text-muted-foreground text-sm">
+        <div className="pt-8 border-t border-primary/10 text-center text-muted-foreground text-sm">
           <p>
             © {currentYear} {siteConfig.name}. {t('contact.rights')}
           </p>

@@ -33,20 +33,20 @@ const ParticlesBackground = () => {
         },
         particles: {
           color: {
-            value: ["#005566", "#FFFFFF"],
+            value: ["#005566", "#008b9b", "#00b8cc"],
           },
           links: {
             color: {
               value: "#005566",
             },
-            distance: 150,
+            distance: 160,
             enable: true,
-            opacity: 0.2,
-            width: 1,
+            opacity: 0.55,
+            width: 1.2,
           },
           move: {
             enable: true,
-            speed: 0.3,
+            speed: 0.5,
             direction: "none",
             random: false,
             straight: false,
@@ -55,17 +55,17 @@ const ParticlesBackground = () => {
             },
           },
           number: {
-            value: 60,
+            value: 70,
             density: {
               enable: true,
               area: 800,
             },
           },
           opacity: {
-            value: 0.3,
+            value: 0.55,
           },
           size: {
-            value: { min: 1, max: 2 },
+            value: { min: 1.5, max: 3 },
           },
         },
         detectRetina: true,
