@@ -60,7 +60,7 @@ const Navbar = () => {
               <ThemeToggle />
               <LanguageSwitcher />
               <Button asChild size="sm" className="shadow-md shadow-primary/20 ml-1">
-                <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-1.5">
+                <a href="/CaioRafaelDeOliveiraResume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-1.5">
                   <Download className="h-3.5 w-3.5" />
                   CV
                 </a>

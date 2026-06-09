@@ -150,7 +150,7 @@ const About = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 mb-16"
             >
               <Button asChild size="lg" className="shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 hover:shadow-primary/40 px-8 text-base font-bold">
-                <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
+                <a href="/CaioRafaelDeOliveiraResume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
                   <Download className="h-5 w-5" />
                   {t('hero.downloadCv')}
                 </a>

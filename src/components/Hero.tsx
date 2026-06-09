@@ -138,7 +138,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-primary/40 hover:border-primary transition-all hover:-translate-y-1">
-                <a href="/Caio Rafael de Oliveira - Resume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
+                <a href="/CaioRafaelDeOliveiraResume.pdf" download="Caio Rafael de Oliveira - Resume.pdf" className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   {t("hero.downloadCv")}
                 </a>
